@@ -8,10 +8,10 @@
 def make_output(data_file, output_file, class_of_interest):
 
 	data_dict = {}
-	selective_patient_ID_list = []
+	selective_patient_ID_list = [] #this list will record class_beta. patientIDs that does not fall into this list will become other class
 
-	class_alpha = int(class_of_interest.split('_')[0])
-	class_beta = int(class_of_interest.split('_')[1])
+	class_alpha = int(class_of_interest.split('_')[0]) 
+	class_beta = int(class_of_interest.split('_')[1]) 
 
 	data_df = pd.read_csv(data_file, sep="\t", index_col = 0)
 	r, c = data_df.shape
@@ -28,31 +28,42 @@ def make_output(data_file, output_file, class_of_interest):
 
 	for patient_ID in patient_ID_list:
 		value = data_dict['acpa', patient_ID]
-		if class_beta == 3:
-		#If I want to consider 0 vs 1,2
-		#append all
+		if class_beta == 3: #This is specifically designed to consider 0 vs 1,2; append all
 			selective_patient_ID_list.append(patient_ID)
 		else:
-			if value == class_alpha or value == class_beta:
-			#this is specifically designed for 1 vs 2
+			if value == class_alpha or value == class_beta: #designed to consider 0 vs 1, 0 vs 2, 1 vs 2
 				selective_patient_ID_list.append(patient_ID)
 
 	output_txt = open(output_file,'w')
+	#write headers
 	for patient_ID in selective_patient_ID_list:
 		output_txt.write('\t%s' % patient_ID)
 	output_txt.write('\n')
 	
 	for feature in feature_list:
 		output_txt.write(feature)
-		if feature == 'acpa' and class_beta == 3:
+		if feature == 'acpa':
+		#write, or transfrom acpa values if necessary
 			for patient_ID in selective_patient_ID_list:
-				label = data_dict[feature, patient_ID]
-				if label == 2:
-					value = 1
+				acpa = data_dict[feature, patient_ID]
+
+				if class_of_interest  == "0_3": 
+					if acpa == 2 or acpa == 1:
+						value = 'ra'
+					else:
+						value = 'control'
+
 				else:
-					value = int(label)
-				output_txt.write('\t%s' % value)
+					if acpa == 1:
+						value = 'pos'
+					if acpa == 2:
+						value = 'neg'
+					if acpa == 0:
+						value = 'control'
+
+				output_txt.write('\t%s' % (value))
 		else:	
+		#write other feature values
 			for patient_ID in selective_patient_ID_list:
 				value = data_dict[feature, patient_ID]
 				output_txt.write('\t%s' % value)

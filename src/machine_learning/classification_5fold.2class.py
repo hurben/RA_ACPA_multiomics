@@ -11,8 +11,8 @@ def run_ML(train_df, test_df, specified_classifier, class_type):
 	y_pred = clf.predict(X_test)
 
 	#summarize prediction results: obtain TPR TNR FPR TNR
-	positive_class = int(class_type.split('_')[1])
-	negative_class = int(class_type.split('_')[0])
+	negative_class = class_type.split('_')[0]
+	positive_class = class_type.split('_')[1]
 
 	tp_count = 0
 	fp_count = 0
@@ -37,15 +37,17 @@ def run_ML(train_df, test_df, specified_classifier, class_type):
 			if predicted_value == positive_class:
 				fp_count += 1
 
-	acc = (tp_count + tn_count) / (tp_count + fp_count + tn_count + fn_count)
-	pre = (tp_count) / (tp_count + fp_count)
-	tpr = (tp_count) / (tp_count + fn_count)
-	tnr = (tn_count) / (tn_count + fp_count)
-
-	fpr = (fp_count) / (fp_count + tn_count)
-	fnr = (fn_count) / (fn_count + tp_count)
-
-	#readings: https://towardsdatascience.com/confusion-matrix-for-your-multi-class-machine-learning-model-ff9aa3bf7826
+	try:
+		acc = (tp_count + tn_count) / (tp_count + fp_count + tn_count + fn_count)
+		pre = (tp_count) / (tp_count + fp_count)
+		tpr = (tp_count) / (tp_count + fn_count)
+		tnr = (tn_count) / (tn_count + fp_count)
+		fpr = (fp_count) / (fp_count + tn_count)
+		fnr = (fn_count) / (fn_count + tp_count)
+	except ZeroDivisionError:
+		print ("Error ACC: %s %s %s %s" % (tp_count, tn_count, fp_count, tn_count, fn_count))
+		print (observed_class_list)
+		print (predicted_class_list)
 	
 	return acc, pre, tpr, tnr, fpr, fnr
 
@@ -65,9 +67,9 @@ def main(fs_data_folder, data_file_name, specified_classifier, threhold, classif
 		train_data = '%s/%s/%s/%s.fs.train.tsv' % (fs_data_folder,threshold, kfold, data_file_name)
 		test_data = '%s/%s/%s/%s.fs.test.tsv' % (fs_data_folder, threshold, kfold, data_file_name)
 
-		train_df = pd.read_csv(train_data, sep='\t', index_col=0)
+		train_df = pd.read_csv(train_data, sep='\t', index_col=0, low_memory=False)
 		train_df = train_df.T
-		test_df = pd.read_csv(test_data, sep='\t', index_col=0)
+		test_df = pd.read_csv(test_data, sep='\t', index_col=0, low_memory=False)
 		test_df = test_df.T
 
 		acc, pre, tpr, tnr, fpr, fnr = run_ML(train_df, test_df, specified_classifier, class_type)
@@ -79,7 +81,12 @@ def main(fs_data_folder, data_file_name, specified_classifier, threhold, classif
 		fnr_list.append(fnr)
 	
 	output_txt.write('%s_%s_%s' % (threshold, data_file_name, classifier_type))
-	output_txt.write('\t%s\t%s\t%s\t%s\t%s\t%s' % (statistics.mean(acc_list), statistics.mean(pre_list), statistics.mean(tpr_list), statistics.mean(tnr_list), statistics.mean(fpr_list), statistics.mean(fnr_list)))
+	output_txt.write('\t%s\t%s' % (statistics.mean(acc_list), statistics.stdev(acc_list)))
+	output_txt.write('\t%s\t%s' % (statistics.mean(pre_list), statistics.stdev(pre_list)))
+	output_txt.write('\t%s\t%s' % (statistics.mean(tpr_list), statistics.stdev(tpr_list)))
+	output_txt.write('\t%s\t%s' % (statistics.mean(tnr_list), statistics.stdev(tnr_list)))
+	output_txt.write('\t%s\t%s' % (statistics.mean(fpr_list), statistics.stdev(fpr_list)))
+	output_txt.write('\t%s\t%s' % (statistics.mean(fnr_list), statistics.stdev(fnr_list)))
 
 	output_txt.write('\n')
 
@@ -116,33 +123,36 @@ if __name__ == '__main__':
 	class_type = sys.argv[4]
 
 	if split_type == "percentage":
-#		split_list = ["1p", "5p", "10p", "20p", "25p", "30p", "40p", "50p", "100p"]
-		split_list = ["1p", "5p", "10p", "20p", "25p", "30p", "40p"]
+		split_list = ["1p", "5p", "10p", "20p", "25p", "30p", "40p", "50p", "100p"]
+#		split_list = ["1p", "5p", "10p", "20p", "25p", "30p", "40p", "50p"]
+#		split_list = ["1p", "5p", "10p", "20p", "25p", "30p", "40p"]
 	if split_type == "top":
 		split_list = ["top10", "top20", "top30", "top40", "top50", "top60", "top70", "top80", "top90", "top100","top200","top300","top400","top500","top600", "top700","top800","top900","top1000"]
 
 	output_txt = open(output_file,'w')
 
-	output_txt.write('data_classifier_type\tACC_average\tPRE_average\tTPR_average\tTNR_average\tFPR_average\tFNR_average\n')
+	output_txt.write('Algorithm\tACC_average\tACC_stdev\tPRE_average\tPRE_stdev\tTPR_average\tTPR_stdev\tTNR_average\tTNR_stdev\tFPR_average\tFPR_stdev\tFNR_average\tFNR_stdev\n')
 
 
 	for threshold in split_list:
 
-		print (threshold)
-#		specified_classifier = LogisticRegression(max_iter=1000)
-#		main(fs_data_folder, data_file_name, specified_classifier, threshold, 'LR', output_txt)
+		print (threshold, 'LR')
+		specified_classifier = LogisticRegression(max_iter=1000, random_state=1)
+		main(fs_data_folder, data_file_name, specified_classifier, threshold, 'LR', output_txt, class_type)
 
-		specified_classifier = RandomForestClassifier()
+		print (threshold, 'RF')
+		specified_classifier = RandomForestClassifier(random_state=1)
 		main(fs_data_folder, data_file_name, specified_classifier, threshold, 'RF', output_txt, class_type)
 
 #		specified_classifier = RandomForestClassifier(n_estimators=200)
 #		main(fs_data_folder, data_file_name, specified_classifier, threshold, 'RF_n_est200', output_txt)
 
-		specified_classifier = DecisionTreeClassifier()
+		print (threshold, 'DTC')
+		specified_classifier = DecisionTreeClassifier(random_state=1)
 		main(fs_data_folder, data_file_name, specified_classifier, threshold, 'DTC', output_txt, class_type)
 
-		specified_classifier = GradientBoostingClassifier()
-		main(fs_data_folder, data_file_name, specified_classifier, threshold, 'GBC', output_txt, class_type)
+#		specified_classifier = GradientBoostingClassifier()
+#		main(fs_data_folder, data_file_name, specified_classifier, threshold, 'GBC', output_txt, class_type)
 
 #		specified_classifier = GradientBoostingClassifier(n_estimators=200)
 #		main(fs_data_folder, data_file_name, specified_classifier, threshold, 'GBC_n_est200', output_txt)

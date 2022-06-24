@@ -1,7 +1,12 @@
 #"create_feature_selection_matrix.py"     22.01.05
-#This is for feature selection of RWR restults
 
-#Intended inputs: outputs from "post_network/RWR.R" which is "kfold.RWR.result.txt"
+#Feature selection based on RWR results.
+#[IMPORTANT NOTE] 
+#This script is designed to handle two cutoffs. 
+#[1] Top N %  ; you must defined this with "p"; such as 10p (for top 10 percent), 50p (for top 50 percent)
+#[2] Top N  ; you must define this as "top"; such as top10 (for top 10), top1000 (for top 1000)
+
+#Intended inputs: outputs from "RWR.R"; which is "kfold.RWR.result.txt"
 
 def get_RWR_features(file_name, cutoff):
 
@@ -15,6 +20,8 @@ def get_RWR_features(file_name, cutoff):
 		if i <= threshold:
 			feature = data_df.iloc[i][0]
 			feature_list.append(feature)
+		else:
+			break
 
 	return feature_list
 
@@ -102,9 +109,10 @@ if __name__ == '__main__':
 
 	#Buffers
 	RWR_result_file = sys.argv[1]
-	data_matrix_dir = sys.argv[2] #where the kfold/train, kfold/test matrix are restored
+	data_matrix_dir = sys.argv[2] #where the kfold/train, kfold/test matrix are stored
 
 	cutoff = sys.argv[3] #cutoffs for top N features or top n% features
+
 	output_folder_name = sys.argv[4] #feature selected matrix will be stored here
 	kfold = sys.argv[5] #kfold to consider
 
