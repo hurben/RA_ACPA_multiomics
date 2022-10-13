@@ -79,6 +79,7 @@ def main(fs_data_folder, data_file_name, specified_classifier, threhold, classif
 		tnr_list.append(tnr)
 		fpr_list.append(fpr)
 		fnr_list.append(fnr)
+	print (acc_list)
 	
 	output_txt.write('%s_%s_%s' % (threshold, data_file_name, classifier_type))
 	output_txt.write('\t%s\t%s' % (statistics.mean(acc_list), statistics.stdev(acc_list)))
@@ -108,8 +109,7 @@ if __name__ == '__main__':
 	from sklearn.metrics import confusion_matrix
 	from sklearn.svm import SVC
 	import statistics
-
-	#input example
+	
 	#[1] RWR result file
 	#[2] kfold_data_dir='/Users/m221138/RA_multiomics/analysis/10fold_data_v3/network_construction_enet
 	#[3] split
@@ -136,20 +136,20 @@ if __name__ == '__main__':
 
 	for threshold in split_list:
 
-		print (threshold, 'LR')
-		specified_classifier = LogisticRegression(max_iter=1000, random_state=1)
-		main(fs_data_folder, data_file_name, specified_classifier, threshold, 'LR', output_txt, class_type)
+#		print (threshold, 'LR')
+#		specified_classifier = LogisticRegression(max_iter=1000, random_state=1)
+#		main(fs_data_folder, data_file_name, specified_classifier, threshold, 'LR', output_txt, class_type)
 
 		print (threshold, 'RF')
-		specified_classifier = RandomForestClassifier(random_state=1)
+		specified_classifier = RandomForestClassifier(random_state=234)
 		main(fs_data_folder, data_file_name, specified_classifier, threshold, 'RF', output_txt, class_type)
 
 #		specified_classifier = RandomForestClassifier(n_estimators=200)
 #		main(fs_data_folder, data_file_name, specified_classifier, threshold, 'RF_n_est200', output_txt)
 
-		print (threshold, 'DTC')
-		specified_classifier = DecisionTreeClassifier(random_state=1)
-		main(fs_data_folder, data_file_name, specified_classifier, threshold, 'DTC', output_txt, class_type)
+#		print (threshold, 'DTC')
+#		specified_classifier = DecisionTreeClassifier(random_state=1)
+#		main(fs_data_folder, data_file_name, specified_classifier, threshold, 'DTC', output_txt, class_type)
 
 #		specified_classifier = GradientBoostingClassifier()
 #		main(fs_data_folder, data_file_name, specified_classifier, threshold, 'GBC', output_txt, class_type)
