@@ -1,11 +1,10 @@
-#STEP2_make_sigNcorr_results.   22.11.16
+#STEP3_update_topology_pad.py 22.11.21
 
-#from the outputs from "STEP1_condition_specific_correlation":
-#[1] *.corr.rho.tsv
-#[2] *.corr.sig.tsv
+#from the outputs from "STEP2_condition_specific_correlation":
+# *.corr.topology.tsv
 
-#make a single file that find significant correlation (defined by user)
-#output: *.corr.rho.sig.tsv
+#update the input file by including padj values (BH-adjusted pvalue)
+# *.corr.padj.topology.tsv
 
 
 def main(topology_file, output_file):
@@ -39,7 +38,6 @@ if __name__ == "__main__":
 	import pandas as pd
 	import statsmodels.stats.multitest as smm
 	import sys
-
 
 	file_dir = "../../analysis/correlation_network"
 	#file_list = ["acpa_neg_3_omics","acpa_pos_3_omics", "control_3_omics"]

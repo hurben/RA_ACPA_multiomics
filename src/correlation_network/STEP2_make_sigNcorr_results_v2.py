@@ -4,8 +4,8 @@
 #[1] *.corr.rho.tsv
 #[2] *.corr.sig.tsv
 
-#make a single file that find significant correlation (defined by user)
-#output: *.corr.rho.sig.tsv
+#make a single file with a format of source-target
+#output: *.corr.topology.tsv
 
 import pandas as pd
 import sys
