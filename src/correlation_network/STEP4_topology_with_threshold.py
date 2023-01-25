@@ -46,16 +46,24 @@ if __name__ == "__main__":
 	import pandas as pd
 	import statsmodels.stats.multitest as smm
 	import sys
+	import os
 
-	file_dir = "../../analysis/correlation_network"
+	file_dir = "../../../analysis/correlation_network/topology_data"
 	#file_list = ["acpa_neg_3_omics","acpa_pos_3_omics", "control_3_omics"]
 
-	rho_threshold = 0.4
-	pad_threshold = 0.01
+	rho_threshold = 0.7
+	pad_threshold = 0.001
 
 	file_name = sys.argv[1]
 
 	topology_file = '%s/%s.corr.pad.topology.tsv' % (file_dir, file_name)
 	output_file = '%s/%s.corr.pad.sig.topology.tsv' % (file_dir, file_name)    
 
+	if os.path.exists(output_file):
+		os.remove(output_file)
+	else:
+		print ("we detected output file from previous run. removing this file")
+
 	main(topology_file, rho_threshold, pad_threshold, output_file)
+
+	print ("Job finished:%s" % output_file)
