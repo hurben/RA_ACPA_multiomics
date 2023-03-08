@@ -7,6 +7,12 @@
 #make a single file with a format of source-target
 #output: *.corr.topology.tsv
 
+#input from: analysis/correlation_network/topology_data
+#output stored: analysis/correlation_network/topology_data
+
+#designed to be runned by: pbs.batch1.sh pbs.batch2.sh pbs.batch3.sh
+
+
 import pandas as pd
 import sys
 
@@ -31,7 +37,6 @@ def main(rho_file, sig_file, output_file):
 		for j in range(c):
 			target = feature_list[j]
 			
-			#Do not consider self-target, reverse correlation (meaningless)
 			if source != target:
 				try: 
 					rho_value = topology_dict[(source, target)][0]
@@ -51,7 +56,7 @@ def main(rho_file, sig_file, output_file):
 	output_txt.close()
 
 
-file_dir = "../../analysis/correlation_network"
+file_dir = "../../analysis/correlation_network/topology_data"
 # file_list = ["acpa_neg_3_omics","acpa_pos_3_omics", "control_3_omics"]
 
 file_name = sys.argv[1]

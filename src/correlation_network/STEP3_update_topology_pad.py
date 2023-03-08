@@ -6,6 +6,11 @@
 #update the input file by including padj values (BH-adjusted pvalue)
 # *.corr.padj.topology.tsv
 
+#input from: analysis/correlation_network/topology_data
+#output stored: analysis/correlation_network/topology_data
+
+#designed to be runned by: pbs.padj.batch1.sh pbs.padj.batch2.sh pbs.padj.batch3.sh
+
 
 def main(topology_file, output_file):
 
@@ -39,7 +44,7 @@ if __name__ == "__main__":
 	import statsmodels.stats.multitest as smm
 	import sys
 
-	file_dir = "../../analysis/correlation_network"
+	file_dir = "../../analysis/correlation_network/topology_data"
 	#file_list = ["acpa_neg_3_omics","acpa_pos_3_omics", "control_3_omics"]
 
 	file_name = sys.argv[1]

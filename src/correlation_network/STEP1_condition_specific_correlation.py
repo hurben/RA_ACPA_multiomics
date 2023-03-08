@@ -4,6 +4,9 @@
 #file1: rho value
 #file2: p value
 
+#input from: analysis/correlation_network/preprocessed_data
+#output stored: analysis/correlation_network/topology_data
+
 import pandas as pd
 from scipy import stats
 import statistics
@@ -60,7 +63,7 @@ data_dir = '../../analysis/correlation_network/preprocessed_data'
 file_name = sys.argv[1]
 
 data_file = '%s/%s' % (data_dir, file_name)
-output_file = '../../analysis/correlation_network/%s' % file_name
+output_file = '../../analysis/correlation_network/topology_data/%s' % file_name
 
 main(data_file, output_file)
 		

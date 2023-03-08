@@ -5,6 +5,11 @@
 
 #parse target-source information that only passes certain threshold
 
+#input from: analysis/correlation_network/topology_data
+#output stored: analysis/correlation_network/topology_data
+
+#designed to be runned by: get_sig_network.sh
+
 def get_num_readlines(data_file):
     with open(data_file) as f:
         for i, _ in enumerate(f):

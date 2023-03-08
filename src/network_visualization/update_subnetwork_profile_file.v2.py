@@ -1,4 +1,4 @@
-#update_subnetwork_profile_file.py			22.04.25
+#update_subnetwork_profile_file.v2.py			22.04.25
 #
 #make a fc profile from subnetwork						22.04.25
 # -> which can be done by "find_subnetwork_from_cyto_file.py"

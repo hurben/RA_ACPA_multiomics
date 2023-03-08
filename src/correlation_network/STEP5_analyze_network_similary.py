@@ -2,7 +2,12 @@
 #
 #Playing around with the network topology (correlation network, defined by adjusted P-value and Rho)
 #Objective: Find common edges, unique edges
-#
+
+#input from: analysis/correlation_network/topology_data
+#output stored: analysis/correlation_network/network_similarity
+
+#designed to be runned by: network_similarity.sh
+
 
 def init_topolgy_graph(data_file):
 
