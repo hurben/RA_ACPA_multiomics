@@ -1,0 +1,14 @@
+pathway	pvalue	number_of_metabolites_in_pathway(m)	number_of_hits(x)	metabolite_list
+[Amino Acid] Urea cycle; Arginine and Proline Metabolism	0.3587	22	1	ornithine
+[Amino Acid] Phenylalanine Metabolism	0.1309	7	1	phenylalanine
+[Carbohydrate] Glycolysis, Gluconeogenesis, and Pyruvate Metabolism	0.1133	6	1	pyruvate
+[Lipid] Medium Chain Fatty Acid	0.1483	8	1	caprate (10:0)
+[Lipid] Short Chain Fatty Acid	0.0198	1	1	butyrate/isobutyrate (4:0)
+[Amino Acid] Glutathione Metabolism	0.1309	7	1	cys-gly, oxidized
+[Lipid] Endocannabinoid	0.0097	8	2	palmitoyl ethanolamide@stearoyl ethanolamide
+[Lipid] Sphingosines	0.0583	3	1	sphingosine 1-phosphate
+[Nucleotide] Pyrimidine Metabolism, Uracil containing	0.1982	11	1	5-methyluridine (ribothymidine)
+[Lipid] Sphingolipid Synthesis	0.0583	3	1	sphinganine-1-phosphate
+[Lipid] Fatty Acid, Dicarboxylate	0.4443	29	1	hexadecenedioate (C16:1-DC)*
+[Xenobiotics] Chemical	0.0973	27	2	3,5-dichloro-2,6-dihydroxybenzoic acid@3-bromo-5-chloro-2,6-dihydroxybenzoic acid*
+[Partially Characterized Molecules] Partially Characterized Molecules	0.4328	28	1	branched-chain, straight-chain, or cyclopropyl 10:1 fatty acid (1)*

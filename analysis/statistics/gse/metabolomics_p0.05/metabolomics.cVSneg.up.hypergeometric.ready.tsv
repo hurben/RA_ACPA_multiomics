@@ -1,0 +1,17 @@
+pathway	number_of_metabolites_in_pathway(m)	significant_metabolites_in_pathway(x)	total_number_of_metabolites(n)	detected_significant_metabolites(k)	list_of_metabolites
+[Lipid] Medium Chain Fatty Acid	8	3	1061	34	laurate (12:0)@caprate (10:0)@5-dodecenoate (12:1n7)
+[Lipid] Sphingosines	3	2	1061	34	sphingosine@sphingosine 1-phosphate
+[Amino Acid] Urea cycle; Arginine and Proline Metabolism	22	1	1061	34	ornithine
+[Amino Acid] Phenylalanine Metabolism	7	1	1061	34	phenylalanine
+[Carbohydrate] Glycolysis, Gluconeogenesis, and Pyruvate Metabolism	6	2	1061	34	lactate@pyruvate
+[Lipid] Long Chain Saturated Fatty Acid	5	1	1061	34	arachidate (20:0)
+[Amino Acid] Glutathione Metabolism	7	2	1061	34	cys-gly, oxidized@cysteinylglycine disulfide*
+[Lipid] Endocannabinoid	8	2	1061	34	palmitoyl ethanolamide@stearoyl ethanolamide
+[Lipid] Ceramides	9	2	1061	34	N-palmitoyl-sphingosine (d18:1/16:0)@N-stearoyl-sphingosine (d18:1/18:0)*
+[Amino Acid] Leucine, Isoleucine and Valine Metabolism	33	2	1061	34	3-methyl-2-oxovalerate@3-methyl-2-oxobutyrate
+[Lipid] Fatty Acid, Dicarboxylate	29	2	1061	34	tetradecanedioate (C14-DC)@octadecanedioate (C18-DC)
+[Lipid] Sphingolipid Synthesis	3	2	1061	34	sphinganine-1-phosphate@sphingadienine
+[Amino Acid] Lysine Metabolism	20	1	1061	34	N6-methyllysine
+[Lipid] Phosphatidylcholine (PC)	21	1	1061	34	1-palmitoyl-2-palmitoleoyl-GPC (16:0/16:1)*
+[Lipid] Phosphatidylethanolamine (PE)	14	1	1061	34	1-palmitoyl-2-stearoyl-GPE (16:0/18:0)*
+[Xenobiotics] Chemical	27	2	1061	34	3,5-dichloro-2,6-dihydroxybenzoic acid@3-bromo-5-chloro-2,6-dihydroxybenzoic acid*

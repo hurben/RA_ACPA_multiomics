@@ -1,0 +1,57 @@
+data_label	pathway	significance	num_sig_met	num_met_in_pathway
+cVSneg_up	[Carbohydrate] Glycolysis, Gluconeogenesis, and Pyruvate Metabolism	1.8601209135987635	2	6
+cVSneg_up	[Lipid] Carnitine Metabolism	0	0	0
+cVSneg_up	[Lipid] Sphingolipid Synthesis	2.537602002101044	2	3
+cVSneg_up	[Lipid] Ceramides	1.5058454059815571	2	9
+cVSneg_up	[Lipid] Medium Chain Fatty Acid	2.8239087409443187	3	8
+cVSneg_up	[Lipid] Endocannabinoid	1.6073030467403342	2	8
+cVSneg_up	[Lipid] Short Chain Fatty Acid	0	0	0
+cVSneg_up	[Lipid] Sphingosines	2.537602002101044	2	3
+cVSneg_up	[Amino Acid] Glutathione Metabolism	1.723538195826756	2	7
+cVSneg_up	[Amino Acid] Glycine, Serine and Threonine Metabolism	0	0	0
+cVSneg_up	[Lipid] Monoacylglycerol	0	0	0
+cVSneg_up	[Lipid] Phosphatidylethanolamine (PE)	0	0	0
+cVSneg_up	[Amino Acid] Alanine and Aspartate Metabolism	0	0	0
+cVSneg_up	[Nucleotide] Pyrimidine Metabolism, Cytidine containing	0	0	0
+cVSneg_down	[Carbohydrate] Glycolysis, Gluconeogenesis, and Pyruvate Metabolism	0	0	0
+cVSneg_down	[Lipid] Carnitine Metabolism	2.2596373105057563	2	2
+cVSneg_down	[Lipid] Sphingolipid Synthesis	0	0	0
+cVSneg_down	[Lipid] Ceramides	0	0	0
+cVSneg_down	[Lipid] Medium Chain Fatty Acid	0	0	0
+cVSneg_down	[Lipid] Endocannabinoid	0	0	0
+cVSneg_down	[Lipid] Short Chain Fatty Acid	0	0	0
+cVSneg_down	[Lipid] Sphingosines	0	0	0
+cVSneg_down	[Amino Acid] Glutathione Metabolism	0	0	0
+cVSneg_down	[Amino Acid] Glycine, Serine and Threonine Metabolism	0	0	0
+cVSneg_down	[Lipid] Monoacylglycerol	0	0	0
+cVSneg_down	[Lipid] Phosphatidylethanolamine (PE)	0	0	0
+cVSneg_down	[Amino Acid] Alanine and Aspartate Metabolism	1.6179829574251317	3	9
+cVSneg_down	[Nucleotide] Pyrimidine Metabolism, Cytidine containing	1.3260580013659122	2	5
+cVSpos_up	[Carbohydrate] Glycolysis, Gluconeogenesis, and Pyruvate Metabolism	0	0	0
+cVSpos_up	[Lipid] Carnitine Metabolism	0	0	0
+cVSpos_up	[Lipid] Sphingolipid Synthesis	0	0	0
+cVSpos_up	[Lipid] Ceramides	0	0	0
+cVSpos_up	[Lipid] Medium Chain Fatty Acid	0	0	0
+cVSpos_up	[Lipid] Endocannabinoid	2.0132282657337552	2	8
+cVSpos_up	[Lipid] Short Chain Fatty Acid	1.7033348097384688	1	1
+cVSpos_up	[Lipid] Sphingosines	0	0	0
+cVSpos_up	[Amino Acid] Glutathione Metabolism	0	0	0
+cVSpos_up	[Amino Acid] Glycine, Serine and Threonine Metabolism	0	0	0
+cVSpos_up	[Lipid] Monoacylglycerol	0	0	0
+cVSpos_up	[Lipid] Phosphatidylethanolamine (PE)	0	0	0
+cVSpos_up	[Amino Acid] Alanine and Aspartate Metabolism	0	0	0
+cVSpos_up	[Nucleotide] Pyrimidine Metabolism, Cytidine containing	0	0	0
+cVSpos_down	[Carbohydrate] Glycolysis, Gluconeogenesis, and Pyruvate Metabolism	0	0	0
+cVSpos_down	[Lipid] Carnitine Metabolism	0	0	0
+cVSpos_down	[Lipid] Sphingolipid Synthesis	0	0	0
+cVSpos_down	[Lipid] Ceramides	0	0	0
+cVSpos_down	[Lipid] Medium Chain Fatty Acid	0	0	0
+cVSpos_down	[Lipid] Endocannabinoid	0	0	0
+cVSpos_down	[Lipid] Short Chain Fatty Acid	0	0	0
+cVSpos_down	[Lipid] Sphingosines	0	0	0
+cVSpos_down	[Amino Acid] Glutathione Metabolism	0	0	0
+cVSpos_down	[Amino Acid] Glycine, Serine and Threonine Metabolism	1.3178549236261683	3	11
+cVSpos_down	[Lipid] Monoacylglycerol	1.712198270069774	3	8
+cVSpos_down	[Lipid] Phosphatidylethanolamine (PE)	1.7212463990471711	4	14
+cVSpos_down	[Amino Acid] Alanine and Aspartate Metabolism	0	0	0
+cVSpos_down	[Nucleotide] Pyrimidine Metabolism, Cytidine containing	0	0	0
