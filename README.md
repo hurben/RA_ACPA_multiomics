@@ -57,13 +57,34 @@ Designed to:
 
 #### Estimate whether clinical variables (e.g., treatment, sex, age, bmi) influence significantly to the omics-data profile.
 
->src/src/statistics/patient_info/demographics_statistics-PERMANOVA.ipynb
+>src/statistics/patient_info/demographics_statistics-PERMANOVA.ipynb
 
 ```
 Designed to:
 [1] use input data of 3omics data with all clinical variables
-[2] PERMANOVA (adonis2) with default option was used to perform this analysis
+[2] use PERMANOVA (adonis2) with default option
 
 ```
 
-###
+### Create a ternary plot to compare the properties of the profiled plasma multi-omics data. (Manscript Fig. 2A)
+
+>src/statistics/ternary_plots/STEP01_PREPROCESS_Ternary_Plot.ipynb
+>src/statistics/ternary_plots/STEP02_Ternary_Plot.ipynb
+
+```
+Designed to:
+[1] create a ternary plot for each proteomics, metabolomics, and autoantibody profiles
+[2] store results at: analysis/statistics/ternary_plots/
+```
+
+### Create a scatter plot of correlations between clinical marker and omics-feature; and to compare 'rho' values of ACPA-negative RA-specific samples and ACPA-positive RA-specific samples. (Manuscript Fig. 2B)
+
+>src/statistics/omics_clinical_feature_correlation/PREPROCESS_make_omics_correlation_matrix_top_bottom_50_v3.ipynb
+>src/statistics/omics_clinical_feature_correlation/draw_scatterplots_for_figure2_v2.ipynb
+
+```
+Designed to:
+[1] create a scatter plots of correlations between clinical variable (e.g., ESR) and omics-feature.
+[2] visualize only top 50 (positive correlation) and top 50 (negative correlation) 
+[3] store results at: analysis/statistics/omics_clinical_feature_correlation
+```
