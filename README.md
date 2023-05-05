@@ -12,8 +12,9 @@ Authors: Benjamin Hur, Minsik Oh, Vinod K. Gupta, Kevin Y. Cunningham, Kerry A. 
 > src/preprocess/PREPROCESS_somascan_raw_data_STEP2.ipynb
 
 ```
-1. Designed to remove non-human proteins (e.g., Spurimoer, Spurimer)
-2. Address duplicated proteins (but with aptamer is targeting different site)
+Designed to:
+1. remove non-human proteins (e.g., Spurimoer, Spurimer)
+2. address duplicated proteins (but aptamer is targeting different site)
 3. & other minor things to make multi-omics comparison feasble (e.g., unifying sample ID)
 ```
 
