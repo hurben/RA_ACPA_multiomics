@@ -32,7 +32,7 @@ Designed to:
 [4] & other minor things to make multi-omics comparison feasble (e.g., unifying sample ID)
 ```
 
-#### 3. Preprocess: Autoantibody data from Sengenic's delivered file (i.e., 
+#### 3. Preprocess: Autoantibody data from Sengenic's delivered file (i.e., KREX Immunome.xlsx, Raw Mean)
 
 >src/preprocess/autoantibody/01_PREPROCESS_sengenics_quantile_norm_STEP1.ipynb
 >src/preprocess/autoantibody/02_PREPROCESS_sengenics_quantile_norm_STEP2.ipynb
@@ -42,3 +42,25 @@ Designed to:
 [1] quantile normalize the data
 [2] & other minor things to make multi-omics comparison feasble (e.g., unifying sample ID)
 ```
+
+#### 4. Preprocess: merging three different multi-omics matrix and patient information into a single matrix
+
+>src/preprocess/multiomics/PREPROCESS_make_3_omics_matrix.py.ipynb
+
+```
+Designed to:
+[1] merge preprocessed proteomics, metabolomics, autoantibody, and patient information data into single matrix
+[2] handle some feature names that Rscript cannot handle.
+```
+
+## Statistics
+
+>src/src/statistics/patient_info/demographics_statistics-PERMANOVA.ipynb
+
+```
+Designed to:
+[1] estimate whether clinical variables (e.g., treatment, sex, age, bmi) influence significantly to the omics-data profile.
+[2] PERMANOVA (adonis2) with default option was used to perform this analysis
+
+```
+
