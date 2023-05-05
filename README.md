@@ -55,12 +55,15 @@ Designed to:
 
 ## Statistics
 
+#### Estimate whether clinical variables (e.g., treatment, sex, age, bmi) influence significantly to the omics-data profile.
+
 >src/src/statistics/patient_info/demographics_statistics-PERMANOVA.ipynb
 
 ```
 Designed to:
-[1] estimate whether clinical variables (e.g., treatment, sex, age, bmi) influence significantly to the omics-data profile.
+[1] use input data of 3omics data with all clinical variables
 [2] PERMANOVA (adonis2) with default option was used to perform this analysis
 
 ```
 
+###
