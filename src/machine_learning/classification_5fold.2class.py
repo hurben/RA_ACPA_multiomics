@@ -141,7 +141,8 @@ if __name__ == '__main__':
 #		main(fs_data_folder, data_file_name, specified_classifier, threshold, 'LR', output_txt, class_type)
 
 		print (threshold, 'RF')
-		specified_classifier = RandomForestClassifier(random_state=234)
+		#specified_classifier = RandomForestClassifier(random_state=234)
+		specified_classifier = RandomForestClassifier(random_state=1234)
 		main(fs_data_folder, data_file_name, specified_classifier, threshold, 'RF', output_txt, class_type)
 
 #		specified_classifier = RandomForestClassifier(n_estimators=200)

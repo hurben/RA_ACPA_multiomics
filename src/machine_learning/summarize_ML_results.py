@@ -56,6 +56,9 @@ def get_omics_info(condition_folder):
 							"enet_2condition_p3":"2omics_AM",
 							"enet_3condition":"3omics_PAM"}
 
+	condition_info_dict = {"enet_3condition":"3omics_PAM"}
+
+
 	omics_info = condition_info_dict[condition_folder]
 
 	return omics_info
@@ -82,8 +85,8 @@ if __name__ == "__main__":
 	import pandas as pd
 
 	#this list is fixed purpose.
-	defined_condition_list = ["enet_1condition_p1","enet_1condition_p2","enet_1condition_p3",
-							"enet_2condition_p1", "enet_2condition_p2", "enet_2condition_p3","enet_3condition"]
+	#defined_condition_list = ["enet_1condition_p1","enet_1condition_p2","enet_1condition_p3","enet_2condition_p1", "enet_2condition_p2", "enet_2condition_p3","enet_3condition"]
+	defined_condition_list = ["enet_3condition"]
 
 	comparison_list = ["cVSneg","cVSpos","cVSra","posVSneg"]
 
