@@ -89,16 +89,23 @@ Designed to:
 [3] store results at: analysis/statistics/omics_clinical_feature_correlation
 ```
 
-### Linear regression & Cohen's D to identify differentially abundant proteins/metabolites/autoantibodies.
+### Linear regression & Cohen's D to identify differentially abundant proteins/metabolites/autoantibodies (Manuscript Fig. 3A, 3C)
 
 >src/statistics/linear_model_v2/01_DifferentialAbundance_and_cohens_D.ipynb
 >src/statistics/linear_model_v2/02_calculated_BH_pvalues.ipynb
 >src/statistics/linear_model_v2/03_summarize_every_results.ipynb
 
+>src/statistics/volcano_plots/MAKE_volcano_plot_Rscript_v2.ipynb
+>src/statistics/volcano_plots/PREPROCESS_identify_cytokines_from_significant_proteins.ipynb
+>src/statistics/boxplot_for_cytokines/DRAW_boxplots_for_8_cytokines.ipynb
+
 ```
 Designed to:
 [1] perform linear regression (model: feature_abundance ~ condition), while feature_abundance is a list of the normalized value of the biomolecular (e.g., one metabolite across all samples) and condition is list of phenotypes across samples (e.g., ACPA– RA, control)
-[2] perform Cohen's D to obtain the effect size from [1].
+[2] perform Cohen's D to obtain the effect size from [1]
+[3] visualize identified features using volcano plots
+[4] visualize differentiall abundant cytokines
 ```
 
+### Visualize 
 
