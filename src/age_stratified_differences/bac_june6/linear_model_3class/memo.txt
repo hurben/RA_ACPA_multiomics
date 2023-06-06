@@ -1,0 +1,2 @@
+adding cliffs delta for filtering
+No clinical covariates were included (since they were not significant)

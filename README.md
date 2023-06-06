@@ -107,5 +107,20 @@ Designed to:
 [4] visualize differentiall abundant cytokines
 ```
 
-#### 5. Visualize 
+#### 5. Metabolomic analysis with age-stratified samples (Manuscript Fig. 4D)
+
+>src/age_stratified_differences/linear_model_3class_v2/00_split_into_three_age_group_v3.ipynb
+>src/age_stratified_differences/linear_model_3class_v2/01_DifferentialAbundance_and_cohens_D_v2.ipynb
+>src/age_stratified_differences/linear_model_3class_v2/02_calculated_BH_pvalues.ipynb
+>src/age_stratified_differences/linear_model_3class_v2/03_make_sig_feature_list_v2.ipynb
+
+```
+Designed to:
+[1] split sample into three group based on age (low-group: bottom 33%, med-group: medium 33%, high-group: high 33%)
+[2] perform linear regression (model: feature_abundance ~ condition), while feature_abundance is a list of the normalized value of the biomolecular (e.g., one metabolite across all samples) and condition is list of phenotypes across samples (e.g., ACPA– RA, control)
+[3] perform Cohen's D to obtain the effect size from [2]
+```
+
+
+
 
