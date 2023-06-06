@@ -89,5 +89,16 @@ Designed to:
 [3] store results at: analysis/statistics/omics_clinical_feature_correlation
 ```
 
-####
+### Linear regression & Cohen's D to identify differentially abundant proteins/metabolites/autoantibodies.
+
+>src/statistics/linear_model_v2/01_DifferentialAbundance_and_cohens_D.ipynb
+>src/statistics/linear_model_v2/02_calculated_BH_pvalues.ipynb
+>src/statistics/linear_model_v2/03_summarize_every_results.ipynb
+
+```
+Designed to:
+[1] perform linear regression (model: feature_abundance ~ condition), while feature_abundance is a list of the normalized value of the biomolecular (e.g., one metabolite across all samples) and condition is list of phenotypes across samples (e.g., ACPA– RA, control)
+[2] perform Cohen's D to obtain the effect size from [1].
+```
+
 
