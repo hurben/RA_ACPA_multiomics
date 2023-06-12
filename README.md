@@ -123,4 +123,14 @@ Designed to:
 
 
 
+## Machine-learning
+
+#### 1. create 5-fold dataset
+
+>analysis/5fold_data/network_construction_enet/01_preprocess_omics_enet.sh
+
+>analysis/5fold_data/network_construction_enet/02_create_omics_enet.*.sh
+
+>analysis/5fold_data/network_construction_enet/03_cleanup_feature_names.sh
+
 
