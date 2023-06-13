@@ -109,10 +109,10 @@ Designed to:
 
 #### 5. Metabolomic analysis with age-stratified samples (Manuscript Fig. 4D)
 
->src/age_stratified_differences/linear_model_3class_v2/00_split_into_three_age_group_v3.ipynb
->src/age_stratified_differences/linear_model_3class_v2/01_DifferentialAbundance_and_cohens_D_v2.ipynb
->src/age_stratified_differences/linear_model_3class_v2/02_calculated_BH_pvalues.ipynb
->src/age_stratified_differences/linear_model_3class_v2/03_make_sig_feature_list_v2.ipynb
+>src/age_stratified_differences/linear_model_3class/00_split_into_three_age_group_v3.ipynb
+>src/age_stratified_differences/linear_model_3class/01_DifferentialAbundance_and_cohens_D_v2.ipynb
+>src/age_stratified_differences/linear_model_3class/02_calculated_BH_pvalues.ipynb
+>src/age_stratified_differences/linear_model_3class/03_make_sig_feature_list_v2.ipynb
 
 ```
 Designed to:
