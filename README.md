@@ -142,6 +142,7 @@ Shell scripts utlizes
 >src/correlation_network/STEP3_topology_with_threshold.py
 >src/correlation_network/STEP3_topology_with_threshold_ver_rho_split.py
 >src/correlation_network/STEP4_analyze_network_similary.py
+>src/correlation_network/STEP5_make_cytoscape_ready_format_v2.py
 ```
 
 ## Machine-learning
