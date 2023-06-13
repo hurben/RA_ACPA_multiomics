@@ -137,7 +137,6 @@ The shell script utilizes
 #### 2. infer a network from 5-fold dataset (using elastic net)
 
 >analysis/5fold_data/network_construction_enet/02_create_omics_enet.*.sh
->analysis/5fold_data/network_construction_enet/03_cleanup_feature_names.sh
 ```
 For each K-fold dataset, perform elastic net to 
 The shell script utilizes
