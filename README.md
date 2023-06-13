@@ -144,5 +144,59 @@ The shell script utilizes
 >src/network_construction_5fold/enet_construction_batch1.py
 ```
 
+#### 3. infer a network from 5-fold dataset (using elastic net)
+
+>analysis/post_network_enet/5fold/enet_3condition/01_organize_topology_files.sh
+```
+Make adjacent matrix into topology (source-target).
+The shell script utlizes
+>src/post_network/integrate_network.v2.py
+```
+
+>analysis/post_network_enet/5fold/enet_3condition/02_preprocess_RWR.sh
+```
+RWR script (from R) has problem understanding some strings. This scripts tries to avoid those issues.
+The shell script utilizes
+>src/post_network/cleanup_RWR_ready_file.py
+```
+
+>analysis/post_network_enet/5fold/enet_3condition/03_make_RWR_p0.sh
+```
+Prepare for RWR 'seed' list.
+The shell script utlizes
+>src/post_network/RWR_create_seed_profile.py
+```
+
+>analysis/post_network_enet/5fold/enet_3condition/04_run_RWR.sh
+```
+Run RWR
+The shell script utlizes
+>src/post_network/RWR.R
+```
+
+#### 4. Perform machine-learning
+
+>analysis/machine_learning/5fold_v2/enet_3condition/01_create_feature_selected_matrix.sh
+>analysis/machine_learning/5fold_v2/enet_3condition/02_create_feature_selected_matrix.v2.sh
+```
+Prepare a matrix for machine leanring. The matrix will contain selective-features from elasticnet and various cutoff thresholds
+The shell script utlizes
+>src/machine_learning/create_feature_selection_matrix.py
+```
+
+>analysis/machine_learning/5fold_v2/enet_3condition/03_3class_to_2class.sh
+>analysis/machine_learning/5fold_v2/enet_3condition/04_do_classification.sh
+>analysis/machine_learning/5fold_v2/enet_3condition/05_3class_to_2class.sh
+>analysis/machine_learning/5fold_v2/enet_3condition/06_do_classification.sh
+
+```
+[1] prepare the data for two-class classification. For example, if the machine-learning task is for ACPA-negative vs. control, discard ACPA-positive class samples from the data
+[2] perform machine-learning with feature-seleted matrices.
+
+The shell script ultilzes 
+>src/machine_learning/transform_3class_to_2class_matrix.py
+>src/machine_learning/classification_5fold.2class.py
+
+```
 
 
