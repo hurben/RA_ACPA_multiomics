@@ -152,6 +152,7 @@ Shell scripts utlizes
 >analysis/5fold_data/network_construction_enet/01_preprocess_omics_enet.sh
 ```
 Split dataset into balanced (each K-fold dataset contains an equal amount of classes) 5-fold dataset.
+
 The shell script utilizes
 >src/network_construction_5fold/enet_construction_preprocess.py
 ```
@@ -161,6 +162,7 @@ The shell script utilizes
 >analysis/5fold_data/network_construction_enet/02_create_omics_enet.*.sh
 ```
 For each K-fold dataset, perform elastic net to 
+
 The shell script utilizes
 >src/network_construction_5fold/enet_construction_batch1.py
 ```
@@ -177,6 +179,7 @@ The shell script utlizes
 >analysis/post_network_enet/5fold/enet_3condition/02_preprocess_RWR.sh
 ```
 RWR script (from R) has problem understanding some strings. This scripts tries to avoid those issues.
+
 The shell script utilizes
 >src/post_network/cleanup_RWR_ready_file.py
 ```
@@ -191,6 +194,7 @@ The shell script utlizes
 >analysis/post_network_enet/5fold/enet_3condition/04_run_RWR.sh
 ```
 Run RWR
+
 The shell script utlizes
 >src/post_network/RWR.R
 ```
@@ -201,6 +205,7 @@ The shell script utlizes
 >analysis/machine_learning/5fold_v2/enet_3condition/02_create_feature_selected_matrix.v2.sh
 ```
 Prepare matrices for machine leanring. Each matrix will contain selective-features from elasticnet and various cutoff thresholds
+
 The shell script utlizes
 >src/machine_learning/create_feature_selection_matrix.py
 ```
