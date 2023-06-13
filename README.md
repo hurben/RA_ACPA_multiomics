@@ -178,7 +178,7 @@ The shell script utlizes
 >analysis/machine_learning/5fold_v2/enet_3condition/01_create_feature_selected_matrix.sh
 >analysis/machine_learning/5fold_v2/enet_3condition/02_create_feature_selected_matrix.v2.sh
 ```
-Prepare a matrix for machine leanring. The matrix will contain selective-features from elasticnet and various cutoff thresholds
+Prepare matrices for machine leanring. Each matrix will contain selective-features from elasticnet and various cutoff thresholds
 The shell script utlizes
 >src/machine_learning/create_feature_selection_matrix.py
 ```
@@ -189,7 +189,7 @@ The shell script utlizes
 >analysis/machine_learning/5fold_v2/enet_3condition/06_do_classification.sh
 
 ```
-[1] prepare the data for two-class classification. For example, if the machine-learning task is for ACPA-negative vs. control, discard ACPA-positive class samples from the data
+[1] prepare the data for two-class classification. For example, if the machine-learning task is for ACPA-negative vs. control, discard ACPA-positive class samples from the data.
 [2] perform machine-learning with feature-seleted matrices.
 
 The shell script ultilzes 
