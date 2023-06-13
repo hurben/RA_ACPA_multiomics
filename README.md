@@ -121,6 +121,27 @@ Designed to:
 [3] perform Cohen's D to obtain the effect size from [2]
 ```
 
+#### 6. Inverted correlation network (Manuscript Fig. 5)
+
+
+>analysis/correlation_network/topology_data/pbs.batch*.sh
+>analysis/correlation_network/topology_data/pbs.padj.batch*.sh
+>analysis/correlation_network/topology_data/02_get_sig_network.sh
+>analysis/correlation_network/topology_data/03_get_sig_network_posneg.sh
+
+```
+Designed to:
+[1] infer a correlation (all pair-wise feature associations) network from condition-specific datasets (i.e., ACPA-negative RA specific, ACPA-positive RA specific)
+[2] "edges" are defined by BH-adjusted P < 0.05, |rho| > 4
+[3] find network edges that are completely the opposite (if the edge is positive-rho in ACPA-negative RA and negative-rho in ACPA-positive RA, this is considered inversed)
+
+Shell scripts utlizes
+>src/correlation_network/STEP1_make_sigNcorr_results_v2.py
+>src/correlation_network/STEP2_update_topology_pad.py
+>src/correlation_network/STEP3_topology_with_threshold_ver_rho_split.py
+>src/correlation_network/STEP4_analyze_network_similary.py
+```
+
 
 
 ## Machine-learning
