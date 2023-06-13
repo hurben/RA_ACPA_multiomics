@@ -123,12 +123,13 @@ Designed to:
 
 #### 6. Inverted correlation network (Manuscript Fig. 5)
 
-
 >analysis/correlation_network/topology_data/pbs.batch*.sh
 >analysis/correlation_network/topology_data/pbs.padj.batch*.sh
 >analysis/correlation_network/topology_data/02_get_sig_network.sh
 >analysis/correlation_network/topology_data/03_get_sig_network_posneg.sh
 
+>analysis/correlation_network/network_similarity/01_network_similarity.sh
+>analysis/correlation_network/network_similarity/02_make_cytocape_ready_format.sh
 ```
 Designed to:
 [1] infer a correlation (all pair-wise feature associations) network from condition-specific datasets (i.e., ACPA-negative RA specific, ACPA-positive RA specific)
@@ -138,11 +139,10 @@ Designed to:
 Shell scripts utlizes
 >src/correlation_network/STEP1_make_sigNcorr_results_v2.py
 >src/correlation_network/STEP2_update_topology_pad.py
+>src/correlation_network/STEP3_topology_with_threshold.py
 >src/correlation_network/STEP3_topology_with_threshold_ver_rho_split.py
 >src/correlation_network/STEP4_analyze_network_similary.py
 ```
-
-
 
 ## Machine-learning
 

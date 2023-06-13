@@ -1,2 +1,1 @@
-#python3 ../../src/correlation_network/STEP6_make_cytoscape_ready_format.py
 python3 ../../../src/correlation_network/STEP6_make_cytoscape_ready_format_v2.py acpa_neg_3_omics.pos.counter.common.topology.tsv acpa_neg_3_omics.neg.counter.common.topology.tsv acpa_neg_3_omics.counter.common.profile.v2.tsv
