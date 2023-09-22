@@ -79,7 +79,10 @@ def main(fs_data_folder, data_file_name, specified_classifier, threhold, classif
 		tnr_list.append(tnr)
 		fpr_list.append(fpr)
 		fnr_list.append(fnr)
+	
+	print ("----------")
 	print (acc_list)
+	print (tnr_list)
 	
 	output_txt.write('%s_%s_%s' % (threshold, data_file_name, classifier_type))
 	output_txt.write('\t%s\t%s' % (statistics.mean(acc_list), statistics.stdev(acc_list)))
@@ -105,7 +108,6 @@ if __name__ == '__main__':
 	from sklearn.neural_network import MLPClassifier
 	from sklearn.gaussian_process import GaussianProcessClassifier
 	from sklearn.ensemble import GradientBoostingClassifier
-	from xgboost import XGBClassifier
 	from sklearn.metrics import confusion_matrix
 	from sklearn.svm import SVC
 	import statistics
@@ -142,7 +144,7 @@ if __name__ == '__main__':
 
 		print (threshold, 'RF')
 		#specified_classifier = RandomForestClassifier(random_state=234)
-		specified_classifier = RandomForestClassifier(random_state=1234)
+		specified_classifier = RandomForestClassifier(random_state=123)
 		main(fs_data_folder, data_file_name, specified_classifier, threshold, 'RF', output_txt, class_type)
 
 #		specified_classifier = RandomForestClassifier(n_estimators=200)

@@ -70,6 +70,7 @@ def make_dict_from_profile(data_file):
 
 		feature = feature.replace(' ','_')
 		feature = feature.replace('-','_')
+		feature = feature.replace(',','_') #newly added sep18
 		feature = feature.replace("'",'prime')
 		feature = feature.replace("*",'')
 		cleaned_feature_list.append(feature)

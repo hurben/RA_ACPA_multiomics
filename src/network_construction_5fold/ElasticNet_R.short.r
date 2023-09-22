@@ -82,6 +82,6 @@ for (i in 1:col_length)
 	)
 
 }
-write.csv(output_df, output_txt, row.names = TRUE, quote=FALSE)
+write.csv(output_df, output_txt, sep="\t", row.names = TRUE, quote=FALSE)
 
 
