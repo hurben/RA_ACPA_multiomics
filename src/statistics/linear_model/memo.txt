@@ -1,0 +1,13 @@
+Cliffs delta for effect size.
+Clinical covariates were included if they were found to be significant in marginal model.
+For example, if the margial model of:
+
+feature_abundance ~ age
+
+the P-value of the coefficients of age was < 0.05, we consider age as significant confounder. Therefore age will be adjusted
+
+feature_abundance ~ RA_phenotype + age
+
+If multiple clinical variables were found to be significant, we adjusted them all:
+
+feature_abundance ~ RA_phenotype + age + sex
