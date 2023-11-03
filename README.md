@@ -100,10 +100,11 @@ Designed to:
 
 ```
 Designed to:
-[1] check whether drug is affecting the feature abundance (model: feature_abundance ~ drug). If the drug is estimated to have significant effect on feature_abundance (P < 0.05) drug will be adjusted.
-	perform linear regression (model: feature_abundance ~ condition), while feature_abundance is a list of the normalized value of the biomolecular (e.g., one metabolite across all samples) and condition is list of phenotypes across samples (e.g., ACPA– RA, control)
+[1] check whether drug is affecting the feature abundance (model: feature_abundance ~ drug). 
+[1-1] if the drug is estimated to have significant effect on feature_abundance (P < 0.05) drug will be adjusted.
+[1-2] perform linear regression (model: feature_abundance ~ condition), while feature_abundance is a list of the normalized value of the biomolecular (e.g., one metabolite across all samples) and condition is list of phenotypes across samples (e.g., ACPA– RA, control)
 
-[2] perform Cohen's D to obtain the effect size from [1]
+[2] perform Cohen's D to obtain the effect size from
 [3] visualize identified features using volcano plots
 [4] visualize differentiall abundant cytokines
 ```
@@ -117,7 +118,7 @@ Designed to:
 Designed to:
 [1] split sample into three group based on age (low-group: bottom 33%, med-group: medium 33%, high-group: high 33%)
 [2] perform linear regression (model: feature_abundance ~ condition), while feature_abundance is a list of the normalized value of the biomolecular (e.g., one metabolite across all samples) and condition is list of phenotypes across samples (e.g., ACPA– RA, control)
-	adjust drugs if they are affecting feature_abundance 
+[2-2] adjust drugs if they are affecting feature_abundance 
 [3] perform Cohen's D to obtain the effect size from [2]
 ```
 
