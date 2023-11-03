@@ -92,7 +92,7 @@ Designed to:
 #### 4. Linear regression & Cohen's D to identify differentially abundant proteins/metabolites/autoantibodies (Manuscript Fig. 3A, 3C)
 
 >src/statistics/linear_model/01_DifferentialAbundance_and_cohens_D_adjust_effect.ipynb
->src/statistics/linear_model/02_report_differentail_abundance_without_drug.ipynb
+>src/statistics/linear_model/02_report_differential_abundance_without_drug.ipynb
 
 >src/statistics/volcano_plots/MAKE_volcano_plot_Rscript.ipynb
 >src/statistics/volcano_plots/PREPROCESS_identify_cytokines_from_significant_proteins.ipynb
