@@ -2,14 +2,12 @@ spermidine
 1-methylnicotinamide
 N-formylmethionine
 arachidonate (20:4n6)
-arginine
 creatinine
 myo-inositol
 citrulline
 retinol (vitamin A)
 salicylate
 pseudouridine
-sarcosine
 N-acetylvaline
 methyl indole-3-acetate
 N-acetylalanine
@@ -24,11 +22,13 @@ indoleacetate
 1-linoleoylglycerol (18:2)
 isobutyrylcarnitine (C4)
 propionylcarnitine (C3)
+3-hydroxy-2-ethylpropionate
 1-methyl-4-imidazoleacetate
 N-acetylthreonine
 gamma-glutamylglycine
 erythronate*
 heme
+isovalerylcarnitine (C5)
 N2,N2-dimethylguanosine
 5,6-dihydrouridine
 gamma-glutamyl-2-aminobutyrate
@@ -42,21 +42,19 @@ N-acetylserine
 2S,3R-dihydroxybutyrate
 5-(galactosylhydroxy)-lysine
 sulfate*
-S-methylcysteine
 2-O-methylascorbic acid
-beta-citrylglutamate
 mannonate*
 retinal
 O-sulfo-tyrosine
 N-acetyltaurine
 methyl-4-hydroxybenzoate sulfate
+N-acetylkynurenine (2)
 1-palmitoyl-2-docosahexaenoyl-GPE (16:0/22:6)*
 1-stearoyl-2-docosahexaenoyl-GPE (18:0/22:6)*
 1-oleoyl-2-arachidonoyl-GPE (18:1/20:4)*
 1-oleoyl-2-docosahexaenoyl-GPE (18:1/22:6)*
 diacylglycerol (16:1/18:2 [2], 16:0/18:3 [1])*
 stearoyl-arachidonoyl-glycerol (18:0/20:4) [1]*
-stearoyl-arachidonoyl-glycerol (18:0/20:4) [2]*
 perfluorooctanesulfonate (PFOS)
 hydroxyasparagine**
 N,N,N-trimethyl-alanylproline betaine (TMAP)
@@ -77,7 +75,5 @@ X-22162
 X-23587
 X-23659
 X-23666
-X-24425
 X-24812
-X-25419
 X-25810

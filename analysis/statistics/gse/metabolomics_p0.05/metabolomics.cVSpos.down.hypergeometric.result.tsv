@@ -1,35 +1,34 @@
 pathway	pvalue	number_of_metabolites_in_pathway(m)	number_of_hits(x)	metabolite_list
-[Amino Acid] Polyamine Metabolism	0.4800	8	1	spermidine
-[Cofactors and Vitamins] Nicotinate and Nicotinamide Metabolism	0.4800	8	1	1-methylnicotinamide
-[Amino Acid] Methionine, Cysteine, SAM and Taurine Metabolism	0.1112	24	4	N-formylmethionine@S-methylcysteine@N-acetyltaurine@2,3-dihydroxy-5-methylthio-4-pentenoate (DMTPA)*
-[Lipid] Long Chain Polyunsaturated Fatty Acid (n3 and n6)	0.3005	14	2	arachidonate (20:4n6)@dihomo-linolenate (20:3n3 or n6)
-[Amino Acid] Urea cycle; Arginine and Proline Metabolism	0.0862	22	4	arginine@citrulline@homocitrulline@N,N,N-trimethyl-alanylproline betaine (TMAP)
-[Amino Acid] Creatine Metabolism	0.2170	3	1	creatinine
-[Lipid] Inositol Metabolism	0.1504	2	1	myo-inositol
-[Cofactors and Vitamins] Vitamin A Metabolism	0.0738	6	2	retinol (vitamin A)@retinal
-[Xenobiotics] Drug - Topical Agents	0.2170	3	1	salicylate
-[Nucleotide] Pyrimidine Metabolism, Uracil containing	0.2103	11	2	pseudouridine@5,6-dihydrouridine
-[Amino Acid] Glycine, Serine and Threonine Metabolism	0.0481	11	3	sarcosine@N-acetylthreonine@N-acetylserine
-[Amino Acid] Leucine, Isoleucine and Valine Metabolism	0.7387	33	3	N-acetylvaline@isobutyrylcarnitine (C4)@tiglylcarnitine (C5:1-DC)
-[Xenobiotics] Food Component/Plant	0.1128	72	2	methyl indole-3-acetate@mannonate*
-[Amino Acid] Alanine and Aspartate Metabolism	0.1521	9	2	N-acetylalanine@hydroxyasparagine**
-[Nucleotide] Pyrimidine Metabolism, Thymine containing	0.1504	2	1	3-aminoisobutyrate
-[Nucleotide] Purine Metabolism, Adenine containing	0.5210	9	1	N1-methyladenosine
+[Amino Acid] Polyamine Metabolism	0.4627	8	1	spermidine
+[Cofactors and Vitamins] Nicotinate and Nicotinamide Metabolism	0.4627	8	1	1-methylnicotinamide
+[Amino Acid] Methionine, Cysteine, SAM and Taurine Metabolism	0.4154	24	3	N-formylmethionine@N-acetyltaurine@2,3-dihydroxy-5-methylthio-4-pentenoate (DMTPA)*
+[Lipid] Long Chain Polyunsaturated Fatty Acid (n3 and n6)	0.2802	14	2	arachidonate (20:4n6)@dihomo-linolenate (20:3n3 or n6)
+[Amino Acid] Creatine Metabolism	0.2073	3	1	creatinine
+[Lipid] Inositol Metabolism	0.1434	2	1	myo-inositol
+[Amino Acid] Urea cycle; Arginine and Proline Metabolism	0.2214	22	3	citrulline@homocitrulline@N,N,N-trimethyl-alanylproline betaine (TMAP)
+[Cofactors and Vitamins] Vitamin A Metabolism	0.0675	6	2	retinol (vitamin A)@retinal
+[Xenobiotics] Drug - Topical Agents	0.2073	3	1	salicylate
+[Nucleotide] Pyrimidine Metabolism, Uracil containing	0.1948	11	2	pseudouridine@5,6-dihydrouridine
+[Amino Acid] Leucine, Isoleucine and Valine Metabolism	0.0920	33	5	N-acetylvaline@isobutyrylcarnitine (C4)@3-hydroxy-2-ethylpropionate@isovalerylcarnitine (C5)@tiglylcarnitine (C5:1-DC)
+[Xenobiotics] Food Component/Plant	0.1601	72	2	methyl indole-3-acetate@mannonate*
+[Amino Acid] Alanine and Aspartate Metabolism	0.1402	9	2	N-acetylalanine@hydroxyasparagine**
+[Nucleotide] Pyrimidine Metabolism, Thymine containing	0.1434	2	1	3-aminoisobutyrate
+[Nucleotide] Purine Metabolism, Adenine containing	0.5030	9	1	N1-methyladenosine
 [Xenobiotics] Benzoate Metabolism	1.0000	29	2	2-hydroxyhippurate (salicylurate)@methyl-4-hydroxybenzoate sulfate
-[Amino Acid] Guanidino and Acetamido Metabolism	0.1504	2	1	1-methylguanidine
-[Lipid] Monoacylglycerol	0.0194	8	3	1-oleoylglycerol (18:1)@2-oleoylglycerol (18:1)@1-linoleoylglycerol (18:2)
-[Amino Acid] Tryptophan Metabolism	0.1249	25	4	indoleacetate@indoleacetylglutamine@indoleacetoylcarnitine*@oxindolylalanine
-[Lipid] Fatty Acid Metabolism (also BCAA Metabolism)	0.3351	5	1	propionylcarnitine (C3)
-[Amino Acid] Histidine Metabolism	0.3891	17	2	1-methyl-4-imidazoleacetate@1-ribosyl-imidazoleacetate*
-[Peptide] Gamma-glutamyl Amino Acid	0.3891	17	2	gamma-glutamylglycine@gamma-glutamyl-2-aminobutyrate
-[Carbohydrate] Aminosugar Metabolism	0.3351	5	1	erythronate*
-[Cofactors and Vitamins] Hemoglobin and Porphyrin Metabolism	0.3351	5	1	heme
-[Nucleotide] Purine Metabolism, Guanine containing	0.2170	3	1	N2,N2-dimethylguanosine
-[Cofactors and Vitamins] Ascorbate and Aldarate Metabolism	0.0738	6	2	gulonate*@2-O-methylascorbic acid
-[Amino Acid] Lysine Metabolism	0.2014	20	3	glutarylcarnitine (C5-DC)@5-(galactosylhydroxy)-lysine@N-acetyl-2-aminoadipate
-[Lipid] Fatty Acid, Dihydroxy	0.3351	5	1	2S,3R-dihydroxybutyrate
-[Xenobiotics] Chemical	0.1541	27	4	sulfate*@O-sulfo-tyrosine@perfluorooctanesulfonate (PFOS)@perfluorohexanesulfonate (PFHxS)
-[Amino Acid] Glutamate Metabolism	1.0000	13	1	beta-citrylglutamate
-[Lipid] Phosphatidylethanolamine (PE)	0.0190	14	4	1-palmitoyl-2-docosahexaenoyl-GPE (16:0/22:6)*@1-stearoyl-2-docosahexaenoyl-GPE (18:0/22:6)*@1-oleoyl-2-arachidonoyl-GPE (18:1/20:4)*@1-oleoyl-2-docosahexaenoyl-GPE (18:1/22:6)*
-[Lipid] Diacylglycerol	0.4762	28	3	diacylglycerol (16:1/18:2 [2], 16:0/18:3 [1])*@stearoyl-arachidonoyl-glycerol (18:0/20:4) [1]*@stearoyl-arachidonoyl-glycerol (18:0/20:4) [2]*
-[Peptide] Modified Peptides	0.0782	1	1	N,N-dimethyl-pro-pro
+[Amino Acid] Guanidino and Acetamido Metabolism	0.1434	2	1	1-methylguanidine
+[Lipid] Monoacylglycerol	0.0169	8	3	1-oleoylglycerol (18:1)@2-oleoylglycerol (18:1)@1-linoleoylglycerol (18:2)
+[Amino Acid] Tryptophan Metabolism	0.0328	25	5	indoleacetate@indoleacetylglutamine@N-acetylkynurenine (2)@indoleacetoylcarnitine*@oxindolylalanine
+[Lipid] Fatty Acid Metabolism (also BCAA Metabolism)	0.3213	5	1	propionylcarnitine (C3)
+[Amino Acid] Histidine Metabolism	0.3652	17	2	1-methyl-4-imidazoleacetate@1-ribosyl-imidazoleacetate*
+[Amino Acid] Glycine, Serine and Threonine Metabolism	0.1948	11	2	N-acetylthreonine@N-acetylserine
+[Peptide] Gamma-glutamyl Amino Acid	0.3652	17	2	gamma-glutamylglycine@gamma-glutamyl-2-aminobutyrate
+[Carbohydrate] Aminosugar Metabolism	0.3213	5	1	erythronate*
+[Cofactors and Vitamins] Hemoglobin and Porphyrin Metabolism	0.3213	5	1	heme
+[Nucleotide] Purine Metabolism, Guanine containing	0.2073	3	1	N2,N2-dimethylguanosine
+[Cofactors and Vitamins] Ascorbate and Aldarate Metabolism	0.0675	6	2	gulonate*@2-O-methylascorbic acid
+[Amino Acid] Lysine Metabolism	0.1818	20	3	glutarylcarnitine (C5-DC)@5-(galactosylhydroxy)-lysine@N-acetyl-2-aminoadipate
+[Lipid] Fatty Acid, Dihydroxy	0.3213	5	1	2S,3R-dihydroxybutyrate
+[Xenobiotics] Chemical	0.1351	27	4	sulfate*@O-sulfo-tyrosine@perfluorooctanesulfonate (PFOS)@perfluorohexanesulfonate (PFHxS)
+[Lipid] Phosphatidylethanolamine (PE)	0.0160	14	4	1-palmitoyl-2-docosahexaenoyl-GPE (16:0/22:6)*@1-stearoyl-2-docosahexaenoyl-GPE (18:0/22:6)*@1-oleoyl-2-arachidonoyl-GPE (18:1/20:4)*@1-oleoyl-2-docosahexaenoyl-GPE (18:1/22:6)*
+[Lipid] Diacylglycerol	1.0000	28	2	diacylglycerol (16:1/18:2 [2], 16:0/18:3 [1])*@stearoyl-arachidonoyl-glycerol (18:0/20:4) [1]*
+[Peptide] Modified Peptides	0.0745	1	1	N,N-dimethyl-pro-pro

@@ -1,2 +1,0 @@
-cliffs delta for effect size
-No clinical covariates were included (since they were not significant)
