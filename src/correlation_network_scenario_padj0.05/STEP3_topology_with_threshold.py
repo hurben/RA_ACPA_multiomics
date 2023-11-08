@@ -53,7 +53,7 @@ if __name__ == "__main__":
 	import sys
 	import os
 
-	file_dir = "../../../analysis/correlation_network/topology_data"
+	file_dir = "../../../analysis/correlation_network/topology_data_scenario_padj0.05"
 	#file_list = ["acpa_neg_3_omics","acpa_pos_3_omics", "control_3_omics"]
 
 	rho_threshold = 0.7

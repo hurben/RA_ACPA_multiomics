@@ -44,7 +44,7 @@ if __name__ == "__main__":
 	import statsmodels.stats.multitest as smm
 	import sys
 
-	file_dir = "../../analysis/correlation_network/topology_data"
+	file_dir = "../../../analysis/correlation_network/topology_data_scenario_padj0.05"
 	#file_list = ["acpa_neg_3_omics","acpa_pos_3_omics", "control_3_omics"]
 
 	file_name = sys.argv[1]

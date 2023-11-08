@@ -1,4 +1,4 @@
-#STEP2_make_sigNcorr_results.   22.11.16
+#STEP1_make_sigNcorr_results   22.11.16
 
 #from the outputs from "STEP1_condition_specific_correlation":
 #[1] *.corr.rho.tsv
@@ -56,7 +56,7 @@ def main(rho_file, sig_file, output_file):
 	output_txt.close()
 
 
-file_dir = "../../analysis/correlation_network/topology_data"
+file_dir = "../../../analysis/correlation_network/topology_data_scenario_padj0.05"
 # file_list = ["acpa_neg_3_omics","acpa_pos_3_omics", "control_3_omics"]
 
 file_name = sys.argv[1]
