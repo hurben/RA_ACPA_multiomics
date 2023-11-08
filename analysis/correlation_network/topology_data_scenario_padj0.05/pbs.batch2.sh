@@ -9,4 +9,4 @@
 #$ -V
 #$ -shell y
 
-python3 ../../src/correlation_network/STEP2_make_sigNcorr_results_v2.py acpa_neg_3_omics
+python3 ../../src/correlation_network/STEP1_make_sigNcorr_results_v2.py acpa_neg_3_omics

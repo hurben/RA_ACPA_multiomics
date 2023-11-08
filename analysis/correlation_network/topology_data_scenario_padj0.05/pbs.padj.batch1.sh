@@ -9,4 +9,4 @@
 #$ -V
 #$ -shell y
 
-python3 ../../src/correlation_network/STEP3_update_topology_pad.py control_3_omics
+python3 ../../src/correlation_network/STEP2_update_topology_pad.py control_3_omics
