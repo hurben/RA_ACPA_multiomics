@@ -103,6 +103,7 @@ Designed to:
 [1] check whether drug is affecting the feature abundance (model: feature_abundance ~ drug). 
 [1-1] if the drug is estimated to have significant effect on feature_abundance (P < 0.05) drug will be adjusted.
 [1-2] perform linear regression (model: feature_abundance ~ condition), while feature_abundance is a list of the normalized value of the biomolecular (e.g., one metabolite across all samples) and condition is list of phenotypes across samples (e.g., ACPA– RA, control)
+[1-3] if drug needs to be adjusted, linear regression will adjust drug (ex1: feature_abundance ~ condition + drug, ex2: feature_abundance ~ condition + drug1 + drug2)
 
 [2] perform Cohen's D to obtain the effect size from
 [3] visualize identified features using volcano plots
