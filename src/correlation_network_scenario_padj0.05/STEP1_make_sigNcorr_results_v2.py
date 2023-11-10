@@ -1,6 +1,6 @@
 #STEP1_make_sigNcorr_results   22.11.16
 
-#from the outputs from "STEP1_condition_specific_correlation":
+#from the outputs from "STEP0_condition_specific_correlation":
 #[1] *.corr.rho.tsv
 #[2] *.corr.sig.tsv
 

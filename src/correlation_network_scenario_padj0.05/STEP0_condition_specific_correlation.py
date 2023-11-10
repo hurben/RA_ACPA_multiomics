@@ -1,6 +1,8 @@
-#STEP1_condition_specific_correlation     22.11.10
+#STEP0_condition_specific_correlation     22.11.10
 
-#do correlation, split results into two files
+#perform all-pairwise spearman correlation analysis for condition-specific samples (i.e., ACPA-pos specific samples, ACPA-neg , split results into two files (rho value file, p value file)
+
+
 #file1: rho value
 #file2: p value
 

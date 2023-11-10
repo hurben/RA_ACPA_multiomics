@@ -1,6 +1,6 @@
-#STEP3_update_topology_pad.py 22.11.21
+#STEP2_update_topology_pad.py 22.11.21
 
-#from the outputs from "STEP2_condition_specific_correlation":
+#from the outputs from "STEP1_make_sigNcorr_results_v2.py":
 # *.corr.topology.tsv
 
 #update the input file by including padj values (BH-adjusted pvalue)

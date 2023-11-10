@@ -139,6 +139,8 @@ Designed to:
 [2] "edges" are defined by BH-adjusted P < 0.05, |rho| > 4
 [3] find network edges that are completely the opposite (if the edge is positive-rho in ACPA-negative RA and negative-rho in ACPA-positive RA, this is considered inversed)
 
+*PBS scripts have been run in cluster that has different directory structure. Please note that the directory might need to be adjusted.
+
 Shell scripts utlizes
 >src/correlation_network/STEP0_condition_specific_correlation.py
 >src/correlation_network/STEP1_make_sigNcorr_results_v2.py

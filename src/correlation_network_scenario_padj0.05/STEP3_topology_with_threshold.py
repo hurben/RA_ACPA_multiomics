@@ -1,6 +1,6 @@
-#STEP4_topology_with_threshold.py   22.11.22
+#STEP3_topology_with_threshold.py   22.11.22
 
-#from outputs from STEP3_update_topology_pad.py
+#from outputs from STEP2_update_topology_pad.py
 # *.corr.padj.topology.tsv
 
 #parse target-source information that only passes certain threshold
