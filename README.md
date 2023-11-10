@@ -14,7 +14,7 @@ Authors: Benjamin Hur, Minsik Oh, Vinod K. Gupta, Kevin Y. Cunningham, Kerry A. 
 ```
 Designed to:
 [1] remove non-human proteins (e.g., Spurimoer, Spurimer)
-[2] address duplicated proteins (but aptamer is targeting different site)
+[2] address duplicated proteins (aptamer is targeting different site)
 [3] & other minor things to make multi-omics comparison feasble (e.g., unifying sample ID)
 ```
 
@@ -26,7 +26,7 @@ Designed to:
 
 ```
 Designed to:
-[1] remove metabolites have more than 20% of N/A values (across all samples)
+[1] remove metabolites that have more than 20% of N/A values (across all samples)
 [2] after [1], follow the same normalization method that Metabolon performs (i.e., each metabolite is re-scaled to have median 1)
 [3] after [2], imput missing value of with the metabolite's minimum value across all samples. For example, if 2 was the minimum value of metaboliteX across 10 samples. missing value will be imputed as 2.
 [4] & other minor things to make multi-omics comparison feasble (e.g., unifying sample ID)
