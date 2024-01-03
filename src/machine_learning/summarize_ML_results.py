@@ -48,16 +48,20 @@ def update_summary_dict(ml_result_file, summary_dict, omics_type, comparison):
 
 def get_omics_info(condition_folder):
 
-	condition_info_dict = {"enet_1condition_p1": "1omics_P",
-							"enet_1condition_p2": "1omics_AA",
-							"enet_1condition_p3":"1omics_M",
-							"enet_2condition_p1":"2omics_PA",
-							"enet_2condition_p2":"2omics_PM",
-							"enet_2condition_p3":"2omics_AM",
-							"enet_3condition":"3omics_PAM"}
+	condition_info_dict = {"enet_1condition_p1": "1omics_p",
+							"enet_1condition_p2": "1omics_aa",
+							"enet_1condition_p3":"1omics_m",
+							"enet_2condition_p1":"2omics_pa",
+							"enet_2condition_p2":"2omics_pm",
+							"enet_2condition_p3":"2omics_am",
+							"enet_3condition":"3omics_pam"}
 
 #	condition_info_dict = {"enet_3condition":"3omics_PAM"}
 
+	condition_info_dict = {"enet_1condition_p1": "1omics_p",
+							"enet_1condition_p2": "1omics_aa",
+							"enet_1condition_p3":"1omics_m",
+							"enet_3condition":"3omics_pam"}
 
 	omics_info = condition_info_dict[condition_folder]
 
@@ -67,7 +71,7 @@ def make_output(summary_dict, output_file):
 	
 	output_txt = open(output_file,'w')
 	#write header
-	output_txt.write('Algorithm\tACCURACY_average\tACCURACY_stdev\tPRECISION_average\tPRECISION_stdev\tTPR_average\tTPR_stdev\tTNR_average\tTNR_stdev\tFPR_average\tFPR_stdev\tFNR_average\tFNR_stdev\n')
+	output_txt.write('Algorithm\tACCURACY_average\tACCURACY_stdev\tPRECISION_average\tPRECISION_stdev\tTPR_average\tTPR_stdev\tTNR_average\tTNR_stdev\tFPR_average\tFPR_stdev\tFNR_average\tFNR_stdev\tMCC_average\tMCC_stdev\n')
 
 	#write content
 	for ml_test_key in list(summary_dict.keys()):
@@ -85,11 +89,12 @@ if __name__ == "__main__":
 	import pandas as pd
 
 	#this list is fixed purpose.
-	defined_condition_list = ["enet_1condition_p1","enet_1condition_p2","enet_1condition_p3","enet_2condition_p1", "enet_2condition_p2", "enet_2condition_p3","enet_3condition"]
+	#defined_condition_list = ["enet_1condition_p1","enet_1condition_p2","enet_1condition_p3","enet_2condition_p1", "enet_2condition_p2", "enet_2condition_p3","enet_3condition"]
+	defined_condition_list = ["enet_1condition_p1","enet_1condition_p2","enet_1condition_p3","enet_3condition"]
 	#defined_condition_list = ["enet_3condition"]
 
 	#comparison_list = ["cVSneg","cVSpos","cVSra","posVSneg"]
-	comparison_list = ["cVSneg","cVSpos"]
+	comparison_list = ["cVSneg","cVSpos", "cVSra"]
 
 	output_file = sys.argv[1]
 	main(defined_condition_list, comparison_list, output_file)

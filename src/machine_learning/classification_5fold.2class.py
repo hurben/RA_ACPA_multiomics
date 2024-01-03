@@ -44,12 +44,18 @@ def run_ML(train_df, test_df, specified_classifier, class_type):
 		tnr = (tn_count) / (tn_count + fp_count)
 		fpr = (fp_count) / (fp_count + tn_count)
 		fnr = (fn_count) / (fn_count + tp_count)
+
+		mcc_tmp = (tp_count + fp_count) * (tp_count + fn_count) * (tn_count + fp_count) * (tn_count + fn_count)
+		try : 
+			mcc = ((tp_count * tn_count) - (fp_count * fn_count)) / math.sqrt(mcc_tmp)
+		except ZeroDivisionError: 
+			mcc = "undefined"
 	except ZeroDivisionError:
 		print ("Error ACC: %s %s %s %s" % (tp_count, tn_count, fp_count, tn_count, fn_count))
 		print (observed_class_list)
 		print (predicted_class_list)
 	
-	return acc, pre, tpr, tnr, fpr, fnr
+	return acc, pre, tpr, tnr, fpr, fnr, mcc
 
 def main(fs_data_folder, data_file_name, specified_classifier, threhold, classifier_type, output_txt, class_type):
 
@@ -60,6 +66,7 @@ def main(fs_data_folder, data_file_name, specified_classifier, threhold, classif
 	tnr_list = []
 	fpr_list = []
 	fnr_list = []
+	mcc_list = []
 
 	for i in range(5):
 		kfold = '%sfold' % (i+1)
@@ -72,17 +79,19 @@ def main(fs_data_folder, data_file_name, specified_classifier, threhold, classif
 		test_df = pd.read_csv(test_data, sep='\t', index_col=0, low_memory=False)
 		test_df = test_df.T
 
-		acc, pre, tpr, tnr, fpr, fnr = run_ML(train_df, test_df, specified_classifier, class_type)
+		acc, pre, tpr, tnr, fpr, fnr, mcc = run_ML(train_df, test_df, specified_classifier, class_type)
 		acc_list.append(acc)
 		pre_list.append(pre)
 		tpr_list.append(tpr)
 		tnr_list.append(tnr)
 		fpr_list.append(fpr)
 		fnr_list.append(fnr)
+		mcc_list.append(mcc)
 	
 	print ("----------")
 	print (acc_list)
-	print (tnr_list)
+#	print (tnr_list)
+	print (mcc_list)
 	
 	output_txt.write('%s_%s_%s' % (threshold, data_file_name, classifier_type))
 	output_txt.write('\t%s\t%s' % (statistics.mean(acc_list), statistics.stdev(acc_list)))
@@ -91,6 +100,11 @@ def main(fs_data_folder, data_file_name, specified_classifier, threhold, classif
 	output_txt.write('\t%s\t%s' % (statistics.mean(tnr_list), statistics.stdev(tnr_list)))
 	output_txt.write('\t%s\t%s' % (statistics.mean(fpr_list), statistics.stdev(fpr_list)))
 	output_txt.write('\t%s\t%s' % (statistics.mean(fnr_list), statistics.stdev(fnr_list)))
+#	output_txt.write('\t%s\t%s' % (statistics.mean(mcc_list), statistics.stdev(mcc_list)))
+	try: 
+		output_txt.write('\t%s\t%s' % (statistics.mean(mcc_list), statistics.stdev(mcc_list)))
+	except TypeError: 
+		output_txt.write('\tN/A\t%s\t%s\t%s\t%s\t%s' % (mcc_list, tpr_list, fpr_list, tnr_list, fnr_list))
 
 	output_txt.write('\n')
 
@@ -111,6 +125,7 @@ if __name__ == '__main__':
 	from sklearn.metrics import confusion_matrix
 	from sklearn.svm import SVC
 	import statistics
+	import math
 	
 	#[1] RWR result file
 	#[2] kfold_data_dir='/Users/m221138/RA_multiomics/analysis/10fold_data_v3/network_construction_enet
@@ -133,7 +148,7 @@ if __name__ == '__main__':
 
 	output_txt = open(output_file,'w')
 
-	output_txt.write('Algorithm\tACC_average\tACC_stdev\tPRE_average\tPRE_stdev\tTPR_average\tTPR_stdev\tTNR_average\tTNR_stdev\tFPR_average\tFPR_stdev\tFNR_average\tFNR_stdev\n')
+	output_txt.write('Algorithm\tACC_average\tACC_stdev\tPRE_average\tPRE_stdev\tTPR_average\tTPR_stdev\tTNR_average\tTNR_stdev\tFPR_average\tFPR_stdev\tFNR_average\tFNR_stdev\tMCC_average\tMCC_stdev\n')
 
 
 	for threshold in split_list:

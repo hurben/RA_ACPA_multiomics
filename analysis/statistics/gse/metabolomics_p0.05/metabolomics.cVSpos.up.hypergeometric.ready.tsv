@@ -1,7 +1,0 @@
-pathway	number_of_metabolites_in_pathway(m)	significant_metabolites_in_pathway(x)	total_number_of_metabolites(n)	detected_significant_metabolites(k)	list_of_metabolites
-[Amino Acid] Polyamine Metabolism	8	1	1061	8	5-methylthioadenosine (MTA)
-[Lipid] Medium Chain Fatty Acid	8	1	1061	8	caprate (10:0)
-[Lipid] Sphingosines	3	1	1061	8	sphingosine 1-phosphate
-[Lipid] Sphingolipid Synthesis	3	1	1061	8	sphinganine-1-phosphate
-[Lipid] Fatty Acid, Dicarboxylate	29	1	1061	8	hexadecenedioate (C16:1-DC)*
-[Xenobiotics] Chemical	27	2	1061	8	3,5-dichloro-2,6-dihydroxybenzoic acid@3-bromo-5-chloro-2,6-dihydroxybenzoic acid*
