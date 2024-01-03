@@ -141,8 +141,6 @@ if __name__ == '__main__':
 
 	if split_type == "percentage":
 		split_list = ["1p", "5p", "10p", "20p", "25p", "30p", "40p", "50p", "100p"]
-#		split_list = ["1p", "5p", "10p", "20p", "25p", "30p", "40p", "50p"]
-#		split_list = ["1p", "5p", "10p", "20p", "25p", "30p", "40p"]
 	if split_type == "top":
 		split_list = ["top10", "top20", "top30", "top40", "top50", "top60", "top70", "top80", "top90", "top100","top200","top300","top400","top500","top600", "top700","top800","top900","top1000"]
 
