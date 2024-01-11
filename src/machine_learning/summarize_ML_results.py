@@ -1,4 +1,4 @@
-#"summarize_ML_results.py"			22.04.04
+#"summarize_ML_results.py"			22.04.04 -> 24.01.11
 
 def main(defined_condition_list, comparison_list, output_file):
 
@@ -71,11 +71,20 @@ def make_output(summary_dict, output_file):
 	
 	output_txt = open(output_file,'w')
 	#write header
-	output_txt.write('Algorithm\tACCURACY_average\tACCURACY_stdev\tPRECISION_average\tPRECISION_stdev\tTPR_average\tTPR_stdev\tTNR_average\tTNR_stdev\tFPR_average\tFPR_stdev\tFNR_average\tFNR_stdev\tMCC_average\tMCC_stdev\n')
+	#output_txt.write('Algorithm')
+	output_txt.write("omics_type\tomics_data\tthrshold\tdata_structure\tclassifier\tclassification_task")
+
+	output_txt.write('\tACCURACY_average\tACCURACY_stdev\tPRECISION_average\tPRECISION_stdev\tTPR_average\tTPR_stdev\tTNR_average\tTNR_stdev\tFPR_average\tFPR_stdev\tFNR_average\tFNR_stdev\tNPV_average\tNPV_stdev\n')
 
 	#write content
 	for ml_test_key in list(summary_dict.keys()):
-		output_txt.write(ml_test_key)
+
+		algorithm_info_list = ml_test_key.split("_")
+		output_txt.write(algorithm_info_list[0])
+
+		for i in range(1, len(algorithm_info_list)):
+			output_txt.write("\t%s" % algorithm_info_list[i])
+
 		for performance in summary_dict[ml_test_key]:
 			output_txt.write('\t%s' % performance)
 		output_txt.write('\n')
