@@ -91,8 +91,8 @@ Designed to:
 
 #### 4. Linear regression & Cohen's D to identify differentially abundant proteins/metabolites/autoantibodies (Manuscript Fig. 3A, 3C)
 
->src/statistics/linear_model/01_DifferentialAbundance_and_cohens_D_adjust_effect.ipynb
->src/statistics/linear_model/02_report_differential_abundance_adjusting_drug.ipynb
+>src/statistics/linear_model_logit/01_DifferentialAbundance_and_cohens_D_adjust_effect.ipynb
+>src/statistics/linear_model_logit/02_report_differential_abundance_adjusting_drug.ipynb
 
 >src/statistics/volcano_plots/MAKE_volcano_plot_Rscript.ipynb
 >src/statistics/volcano_plots/PREPROCESS_identify_cytokines_from_significant_proteins.ipynb
@@ -100,11 +100,8 @@ Designed to:
 
 ```
 Designed to:
-[1] check whether drug is affecting the feature abundance (model: feature_abundance ~ drug). 
-[1-1] if the drug is estimated to have significant effect on feature_abundance (P < 0.05) drug will be adjusted.
-[1-2] perform linear regression (model: feature_abundance ~ condition), while feature_abundance is a list of the normalized value of the biomolecular (e.g., one metabolite across all samples) and condition is list of phenotypes across samples (e.g., ACPA– RA, control)
-[1-3] if drug needs to be adjusted, linear regression will adjust drug (ex1: feature_abundance ~ condition + drug, ex2: feature_abundance ~ condition + drug1 + drug2)
-
+[1] Perform logistic regression models while adjusting for sex, age, BMI, smoking history, prednisone use, and use of bDMARDs and csDMARDs. 
+[1-1] sample_phenotype ~ feature_abundance + sex + age + BMI + smoking_history + prednisone + bDMARDs + csDMARDS
 [2] perform Cohen's D to obtain the effect size from
 [3] visualize identified features using volcano plots
 [4] visualize differentiall abundant cytokines
