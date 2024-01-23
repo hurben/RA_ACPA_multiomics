@@ -89,7 +89,7 @@ Designed to:
 [3] store results at: analysis/statistics/omics_clinical_feature_correlation
 ```
 
-#### 4. Linear regression & Cohen's D to identify differentially abundant proteins/metabolites/autoantibodies (Manuscript Fig. 3A, 3C)
+#### 4. Linear regression & Cohen's D to identify phenotype-associated proteins/metabolites/autoantibodies (Manuscript Fig. 3A, 3C)
 
 >src/statistics/linear_model_logit/01_DifferentialAbundance_and_cohens_D_adjust_effect.ipynb
 >src/statistics/linear_model_logit/02_report_differential_abundance_adjusting_drug.ipynb
@@ -109,14 +109,14 @@ Designed to:
 
 #### 5. Metabolomic analysis with age-stratified samples (Manuscript Fig. 4D)
 
->src/age_stratified_differences/linear_model_3class/00_split_into_three_age_group_v3.ipynb
->src/age_stratified_differences/linear_model_3class/01_DifferentialAbundance_and_cohens_D_v2.ipynb
+>src/age_stratified_differences/linear_model_logit/00_split_into_three_age_group_v3.ipynb
+>src/age_stratified_differences/linear_model_logit/01_DifferentialAbundance_and_cohens_D_v2.ipynb
 
 ```
 Designed to:
 [1] split sample into three group based on age (low-group: bottom 33%, med-group: medium 33%, high-group: high 33%)
-[2] perform linear regression (model: feature_abundance ~ condition), while feature_abundance is a list of the normalized value of the biomolecular (e.g., one metabolite across all samples) and condition is list of phenotypes across samples (e.g., ACPA– RA, control)
-[2-2] adjust drugs if they are affecting feature_abundance 
+[2] perform logistic regression, while feature_abundance is a list of the normalized value of the biomolecular (e.g., one metabolite across all samples).
+[2-1] sample_phenotype ~ feature_abundance + sex + age + BMI + smoking_history + prednisone + bDMARDs + csDMARDS
 [3] perform Cohen's D to obtain the effect size from [2]
 ```
 
