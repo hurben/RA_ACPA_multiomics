@@ -1,8 +1,8 @@
 # Integrative Multi-omic Phenotyping in Blood Identifies Molecular Signatures and Candidate Biomarkers of ACPA-negative Rheumatoid Arthritis
 
-DOI: TBD, Tehe
+DOI: TBD
 
-Authors: Benjamin Hur, Minsik Oh, Vinod K. Gupta, Kevin Y. Cunningham, Kerry A. Wright, Hu Zeng, Elena Myasoedova, Cynthia S. Crowson, Kenneth Warrington, John M. Davis, and Jaeyun Sung
+Authors: Benjamin Hur, Minsik Oh, Vinod K. Gupta, Kevin Y. Cunningham, Hu Zeng, Cynthia S. Crowson, Kenneth J. Warrington, Elena Myasoedova, Vanessa L. Kronzer, John M. Davis, and Jaeyun Sung
 
 ## Overview
 
