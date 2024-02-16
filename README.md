@@ -9,18 +9,17 @@ Authors: Benjamin Hur, Minsik Oh, Vinod K. Gupta, Kevin Y. Cunningham, Kerry A. 
 ![plot](./etc/Figure1_v3.png)
 
 ```
-A) Deep plasma multi-omic profiling was utilized to create a dataset comprising 9,944 proteins, metabolites, and autoantibodies from 40 ACPA– RA patients, 40 ACPA+ RA patients, and 40 healthy controls. 
+Deep plasma multi-omic profiling was utilized to create a dataset comprising 9,944 proteins, metabolites, and autoantibodies from 40 ACPA– RA patients, 40 ACPA+ RA patients, and 40 healthy controls. 
 ```
 
 ```
-B) Statistical analyses and set comparisons were performed to characterize and differentiate the three study cohorts at the single- and multi-omic levels. 
+Statistical analyses and set comparisons were performed to characterize and differentiate the three study cohorts at the single- and multi-omic levels. 
 A multi-omic network that elucidates associations between various omic features and clinical attributes, including study group (or phenotype), was constructed using penalized (elastic net) linear regression. 
 ```
 
 ```
-C) The feature selection scheme for phenotype classification between study groups is composed of three main steps: 
-i) Multi-omic network construction: Nodes represent omic features, and edges symbolize links between features inferred using elastic net linear regression. 
-This step forms the backbone of the network, laying the groundwork for subsequent analyses. 
+The feature selection scheme for phenotype classification between study groups is composed of three main steps: 
+i) Multi-omic network construction: Nodes represent omic features, and edges symbolize links between features inferred using elastic net linear regression. This step forms the backbone of the network, laying the groundwork for subsequent analyses. 
 ii) Network topology propagation via random walker algorithm: Initiated from a seed node representing the clinical phenotype (i.e., ACPA– RA, ACPA+ RA, or controls), this process aims to identify omic features most closely connected to phenotypes on the network topology. The random walker algorithm, specifically a random walk with restart, refines the initial full network into a smaller sub-network composed of features most closely linked to phenotypes. 
 iii) Evaluation in 5-fold cross-validation: A random forest classifier was trained on the identified omic features to evaluate their potential for phenotype classification.
 ```
