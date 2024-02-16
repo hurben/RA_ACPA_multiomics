@@ -4,6 +4,10 @@ DOI: TBD, Tehe
 
 Authors: Benjamin Hur, Minsik Oh, Vinod K. Gupta, Kevin Y. Cunningham, Kerry A. Wright, Hu Zeng, Elena Myasoedova, Cynthia S. Crowson, Kenneth Warrington, John M. Davis, and Jaeyun Sung
 
+
+![plot](./etc/Figure1_v3.png)
+
+
 ## Omics data preprocess
 
 #### 1. Preprocess: Proteomics data from Somascan's delivered file (i.e., .adat)
