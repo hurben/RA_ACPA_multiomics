@@ -1,4 +1,4 @@
-# Integrative Multi-omic Phenotyping in Blood Identifies Molecular Signatures and Candidate Biomarkers of ACPA-negative Rheumatoid Arthritis
+Integrative Multi-omic Phenotyping in Blood Identifies Molecular Signatures and Candidate Biomarkers of ACPA-negative Rheumatoid Arthritis
 
 DOI: TBD
 
@@ -76,15 +76,15 @@ Designed to:
 
 ## Statistics
 
-#### 1. Estimate whether clinical variables (e.g., treatment, sex, age, bmi) influence significantly to the omics-data profile.
+#### 1. Organize demographics and perform statistics for clinical variables (e.g., treatment, sex, age) (Manuscript Table. 1)
 
->src/statistics/patient_info/demographics_statistics-PERMANOVA.ipynb
+>src/statistics/patient_info/summarize_demographics_for_table1.ipynb
+>src/statistics/patient_info/table1_statistics.ipynb
 
 ```
 Designed to:
-[1] use input data of 3omics data with all clinical variables
-[2] use PERMANOVA (adonis2) with default option
-
+[1] use input data from: preprocessed_data/meta/patient_info_for_statistics.tsv, preprocessed_data/meta/patient_info_for_statistics.v3.tsv
+[2] use Fisher's Exact Test, Kruskal-Wallis rank sum test was used to measure statistics.
 ```
 
 #### 2. Create a ternary plot to compare the properties of the profiled plasma multi-omics data. (Manscript Fig. 2A)
