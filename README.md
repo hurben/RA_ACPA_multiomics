@@ -265,10 +265,3 @@ Designed to summarize ML results from /analysis/machine_learning/5fold_v2
 ```
 Not available at the moment
 ```
-
-#### Machine learning processed data
-
-Data that has been generated during the 5fold-CV process can be seen here:
-```
-URL:
-```
