@@ -43,6 +43,9 @@ def update_summary_dict(ml_result_file, summary_dict, omics_type, comparison):
 
 	open_file.close()
 
+	#note: summary dict save information in order of:
+	#ACC_average, ACC_stdev, PRE_average, PRE_stdev, TPR_average, TPR_stdev, TNR_average, TNR_stdev, FPR_average, FPR_stdev, FNR_average, FNR_stdev, NPV_average,NPV_stdev
+
 	return summary_dict
 
 
@@ -85,6 +88,8 @@ def make_output(summary_dict, output_file):
 		for i in range(1, len(algorithm_info_list)):
 			output_txt.write("\t%s" % algorithm_info_list[i])
 
+		#note summary dict:
+		#ACC_average, ACC_stdev, PRE_average, PRE_stdev, TPR_average, TPR_stdev, TNR_average, TNR_stdev, FPR_average, FPR_stdev, FNR_average, FNR_stdev, NPV_average,NPV_stdev
 		for performance in summary_dict[ml_test_key]:
 			output_txt.write('\t%s' % performance)
 		output_txt.write('\n')

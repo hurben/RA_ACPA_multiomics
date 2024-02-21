@@ -173,6 +173,7 @@ Shell scripts utlizes
 
 ## Machine-learning
 
+Note: Requires long-computations. Processed files are shared in this URL: [URL HERE]
 #### 1. create 5-fold dataset
 
 >analysis/5fold_data/network_construction_enet/01_preprocess_omics_enet.sh
@@ -248,8 +249,14 @@ The shell script utlizes
 The shell script ultilzes 
 >src/machine_learning/transform_3class_to_2class_matrix.py
 >src/machine_learning/classification_5fold.2class.py
+```
+
+>analysis/machine_learning/5fold_v2/summarize_ML_results.py
 
 ```
+Designed to summarize ML results from /analysis/machine_learning/5fold_v2
+```
+
 
 ## Misc
 
