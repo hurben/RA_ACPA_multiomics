@@ -143,6 +143,8 @@ Designed to:
 
 #### 6. Inverted correlation network (Manuscript Fig. 5)
 
+Note: Requires long-computations. Processed files are shared in this URL: [URL HERE]
+
 >analysis/correlation_network/topology_data/01_make_condition_specific_network.sh
 >analysis/correlation_network/topology_data/pbs.batch*.sh
 >analysis/correlation_network/topology_data/pbs.padj.batch*.sh
@@ -163,10 +165,10 @@ Shell scripts utlizes
 >src/correlation_network/STEP0_condition_specific_correlation.py
 >src/correlation_network/STEP1_make_sigNcorr_results_v2.py
 >src/correlation_network/STEP2_update_topology_pad.py
->src/correlation_network/STEP3_topology_with_threshold.py
+>src/correlation_network/STEP3_topology_with_threshold.py (currently, I am not using this script)
 >src/correlation_network/STEP3_topology_with_threshold_ver_rho_split.py
 >src/correlation_network/STEP4_analyze_network_similary.py
->src/correlation_network/STEP5_make_cytoscape_ready_format_v2.py
+>src/correlation_network/STEP5_make_cytoscape_ready_format_v3.py
 ```
 
 ## Machine-learning

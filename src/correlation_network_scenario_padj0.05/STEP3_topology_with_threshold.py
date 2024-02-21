@@ -56,8 +56,8 @@ if __name__ == "__main__":
 	file_dir = "../../../analysis/correlation_network/topology_data_scenario_padj0.05"
 	#file_list = ["acpa_neg_3_omics","acpa_pos_3_omics", "control_3_omics"]
 
-	rho_threshold = 0.7
-	pad_threshold = 0.001
+	rho_threshold = 0.4
+	pad_threshold = 0.05
 
 	file_name = sys.argv[1]
 

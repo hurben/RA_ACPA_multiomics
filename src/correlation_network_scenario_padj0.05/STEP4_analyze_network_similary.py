@@ -1,4 +1,4 @@
-#STEP5_analyze_network_similary.py   12.05.04
+#STEP4_analyze_network_similary.py   12.05.04
 #
 #Playing around with the network topology (correlation network, defined by adjusted P-value and Rho)
 #Objective: Find common edges, unique edges
@@ -160,8 +160,6 @@ if __name__ == "__main__":
 	write_output(topology_3_name, 'neg.uniq', topology_3_neg_uniq_list)
 
 	#Objective: find whether edge in network_topology_1 & network_topology 2 is common; and is not common in network_topology_3
-	#Objective: find whether edge in network_topology_2 is unique compared to other network topologies
-	#Objective: find whether edge in network_topology_2 is unique compared to other network topologies
 	ra_pos_uniq_list = get_ra_unique_edges(topology_1_pos_graph, topology_2_pos_graph, topology_3_pos_graph)
 	ra_neg_uniq_list = get_ra_unique_edges(topology_1_neg_graph, topology_2_neg_graph, topology_3_neg_graph)
 
@@ -170,9 +168,9 @@ if __name__ == "__main__":
 
 	#Check list #3
 	#find counter-wise trend (for example, positive rho in ACPA-pos, negative rho in ACPA-neg)
-	#Objective: find whether edge in network_topology_1 al
+	#Objective: find whether edge in network_topology_1 are...
 	#positive rho: ACPA-pos, negative rho in ACPA-neg
-		#does this exist in control?
+		#does this exist in control? 
 	#negative rho: ACPA-pos, positive rho in ACPA-neg
 		#does this exist in control?
 	topology_1_neg_counterwise_list = get_counterwise_edges(topology_1_neg_graph, topology_2_pos_graph)

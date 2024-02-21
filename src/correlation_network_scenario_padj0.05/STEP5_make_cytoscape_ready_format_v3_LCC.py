@@ -1,4 +1,4 @@
-# STEP6_make_cytoscape_ready_format_v2.py         23.02.10
+# STEP5_make_cytoscape_ready_format_v3_LCC.py         23.02.10
 
 # make cytoscape ready file for Fig. 5
 

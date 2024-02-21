@@ -1,4 +1,4 @@
-#STEP4_topology_with_threshold_ver_rho_split.py   22.12.05
+#STEP3_topology_with_threshold_ver_rho_split.py   22.12.05
 
 #from outputs from STEP3_update_topology_pad.py
 # *.corr.padj.topology.tsv
