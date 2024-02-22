@@ -1,0 +1,20 @@
+pathway	pvalue	number_of_metabolites_in_pathway(m)	number_of_hits(x)	metabolite_list
+[Lipid] Medium Chain Fatty Acid	0.0018	8	3	laurate (12:0)@caprate (10:0)@5-dodecenoate (12:1n7)
+[Amino Acid] Polyamine Metabolism	0.2420	8	1	5-methylthioadenosine (MTA)
+[Lipid] Sphingosines	0.0985	3	1	sphingosine
+[Nucleotide] Purine Metabolism, (Hypo)Xanthine/Inosine containing	0.2420	8	1	inosine 5'-monophosphate (IMP)
+[Lipid] Long Chain Saturated Fatty Acid	0.0003	5	3	palmitate (16:0)@stearate (18:0)@arachidate (20:0)
+[Carbohydrate] Glycolysis, Gluconeogenesis, and Pyruvate Metabolism	0.1875	6	1	pyruvate
+[Lipid] Phosphatidylinositol (PI)	0.1875	6	1	1-palmitoyl-2-linoleoyl-GPI (16:0/18:2)
+[Amino Acid] Leucine, Isoleucine and Valine Metabolism	0.3094	33	2	3-methyl-2-oxovalerate@3-methyl-2-oxobutyrate
+[Lipid] Long Chain Polyunsaturated Fatty Acid (n3 and n6)	0.3851	14	1	docosadienoate (22:2n6)
+[Lipid] Long Chain Monounsaturated Fatty Acid	0.0001	8	4	myristoleate (14:1n5)@nervonate (24:1n9)*@eicosenoate (20:1)@oleate/vaccenate (18:1)
+[Xenobiotics] Xanthine Metabolism	0.3851	14	1	5-acetylamino-6-formylamino-3-methyluracil
+[Lipid] Lysophospholipid	1.0000	28	1	2-palmitoyl-GPC (16:0)*
+[Lipid] Fatty Acid, Dicarboxylate	1.0000	29	1	octadecanedioate (C18-DC)
+[Peptide] Dipeptide	0.2152	7	1	valylglycine
+[Lipid] Phosphatidylcholine (PC)	0.5190	21	1	1-palmitoyl-2-arachidonoyl-GPC (16:0/20:4n6)
+[Lipid] Ceramides	0.0347	9	2	N-palmitoyl-sphingadienine (d18:2/16:0)*@ceramide (d16:1/24:1, d18:1/22:1)*
+[Lipid] Fatty Acid, Monohydroxy	0.4063	15	1	2-hydroxynervonate*
+[Lipid] Sphingolipid Synthesis	0.0985	3	1	sphingadienine
+[Xenobiotics] Chemical	0.2323	27	2	3,5-dichloro-2,6-dihydroxybenzoic acid@3-bromo-5-chloro-2,6-dihydroxybenzoic acid*

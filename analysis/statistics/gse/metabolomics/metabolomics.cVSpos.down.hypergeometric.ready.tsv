@@ -1,0 +1,23 @@
+pathway	number_of_metabolites_in_pathway(m)	significant_metabolites_in_pathway(x)	total_number_of_metabolites(n)	detected_significant_metabolites(k)	list_of_metabolites
+[Amino Acid] Methionine, Cysteine, SAM and Taurine Metabolism	24	5	1061	41	N-formylmethionine@S-adenosylhomocysteine (SAH)@cysteine@methionine sulfone@2,3-dihydroxy-5-methylthio-4-pentenoate (DMTPA)*
+[Amino Acid] Creatine Metabolism	3	1	1061	41	creatinine
+[Amino Acid] Histidine Metabolism	17	3	1061	41	histidine@N-acetylhistidine@1-ribosyl-imidazoleacetate*
+[Amino Acid] Urea cycle; Arginine and Proline Metabolism	22	3	1061	41	citrulline@N2,N5-diacetylornithine@N,N,N-trimethyl-alanylproline betaine (TMAP)
+[Cofactors and Vitamins] Vitamin A Metabolism	6	2	1061	41	retinol (vitamin A)@retinal
+[Nucleotide] Pyrimidine Metabolism, Uracil containing	11	3	1061	41	2'-deoxyuridine@pseudouridine@5,6-dihydrouridine
+[Amino Acid] Leucine, Isoleucine and Valine Metabolism	33	1	1061	41	N-acetylvaline
+[Amino Acid] Polyamine Metabolism	8	1	1061	41	4-acetamidobutanoate
+[Amino Acid] Tryptophan Metabolism	25	4	1061	41	indolelactate@N-acetyltryptophan@N-acetylkynurenine (2)@oxindolylalanine
+[Amino Acid] Guanidino and Acetamido Metabolism	2	1	1061	41	1-methylguanidine
+[Xenobiotics] Food Component/Plant	72	4	1061	41	erythritol@ergothioneine@histidine betaine (hercynine)*@3-formylindole
+[Peptide] Gamma-glutamyl Amino Acid	17	2	1061	41	gamma-glutamylglycine@gamma-glutamylcitrulline*
+[Lipid] Carnitine Metabolism	2	1	1061	41	deoxycarnitine
+[Nucleotide] Purine Metabolism, Adenine containing	9	1	1061	41	N6-succinyladenosine
+[Amino Acid] Glycine, Serine and Threonine Metabolism	11	1	1061	41	N-acetylserine
+[Amino Acid] Glutamate Metabolism	13	1	1061	41	alpha-ketoglutaramate*
+[Amino Acid] Lysine Metabolism	20	1	1061	41	5-(galactosylhydroxy)-lysine
+[Lipid] Diacylglycerol	28	2	1061	41	stearoyl-arachidonoyl-glycerol (18:0/20:4) [1]*@stearoyl-arachidonoyl-glycerol (18:0/20:4) [2]*
+[Amino Acid] Alanine and Aspartate Metabolism	9	1	1061	41	hydroxyasparagine**
+[Lipid] Primary Bile Acid Metabolism	12	1	1061	41	glyco-beta-muricholate**
+[Peptide] Modified Peptides	1	1	1061	41	N,N-dimethyl-pro-pro
+[Xenobiotics] Chemical	27	1	1061	41	perfluorohexanesulfonate (PFHxS)

@@ -1,0 +1,19 @@
+pathway	number_of_metabolites_in_pathway(m)	significant_metabolites_in_pathway(x)	total_number_of_metabolites(n)	detected_significant_metabolites(k)	list_of_metabolites
+[Lipid] Long Chain Polyunsaturated Fatty Acid (n3 and n6)	14	6	1061	32	linoleate (18:2n6)@dihomo-linoleate (20:2n6)@docosadienoate (22:2n6)@dihomo-linolenate (20:3n3 or n6)@hexadecadienoate (16:2n6)@tetradecadienoate (14:2)*
+[Lipid] Long Chain Saturated Fatty Acid	5	2	1061	32	palmitate (16:0)@arachidate (20:0)
+[Lipid] Long Chain Monounsaturated Fatty Acid	8	4	1061	32	erucate (22:1n9)@nervonate (24:1n9)*@eicosenoate (20:1)@oleate/vaccenate (18:1)
+[Energy] TCA Cycle	8	1	1061	32	citrate
+[Lipid] Endocannabinoid	8	2	1061	32	oleoyl ethanolamide@linoleoyl ethanolamide
+[Lipid] Phosphatidylcholine (PC)	21	1	1061	32	1-palmitoyl-2-oleoyl-GPC (16:0/18:1)
+[Lipid] Fatty Acid Metabolism (Acyl Carnitine, Short Chain)	1	1	1061	32	acetylcarnitine (C2)
+[Lipid] Fatty Acid, Monohydroxy	15	2	1061	32	3-hydroxylaurate@2-hydroxypalmitate
+[Amino Acid] Leucine, Isoleucine and Valine Metabolism	33	2	1061	32	3-hydroxy-2-ethylpropionate@3-methylglutaconate
+[Peptide] Gamma-glutamyl Amino Acid	17	1	1061	32	gamma-glutamyl-2-aminobutyrate
+[Lipid] Lysophospholipid	28	2	1061	32	2-palmitoyl-GPC (16:0)*@1-linoleoyl-GPI (18:2)*
+[Lipid] Fatty Acid, Branched	4	1	1061	32	(16 or 17)-methylstearate (a19:0 or i19:0)
+[Amino Acid] Glutamate Metabolism	13	1	1061	32	beta-citrylglutamate
+[Xenobiotics] Chemical	27	1	1061	32	O-sulfo-tyrosine
+[Xenobiotics] Benzoate Metabolism	29	1	1061	32	methyl-4-hydroxybenzoate sulfate
+[Carbohydrate] Aminosugar Metabolism	5	1	1061	32	N-acetylglucosamine/N-acetylgalactosamine
+[Lipid] Fatty Acid, Dicarboxylate	29	2	1061	32	dodecadienoate (12:2)*@tetradecadienedioate (C14:2-DC)*
+[Partially Characterized Molecules] Partially Characterized Molecules	28	1	1061	32	branched-chain, straight-chain, or cyclopropyl 12:1 fatty acid*
