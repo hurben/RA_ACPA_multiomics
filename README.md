@@ -110,7 +110,7 @@ Designed to:
 [3] store results at: analysis/statistics/omics_clinical_feature_correlation
 ```
 
-#### 4. Linear regression & Cohen's D to identify phenotype-associated proteins/metabolites/autoantibodies (Manuscript Fig. 3A, 3C)
+#### 4. Linear regression & Cohen's D to identify phenotype-associated proteins/metabolites/autoantibodies (Manuscript Fig. 3A, 3B, 4A, 4B, 5A, 5B)
 
 >src/statistics/linear_model_logit/01_DifferentialAbundance_and_cohens_D_adjust_effect.ipynb
 >src/statistics/linear_model_logit/02_report_differential_abundance_adjusting_drug.ipynb
@@ -141,7 +141,21 @@ Designed to:
 [3] perform Cohen's D to obtain the effect size from [2]
 ```
 
-#### 6. Inverted correlation network (Manuscript Fig. 5)
+#### 6. Autoantibody correlation with clinical parameters (Manuscript Fig. 5C–D)
+
+>src/statistics/autoantibody_correlation/PREPROCESS01_make_correlation_ready_profile_v2.ipynb
+>src/statistics/autoantibody_correlation/PREPROCESS02_make_correlation_ready_profile.ipynb
+>src/statistics/autoantibody_correlation/PREPROCESS03_make_correlation_ready_profile.ver_binary.V2.ipynb
+>src/statistics/autoantibody_correlation/PREPROCESS04_make_correlation_ready_profile_V2.ipynb
+>src/statistics/autoantibody_correlation/draw_heatmap_correlation_v2.ipynb
+
+```
+Designed to:
+Calculate Spearman’s rank correlation coefficient (ρ) between plasma autoantibodies and clinical parameters (ACPA titer, RF titer, DAS28-CRP, ESR, CRP) in ACPA– RA and ACPA+ RA. 
+Only autoantibodies demonstrating a significant correlation (|ρ| > 0.4 and P < 0.01) with at least one variable are represented in the heatmap.
+```
+
+#### 7. Inverted correlation network (Manuscript Fig. 6)
 
 Note: Requires long-computations. Processed files are shared in this URL: [URL HERE]
 
