@@ -279,3 +279,13 @@ Designed to summarize ML results from /analysis/machine_learning/5fold_v2
 ```
 Not available at the moment
 ```
+
+#### Metabolomics hypergeometric tests
+
+```
+src/statistics/geneset_enrichment/metabolomics/STEP01_PREPROCESS_make_updownDEG.ipynb
+src/statistics/geneset_enrichment/metabolomics/STEP02_PREPROCESS_hypergeometric_test_for_metabolomics.ipynb
+src/statistics/geneset_enrichment/metabolomics/STEP03_hypergeomteric_test_for_metabolites.ipynb
+src/statistics/geneset_enrichment/metabolomics/STEP04_prepare_bubble_plot_format_V2.ipynb
+src/statistics/geneset_enrichment/metabolomics/STEP05_draw_bubble_plot_V2.ipynb
+```
