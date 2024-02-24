@@ -62,6 +62,7 @@ Designed to:
 Designed to:
 [1] quantile normalize the data
 [2] & other minor things to make multi-omics comparison feasble (e.g., unifying sample ID)
+Note: please add "\t" in the begining at first row at the output file (sengenics_qnorm_data.tsv) from sengenics_quantile_norm_STEP1.ipynb.
 ```
 
 #### 4. Preprocess: merging three different multi-omics matrix and patient information into a single matrix
