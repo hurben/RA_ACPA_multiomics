@@ -303,7 +303,6 @@ Results are stored in analysis/statistics/gse/metabolomics
 >analysis/full_data/post_network_enet/04_run_RWR.sh
 >analysis/full_data/cytoscape_top30/01_make_cytoscape_ready_from_full_topology.sh
 >analysis/full_data/cytoscape_top30/02_subnetwork_from_full_topology.sh
->analysis/full_data/cytoscape_top30/03_update_subnetwork_profile.sh
 
 ```
 Designed to infer the network on a full data (not k-fold) and perform RWR
@@ -314,9 +313,7 @@ src/post_network/integrate_network.v2.py
 src/post_network/cleanup_RWR_ready_file.py
 src/post_network/RWR_create_seed_profile.py
 src/post_network/RWR.R
-src/network_visualization_v2/make_cytoscape_ready_file.py
+src/network_visualization/make_cytoscape_ready_file.py
 src/network_visualization/find_subnetwork_from_cyto_file.py
-src/network_visualization_v2/update_subnetwork_profile_file.py
-
 ```
 
