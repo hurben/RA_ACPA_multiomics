@@ -290,6 +290,33 @@ Not available at the moment
 >src/statistics/geneset_enrichment/metabolomics/STEP05_draw_bubble_plot_V2.ipynb
 
 ```
-Designed to identify enriched biochemical pathways.
+Designed to identify enriched biochemical pathways
 Results are stored in analysis/statistics/gse/metabolomics
 ```
+
+#### Network inference and RWR with full data (Fig 7)
+
+>analysis/full_data/create_omics_enet.sh
+>analysis/full_data/post_network_enet/01_organize_topology_files.sh
+>analysis/full_data/post_network_enet/02_preprocess_RWR.sh
+>analysis/full_data/post_network_enet/03_make_RWR_p0.sh
+>analysis/full_data/post_network_enet/04_run_RWR.sh
+>analysis/full_data/cytoscape_top30/01_make_cytoscape_ready_from_full_topology.sh
+>analysis/full_data/cytoscape_top30/02_subnetwork_from_full_topology.sh
+>analysis/full_data/cytoscape_top30/03_update_subnetwork_profile.sh
+
+```
+Designed to infer the network on a full data (not k-fold) and perform RWR
+
+Shell script utilizes:
+src/network_construction_5fold/ElasticNet_R.short.fulldata.r
+src/post_network/integrate_network.v2.py
+src/post_network/cleanup_RWR_ready_file.py
+src/post_network/RWR_create_seed_profile.py
+src/post_network/RWR.R
+src/network_visualization_v2/make_cytoscape_ready_file.py
+src/network_visualization/find_subnetwork_from_cyto_file.py
+src/network_visualization_v2/update_subnetwork_profile_file.py
+
+```
+
