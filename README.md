@@ -26,7 +26,6 @@ iii) Evaluation in 5-fold cross-validation: A random forest classifier was train
 
 ## Omics data preprocess
 
-Note: Preprocessed files are shared in this URL: [URL HERE]
 #### 1. Preprocess: Proteomics data from Somascan's delivered file (i.e., .adat)
 
 > src/preprocess/proteomics/PREPROCESS_somascan_raw_data_STEP1.ipynb
@@ -77,7 +76,7 @@ Designed to:
 
 ## Statistics
 
-#### 1. Organize demographics and perform statistics for clinical variables (e.g., treatment, sex, age) (Manuscript Table. 1)
+#### 1. Organize demographics and perform statistics for clinical variables (e.g., treatment, sex, age) (Manuscript Table 1)
 
 >src/statistics/patient_info/summarize_demographics_for_table1.ipynb
 >src/statistics/patient_info/table1_statistics.ipynb
