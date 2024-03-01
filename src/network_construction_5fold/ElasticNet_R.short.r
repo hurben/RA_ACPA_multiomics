@@ -58,7 +58,8 @@ for (i in 1:col_length)
 									  trControl = train_control)
 
 			#Summarize output
-			coefficients <- coef(elastic_net_model$finalModel, elastic_net_model$bestTune$lambda)
+			#coefficients <- coef(elastic_net_model$finalModel, elastic_net_model$bestTune$lambda)
+			coefficients <- coef(elastic_net_model$finalModel, s = elastic_net_model$bestTune$lambda, alpha = elastic_net_model$bestTune$alpha)
 			coefficient_feature_list = rownames(coefficients)
 
 			for (i in 1:length(coefficient_feature_list))
