@@ -33,7 +33,8 @@ if __name__ == "__main__":
 
 	#read topology file,
 	topology_file = '%s/%s' % (topology_folder_dir, topology_name)
-	topology_df = pd.read_csv(topology_file, sep='\t', index_col=0)
+	topology_df = pd.read_csv(topology_file, sep='\t', index_col=0) 
+	#IMPORTANT NOTE March20, 2024: Keep in mind that input data index column misses one "\t" at the first row; which makes incorrect matrix size. Luckily Pandas was addressing this correctly. However, I need to address this at somepoint.
 
 	row_list = topology_df.index.values
 	col_list = topology_df.columns.values
