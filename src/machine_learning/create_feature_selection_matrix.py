@@ -18,7 +18,8 @@ def get_RWR_features(file_name, cutoff):
 
 	for i in range(r):
 		if i <= threshold:
-			feature = data_df.iloc[i][0]
+			#feature = data_df.iloc[i][0]
+			feature = data_df.iloc[i,0]
 			feature_list.append(feature)
 		else:
 			break
@@ -77,7 +78,8 @@ def make_dict_from_profile(data_file):
 
 		for j in range(c):
 			patient_ID = patient_ID_list[j]
-			value = data_df.iloc[i][j]
+			#value = data_df.iloc[i][j]
+			value = data_df.iloc[i, j]
 			data_dict[feature, patient_ID] = value
 
 	return data_dict, cleaned_feature_list, patient_ID_list

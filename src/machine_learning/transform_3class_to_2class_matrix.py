@@ -23,7 +23,8 @@ def make_output(data_file, output_file, class_of_interest):
 		feature = feature_list[i]
 		for j in range(c):
 			patient_ID = patient_ID_list[j]
-			value = data_df.iloc[i][j]
+			#value = data_df.iloc[i][j]
+			value = data_df.iloc[i, j]
 			data_dict[feature, patient_ID] = value
 
 	for patient_ID in patient_ID_list:

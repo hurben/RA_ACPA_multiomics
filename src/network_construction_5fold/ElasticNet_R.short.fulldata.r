@@ -13,6 +13,7 @@ args <- commandArgs(trailingOnly=TRUE)
 data_file = args[1]
 output_txt = args[2]
 
+set.seed(123)
 
 #output related
 

@@ -72,6 +72,7 @@ for (i in 1:col_length)
 					if (coefficient_feature != "(Intercept)")
 					{
 						output_df[feature, coefficient_feature] = coefficient_feature_value
+						#row = feature, column = coefficient_feature
 					}
 				}
 			}

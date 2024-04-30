@@ -15,6 +15,7 @@ result_file <- args[3]
 
 #load adj matrix
 table_file <- read.table(adjacency_matrix_file, header=TRUE, sep="\t")
+
 temp_table <- table_file[,2:ncol(table_file)]
 rownames(temp_table) <- table_file[,1]
 graph <- as.matrix(temp_table)
@@ -29,7 +30,6 @@ pt <- pt$p.inf
 
 #output
 rownames(pt) <- table_file[,1]
-print (head(pt))
 
 pt_df <- as.data.frame(pt)
 pt_df <- pt_df[order(pt[,1], decreasing=TRUE), ,drop=FALSE]

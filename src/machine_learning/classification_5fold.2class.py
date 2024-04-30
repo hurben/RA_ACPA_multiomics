@@ -50,8 +50,8 @@ def run_ML(train_df, test_df, specified_classifier, class_type):
 
 	except ZeroDivisionError:
 		print ("Error ACC: %s %s %s %s" % (tp_count, tn_count, fp_count, tn_count, fn_count))
-		print (observed_class_list)
-		print (predicted_class_list)
+#		print (observed_class_list)
+#		print (predicted_class_list)
 	
 	return acc, pre, tpr, tnr, fpr, fnr, npv
 
@@ -74,6 +74,7 @@ def main(fs_data_folder, data_file_name, specified_classifier, threhold, classif
 
 		train_df = pd.read_csv(train_data, sep='\t', index_col=0, low_memory=False)
 		train_df = train_df.T
+
 		test_df = pd.read_csv(test_data, sep='\t', index_col=0, low_memory=False)
 		test_df = test_df.T
 
@@ -86,9 +87,12 @@ def main(fs_data_folder, data_file_name, specified_classifier, threhold, classif
 		fnr_list.append(fnr)
 		npv_list.append(npv)
 	
-	print ("----------")
-	print (acc_list)
-	print ("----------")
+#	print ("----------")
+#	print (acc_list)
+#	print ("----------")
+
+	if statistics.mean(acc_list) > 0.65:
+		print (statistics.mean(acc_list))
 
 	output_txt.write('%s_%s_%s' % (threshold, data_file_name, classifier_type))
 	output_txt.write('\t%s\t%s' % (statistics.mean(acc_list), statistics.stdev(acc_list)))
@@ -121,6 +125,7 @@ if __name__ == '__main__':
 	from sklearn.ensemble import GradientBoostingClassifier
 	from sklearn.metrics import confusion_matrix
 	from sklearn.svm import SVC
+	from xgboost import XGBClassifier
 	import statistics
 	import math
 	
@@ -149,11 +154,28 @@ if __name__ == '__main__':
 	for threshold in split_list:
 
 #		print (threshold, 'LR')
-#		specified_classifier = LogisticRegression(max_iter=1000, random_state=123)
+#		specified_classifier = LogisticRegression(random_state=123, max_iter=1000)
 #		main(fs_data_folder, data_file_name, specified_classifier, threshold, 'LR', output_txt, class_type)
 
 		print (threshold, 'RF')
-		specified_classifier = RandomForestClassifier(random_state=123)
+#		specified_classifier = RandomForestClassifier(random_state=123)
+		specified_classifier = RandomForestClassifier()
 		main(fs_data_folder, data_file_name, specified_classifier, threshold, 'RF', output_txt, class_type)
+
+		print (threshold, 'ABC')
+#		specified_classifier = AdaBoostClassifier(random_state=123)
+		specified_classifier = AdaBoostClassifier()
+		main(fs_data_folder, data_file_name, specified_classifier, threshold, 'ABC', output_txt, class_type)
+
+		print (threshold, 'GBC')
+#		specified_classifier = GradientBoostingClassifier(random_state=123)
+		specified_classifier = GradientBoostingClassifier()
+		main(fs_data_folder, data_file_name, specified_classifier, threshold, 'GBC', output_txt, class_type)
+
+#		print (threshold, 'xbg')
+#		specified_classifier = XGBClassifier(random_state=123)
+#		main(fs_data_folder, data_file_name, specified_classifier, threshold, 'XBG', output_txt, class_type)
+
+
 
 	output_txt.close()
