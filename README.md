@@ -157,7 +157,6 @@ Only autoantibodies demonstrating a significant correlation (|ρ| > 0.4 and P < 
 
 #### 7. Inverted correlation network (Manuscript Fig. 6)
 
-Note: Requires long-computations. Processed files are shared in this URL: [URL HERE]
 
 >analysis/correlation_network/topology_data/01_make_condition_specific_network.sh
 >analysis/correlation_network/topology_data/pbs.batch*.sh
@@ -187,7 +186,6 @@ Shell scripts utlizes
 
 ## Machine-learning
 
-Note: Requires long-computations. Processed files are shared in this URL: [URL HERE]
 #### 1. create 5-fold dataset
 
 >analysis/5fold_data/network_construction_enet/01_preprocess_omics_enet.sh
