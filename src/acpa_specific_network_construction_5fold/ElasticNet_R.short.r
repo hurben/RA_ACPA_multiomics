@@ -13,7 +13,6 @@ args <- commandArgs(trailingOnly=TRUE)
 data_file = args[1]
 output_txt = args[2]
 
-
 #output related
 
 if (file.exists(output_txt)) {

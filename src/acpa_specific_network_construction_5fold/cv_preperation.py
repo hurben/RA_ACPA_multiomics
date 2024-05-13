@@ -105,6 +105,7 @@ def merge_multiple_dict_sub(query_dict, query_list, main_dict, patientID_list, f
 
 
 def create_kfold_dataset(main_dict, main_feature_list, patient_list, kfold):
+#Disabling control datasets to create RA-only datasets
 
 #	control_patient_list = []  #0 = control
 	acpa_pos_patient_list = [] #1 = pos
