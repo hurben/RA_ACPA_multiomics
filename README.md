@@ -265,24 +265,33 @@ The shell script utlizes
 
 #### 4. Perform machine-learning
 
+Prepare matrices for machine learning. Each matrix will contain features selected by (i) elasticnet various and (ii) RWR cutoff thresholds.
+
 >analysis/machine_learning/5fold_v2/enet_3condition/01_create_feature_selected_matrix.sh
 >analysis/machine_learning/5fold_v2/enet_3condition/02_create_feature_selected_matrix.v2.sh
+
+>analysis/machine_learning_ra_only/enet_3condition/01_create_feature_selected_matrix.sh
+>analysis/machine_learning_ra_only/enet_3condition/02_create_feature_selected_matrix.v2.sh
 ```
-Prepare matrices for machine leanring. Each matrix will contain selective-features from elasticnet and various cutoff thresholds
+01_create_feature_selected_matrix.sh is for applying RWR cutoffs via percentage (e.g., top1%, top 5%)
+01_create_feature_selected_matrix.v2.sh is for applying RWR cutoffs via top N (e.g., top10, top 20)
 
 The shell script utlizes
 >src/machine_learning/create_feature_selection_matrix.py
 ```
+
+[1] prepare the data for two-class classification. For example, if the machine-learning task is for ACPA-negative vs. control, discard ACPA-positive class samples from the data.
+[2] perform machine-learning with feature-seleted matrices.
 
 >analysis/machine_learning/5fold_v2/enet_3condition/03_3class_to_2class.sh
 >analysis/machine_learning/5fold_v2/enet_3condition/04_do_classification.sh
 >analysis/machine_learning/5fold_v2/enet_3condition/05_3class_to_2class.sh
 >analysis/machine_learning/5fold_v2/enet_3condition/06_do_classification.sh
 
-```
-[1] prepare the data for two-class classification. For example, if the machine-learning task is for ACPA-negative vs. control, discard ACPA-positive class samples from the data.
-[2] perform machine-learning with feature-seleted matrices.
+>analysis/machine_learning_ra_only/enet_3condition/03_3class_to_2class.sh
+>analysis/machine_learning_ra_only/enet_3condition/04_do_classification.sh
 
+```
 The shell script ultilzes 
 >src/machine_learning/transform_3class_to_2class_matrix.py
 >src/machine_learning/classification_5fold.2class.py
