@@ -265,7 +265,7 @@ The shell script utlizes
 
 #### 4. Perform machine-learning
 
-Prepare matrices for machine learning. Each matrix will contain features selected by (i) elasticnet various and (ii) RWR cutoff thresholds.
+Prepare matrices for machine learning. Each matrix will contain features selected by (i) elasticnet and (ii) RWR cutoff thresholds.
 
 >analysis/machine_learning/5fold_v2/enet_3condition/01_create_feature_selected_matrix.sh
 >analysis/machine_learning/5fold_v2/enet_3condition/02_create_feature_selected_matrix.v2.sh
@@ -284,17 +284,16 @@ The shell script utlizes
 [2] perform machine-learning with feature-seleted matrices.
 
 >analysis/machine_learning/5fold_v2/enet_3condition/03_3class_to_2class.sh
->analysis/machine_learning/5fold_v2/enet_3condition/04_do_classification.sh
 >analysis/machine_learning/5fold_v2/enet_3condition/05_3class_to_2class.sh
->analysis/machine_learning/5fold_v2/enet_3condition/06_do_classification.sh
+>analysis/machine_learning/5fold_v2/run.sh
 
 >analysis/machine_learning_ra_only/enet_3condition/03_3class_to_2class.sh
->analysis/machine_learning_ra_only/enet_3condition/04_do_classification.sh
+>analysis/machine_learning_ra_only/run.sh
 
 ```
 The shell script ultilzes 
 >src/machine_learning/transform_3class_to_2class_matrix.py
->src/machine_learning/classification_5fold.2class.py
+>src/machine_learning/classification_5fold.2class.opti.withMCC.py
 ```
 
 >analysis/machine_learning/5fold_v2/summarize_ML_results.py
