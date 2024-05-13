@@ -203,14 +203,14 @@ The shell script utilizes
 
 #### 2. infer a network from 5-fold dataset (using elastic net)
 
->analysis/5fold_data/network_construction_enet/02_create_omics_enet.*.sh
->analysis/5fold_data_ra_only/network_construction_enet/02_create_omics_enet.*.sh
+>analysis/5fold_data/network_construction_enet/02_create_omics_enet.\*.sh
+>analysis/5fold_data_ra_only/network_construction_enet/02_create_omics_enet.\*.sh
 
 ```
 For each K-fold dataset, perform elastic net to 
 
 The shell script utilizes
->src/network_construction_5fold/enet_construction_batch1.py
+>src/network_construction_5fold/enet_construction_batch*.py
 ```
 
 #### 3. infer a network from 5-fold dataset (using elastic net)
