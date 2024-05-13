@@ -13,7 +13,7 @@
 #$SBATCH --signal=USR1@60
 
 
-kfold_dir=../../../../analysis/5fold_data_ra_only_seed/network_construction_enet/result/
+kfold_dir=../../../../analysis/5fold_data_ra_only/network_construction_enet/result
 multiplex_file_name=multiplex.enet.tsv
 
 for i in 1 2 3 4 5
