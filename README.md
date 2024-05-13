@@ -296,22 +296,27 @@ The shell script ultilzes
 >src/machine_learning/classification_5fold.2class.opti.withMCC.py
 ```
 
->analysis/machine_learning/5fold_v2/summarize_ML_results.py
+Summarize ML results
 
 ```
-Designed to summarize ML results from /analysis/machine_learning/5fold_v2
+>src/machine_learning/ML_summary_overall_performance_v2.ipynb
+>src/machine_learning/ML_summary_overall_performance_v2.negVSpos.ipynb
+
+Designed to summarize results from 
+[1] analysis/machine_learning/5fold_v2
+[1] analysis/machine_learning_ra_only
 ```
 
 
 ## Misc
 
-#### Addressing Reviewer comments
+#### [1] Addressing Reviewer comments
 
 ```
 Not available at the moment
 ```
 
-#### Metabolomics hypergeometric tests
+#### [2] Metabolomics hypergeometric tests
 
 >src/statistics/geneset_enrichment/metabolomics/STEP01_PREPROCESS_make_updownDEG.ipynb
 >src/statistics/geneset_enrichment/metabolomics/STEP02_PREPROCESS_hypergeometric_test_for_metabolomics.ipynb
@@ -324,7 +329,7 @@ Designed to identify enriched biochemical pathways
 Results are stored in analysis/statistics/gse/metabolomics
 ```
 
-#### Network inference and RWR with full data (Fig 7)
+#### [3] Network inference and RWR with full data (Fig 7)
 
 >analysis/full_data/create_omics_enet.sh
 >analysis/full_data/post_network_enet/01_organize_topology_files.sh
@@ -346,4 +351,48 @@ src/post_network/RWR.R
 src/network_visualization/make_cytoscape_ready_file.py
 src/network_visualization/find_subnetwork_from_cyto_file.py
 ```
+
+#### [4] External validation of machine-learning.
+
+External validation was performed on ACPA– vs. ACPA+ metabolomics; ART and EAC data.
+In brief, we inferred a metabolomics network with our own data (internal validation dataset), 
+and selected the features using the cutoff that we learned that had the best performance (via 5-fold CV).
+
+The features were then used to create a RF classifier while features that are not in external validation dataset were discarded.
+
+## 4-1 Data preprocessing for ART data
+
+```
+Preprocess the raw peaks (using the same principle from our internal validation dataset)
+>src/revision/ART_preprocess/01_PREPROCESS_RA_ART_metabolomics.ipynb
+
+prepare feature-selected matrix (from the model that were created purely from internal validation dataset) while discarding features that do not exist in external validation dataset.
+>src/revision/ART_preprocess/02_PREPROCESS_ML_external_validation.ipynb
+```
+
+## 4-2 Data preprocessing for EAC data
+
+Note: This data is unpublished raw dataset. 
+Please contact corresponding author for data. We will share the data for reasonable request.
+
+```
+Preprocess the raw peaks (using the same principle from our internal validation dataset)
+>src/revision/EAC_preprocess/PREPROCESS_metabolon_raw_data.ipynb
+
+prepare feature-selected matrix (from the model that were created purely from internal validation dataset) while discarding features that do not exist in external validation dataset.
+>src/revision/EAC_preprocess/Perform_FS_for_ML_external_validation.ipynb
+```
+
+## 4-3 Perform ML
+
+Perform ML on external validation dataset.The script also handles imbalanced classes of the external validation set.
+
+analysis_revision/external_validation/ra_art_metabolomics/run.sh
+analysis_revision/external_validation/ra_eac_metabolomics/run.sh
+
+```
+run.sh utilizes
+>src/revision/machine_learning_handle_imbalanced/classification_N_summary.ver_external.v2.py
+```
+
 

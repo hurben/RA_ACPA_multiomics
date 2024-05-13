@@ -1,5 +1,5 @@
 #for i in 20
-for i in 20 428
+for i in 20
 do
 	echo $i
 	seed_directory=seed_$i
