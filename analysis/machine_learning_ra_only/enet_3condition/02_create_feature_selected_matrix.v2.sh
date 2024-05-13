@@ -10,7 +10,7 @@
 #$ -V
 
 kfold_data_dir='../../../analysis/5fold_data_ra_only/network_construction_enet'
-kfold_feature_dir='../../../analysis/post_network_enet_ra_only/5fold/enet_3condition_s1'
+kfold_feature_dir='../../../analysis/post_network_enet_ra_only/5fold/enet_3condition'
 folder_name='fs_network_topn'
 
 rm -r $folder_name

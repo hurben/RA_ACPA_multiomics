@@ -1,0 +1,4 @@
+proteomics	../../../preprocessed_data/proteomics/somascan_anml.T.v2.tsv
+autoantibody	../../../preprocessed_data/autoantibody/sengenics_qnorm_data.ra_only.v2.tsv
+metabolites	../../../preprocessed_data/metabolomics/metabolone_raw_norm_preprocessed.ra_only.v2.tsv
+patient_info	../../../preprocessed_data/meta/patient_info.ML_ready.tsv

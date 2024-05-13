@@ -189,11 +189,14 @@ Shell scripts utlizes
 #### 1. create 5-fold dataset
 
 >analysis/5fold_data/network_construction_enet/01_preprocess_omics_enet.sh
+>analysis/5fold_data_ra_only/network_construction_enet/01_preprocess_omics_enet.sh
+
 ```
 Split dataset into balanced (each K-fold dataset contains an equal amount of classes) 5-fold dataset.
 
 The shell script utilizes
 >src/network_construction_5fold/enet_construction_preprocess.py
+>src/acpa_specific_network_construction_5fold/enet_construction_preprocess.py
 ```
 
 #### 2. infer a network from 5-fold dataset (using elastic net)
