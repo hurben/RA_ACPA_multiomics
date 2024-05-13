@@ -206,22 +206,19 @@ The shell script utilizes
 >analysis/5fold_data/network_construction_enet/02_create_omics_enet.\*.sh
 >analysis/5fold_data_ra_only/network_construction_enet/02_create_omics_enet.\*.sh
 
+note: do_qsub.sh and create_omics_enet.5batch.sh runs pbs and slurm for 02_create_omics_enet.\*.sh, respectively. 
+
 ```
 For each K-fold dataset, perform elastic net to infer network from the data.
 Due to running time, I've splitted the data into several batches and runned via cluster.
 
-note: do_qsub.sh and create_omics_enet.5batch.sh runs pbs and slurm for 02_create_omics_enet.\*.sh, respectively. 
-
->analysis/5fold_data/network_construction_enet/create_omics_enet.5batch.sh
-runs network_construction_enet/02_create_omics_enet.*.sh
-
 The shell script utilizes
 >src/network_construction_5fold/enet_construction_batch*.py
+>src/network_construction_5fold_ra_only/enet_construction_batch*.py
 
 enet_construction_batch*.py utilizes
 >src/src/network_construction_5fold/ElasticNet_R.short.r
 >src/src/network_construction_5fold_ra_only/ElasticNet_R.short.r
-
 ```
 
 #### 3. infer a network from 5-fold dataset (using elastic net) part-2
