@@ -224,13 +224,18 @@ enet_construction_batch*.py utilizes
 #### 3. infer a network from 5-fold dataset (using elastic net) part-2
 
 >analysis/post_network_enet/5fold/enet_3condition/01_organize_topology_files.sh
+>analysis/post_network_enet_ra_only/5fold/enet_3condition/01_organize_topology_files.sh
+
 ```
 Make adjacent matrix into topology (source-target).
+
 The shell script utlizes
 >src/post_network/integrate_network.v2.py
 ```
 
 >analysis/post_network_enet/5fold/enet_3condition/02_preprocess_RWR.sh
+>analysis/post_network_enet_ra_only/5fold/enet_3condition/02_preprocess_RWR.sh
+
 ```
 RWR script (from R) has problem understanding some strings. This scripts tries to avoid those issues.
 
@@ -239,13 +244,18 @@ The shell script utilizes
 ```
 
 >analysis/post_network_enet/5fold/enet_3condition/03_make_RWR_p0.sh
+>analysis/post_network_enet_ra_only/5fold/enet_3condition/03_make_RWR_p0.sh
+
 ```
 Prepare for RWR 'seed' list.
+
 The shell script utlizes
 >src/post_network/RWR_create_seed_profile.py
 ```
 
 >analysis/post_network_enet/5fold/enet_3condition/04_run_RWR.sh
+>analysis/post_network_enet_ra_only/5fold/enet_3condition/04_run_RWR.sh
+
 ```
 Run RWR
 
