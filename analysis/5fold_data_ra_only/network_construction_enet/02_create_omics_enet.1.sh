@@ -14,4 +14,4 @@
 
 input="$1"
 
-python3 ../../../src/network_construction_5fold/enet_construction_batch1.seed.py $input
+python3 ../../../src/network_construction_5fold_ra_only/enet_construction_batch1.py $input

@@ -13,4 +13,4 @@
 #$SBATCH --signal=USR1@60
 
 input="$1"
-python3 ../../../src/network_construction_5fold/enet_construction_batch5.seed.py $input
+python3 ../../../src/network_construction_5fold_ra_only/enet_construction_batch5.py $input
