@@ -360,7 +360,7 @@ and selected the features using the cutoff that we learned that had the best per
 
 The features were then used to create a RF classifier while features that are not in external validation dataset were discarded.
 
-## 4-1 Data preprocessing for ART data
+##### 4-1 Data preprocessing for ART data
 
 ```
 Preprocess the raw peaks (using the same principle from our internal validation dataset)
@@ -370,7 +370,7 @@ prepare feature-selected matrix (from the model that were created purely from in
 >src/revision/ART_preprocess/02_PREPROCESS_ML_external_validation.ipynb
 ```
 
-## 4-2 Data preprocessing for EAC data
+##### 4-2 Data preprocessing for EAC data
 
 Note: This data is unpublished raw dataset. 
 Please contact corresponding author for data. We will share the data for reasonable request.
@@ -383,7 +383,7 @@ prepare feature-selected matrix (from the model that were created purely from in
 >src/revision/EAC_preprocess/Perform_FS_for_ML_external_validation.ipynb
 ```
 
-## 4-3 Perform ML
+##### 4-3 Perform ML
 
 Perform ML on external validation dataset.The script also handles imbalanced classes of the external validation set.
 
