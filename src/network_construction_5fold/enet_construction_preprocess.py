@@ -1,4 +1,3 @@
-create_kfold_dataset
 #enet_construction_preprocess.py		#22.05.10 code reviewed 
 #
 #[1] Split full data into 5 fold data.
