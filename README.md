@@ -210,7 +210,7 @@ The shell script utilizes
 For each K-fold dataset, perform elastic net to 
 
 The shell script utilizes
->src/network_construction_5fold/enet_construction_batch*.py
+>src/network_construction_5fold/enet_construction_batch\*.py
 ```
 
 #### 3. infer a network from 5-fold dataset (using elastic net)
