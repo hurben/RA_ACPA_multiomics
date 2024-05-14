@@ -12,7 +12,7 @@
 #SBATCH --mem=64G
 #$SBATCH --signal=USR1@60
 
-data_dir=../../../analysis/full_data_metabolomics_v2
+data_dir=../../../analysis/full_data_metabolomics_neg_pos
 multiplex_file_name=metabolomics_ML_ready.v2.enet.tsv
 
 python3 ../../../src/post_network/integrate_network.v2.py $data_dir $multiplex_file_name metabolomics_full_data.topology.tsv
