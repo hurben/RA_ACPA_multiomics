@@ -26,6 +26,8 @@ iii) Evaluation in 5-fold cross-validation: A random forest classifier was train
 
 ## Omics data preprocess
 
+#Note: Preprocessed files are stored in "preprocessed_data_public". Please rename "preprocessed_data_public" to "preprocessed_data" if you wish to reproduce the study results.
+
 #### 1. Preprocess: Proteomics data from Somascan's delivered file (i.e., .adat)
 
 > src/preprocess/proteomics/PREPROCESS_somascan_raw_data_STEP1.ipynb
