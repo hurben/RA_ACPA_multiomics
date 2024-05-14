@@ -283,6 +283,7 @@ The shell script utlizes
 ```
 
 [1] prepare the data for two-class classification. For example, if the machine-learning task is for ACPA-negative vs. control, discard ACPA-positive class samples from the data.
+
 [2] perform machine-learning with feature-seleted matrices.
 
 >analysis/machine_learning/5fold_v2/enet_3condition/03_3class_to_2class.sh
