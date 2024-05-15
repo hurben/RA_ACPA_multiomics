@@ -167,7 +167,13 @@ Shell scripts utlizes
 - `analysis/5fold_data/network_construction_enet/01_preprocess_omics_enet.sh`
 - `analysis/5fold_data_ra_only/network_construction_enet/01_preprocess_omics_enet.sh`
 
-Designed to split datasets into balanced 5-fold datasets.
+Designed to: split datasets into balanced 5-fold datasets.
+
+```
+The shell script utilizes
+>src/network_construction_5fold/enet_construction_preprocess.py
+>src/acpa_specific_network_construction_5fold/enet_construction_preprocess.py
+```
 
 ### 2. Infer a Network from 5-fold Dataset Using Elastic Net (Part 1)
 
@@ -182,14 +188,32 @@ Due to running time, I've splitted the data into several batches and runned via 
 - [5fold_data_ra_only results](https://drive.google.com/drive/folders/1N0EH0RBowVidHv-6JZHl5hmmpL-5Db9d)
 - Please use these files for down-stream analysis if you wish to reproduce the study results.
 
+```
+The shell script utilizes
+>src/network_construction_5fold/enet_construction_batch*.py
+>src/network_construction_5fold_ra_only/enet_construction_batch*.py
+
+enet_construction_batch*.py utilizes
+>src/src/network_construction_5fold/ElasticNet_R.short.r
+>src/src/network_construction_5fold_ra_only/ElasticNet_R.short.r
+```
+
 ### 3. Infer a Network from 5-fold Dataset Using Elastic Net (Part 2)
 
-Make adjacent matrix into topology (source-target).
+Designed to: Make adjacent matrix into topology (source-target).
+
+- `analysis/post_network_enet/5fold/enet_3condition/01_organize_topology_files.sh`
+- `analysis/post_network_enet_ra_only/5fold/enet_3condition/01_organize_topology_files.sh`
 
 **NOTE:** RWR results are stored in:
 - [5fold_data results](https://drive.google.com/drive/folders/140W1aTweCnttRaEUKgpsrA6Z3Y_T_8Do)
 - [5fold_data_ra_only results](https://drive.google.com/drive/folders/1JZhhVDHIZlCwRGMzJgUdu5MOFoak1STc)
 - RWR results were performed with the output from elastic net results provided in the step mentioned above.
+
+```
+The shell script utilizes
+>src/post_network/integrate_network.v2.py
+```
 
 
 ### 4. Perform Machine Learning
