@@ -1,428 +1,271 @@
-***Integrative Multi-omic Phenotyping in Blood Identifies Molecular Signatures and Candidate Biomarkers of ACPA-negative Rheumatoid Arthritis***
+# Integrative Multi-omic Phenotyping in Blood Identifies Molecular Signatures and Candidate Biomarkers of ACPA-negative Rheumatoid Arthritis
 
-DOI: TBD
+**DOI:** TBD
 
-Authors: Benjamin Hur, Minsik Oh, Vinod K. Gupta, Kevin Y. Cunningham, Hu Zeng, Cynthia S. Crowson, Kenneth J. Warrington, Elena Myasoedova, Vanessa L. Kronzer, John M. Davis, and Jaeyun Sung
+**Authors:** Benjamin Hur, Minsik Oh, Vinod K. Gupta, Kevin Y. Cunningham, Hu Zeng, Cynthia S. Crowson, Kenneth J. Warrington, Elena Myasoedova, Vanessa L. Kronzer, John M. Davis, and Jaeyun Sung
 
 ## Overview
 
 ![plot](./etc/Figure1_v3.png)
 
-```
-[A] Deep plasma multi-omic profiling was utilized to create a dataset comprising 9,944 proteins, metabolites, and autoantibodies from 40 ACPA– RA patients, 40 ACPA+ RA patients, and 40 healthy controls. 
-```
+### [A] Deep Plasma Multi-omic Profiling
 
-```
-[B] Statistical analyses and set comparisons were performed to characterize and differentiate the three study cohorts at the single- and multi-omic levels. 
-A multi-omic network that elucidates associations between various omic features and clinical attributes, including study group (or phenotype), was constructed using penalized (elastic net) linear regression. 
-```
+Utilized to create a dataset comprising 9,944 proteins, metabolites, and autoantibodies from:
+- 40 ACPA– RA patients
+- 40 ACPA+ RA patients
+- 40 healthy controls
 
-```
-[C] The feature selection scheme for phenotype classification between study groups is composed of three main steps: 
-i) Multi-omic network construction: Nodes represent omic features, and edges symbolize links between features inferred using elastic net linear regression. This step forms the backbone of the network, laying the groundwork for subsequent analyses. 
-ii) Network topology propagation via random walker algorithm: Initiated from a seed node representing the clinical phenotype (i.e., ACPA– RA, ACPA+ RA, or controls), this process aims to identify omic features most closely connected to phenotypes on the network topology. The random walker algorithm, specifically a random walk with restart, refines the initial full network into a smaller sub-network composed of features most closely linked to phenotypes. 
-iii) Evaluation in 5-fold cross-validation: A random forest classifier was trained on the identified omic features to evaluate their potential for phenotype classification.
-```
+### [B] Statistical Analyses and Set Comparisons
 
-## Omics data preprocess
+Performed to characterize and differentiate the three study cohorts at the single- and multi-omic levels. A multi-omic network that elucidates associations between various omic features and clinical attributes, including study group (or phenotype), was constructed using penalized (elastic net) linear regression.
 
->[!NOTE]
->Preprocessed files are stored in "preprocessed_data_public". 
-><br />Please rename "preprocessed_data_public" to "preprocessed_data" if you wish to reproduce the study results.
+### [C] Feature Selection Scheme for Phenotype Classification
 
-#### 1. Preprocess: Proteomics data from Somascan's delivered file (i.e., .adat)
+Composed of three main steps:
+1. **Multi-omic Network Construction:** Nodes represent omic features, and edges symbolize links between features inferred using elastic net linear regression.
+2. **Network Topology Propagation via Random Walker Algorithm:** Initiated from a seed node representing the clinical phenotype (i.e., ACPA– RA, ACPA+ RA, or controls), this process aims to identify omic features most closely connected to phenotypes on the network topology.
+3. **Evaluation in 5-fold Cross-validation:** A random forest classifier was trained on the identified omic features to evaluate their potential for phenotype classification.
 
-> src/preprocess/proteomics/PREPROCESS_somascan_raw_data_STEP1.ipynb
-> src/preprocess/proteomics/PREPROCESS_somascan_raw_data_STEP2.ipynb
+## Omics Data Preprocess
 
-```
+> **NOTE:** Preprocessed files are stored in "preprocessed_data_public". Please rename "preprocessed_data_public" to "preprocessed_data" if you wish to reproduce the study results.
+
+### 1. Preprocess: Proteomics Data from Somascan's Delivered File (.adat)
+
+- `src/preprocess/proteomics/PREPROCESS_somascan_raw_data_STEP1.ipynb`
+- `src/preprocess/proteomics/PREPROCESS_somascan_raw_data_STEP2.ipynb`
+
 Designed to:
-[1] remove non-human proteins (e.g., Spurimoer, Spurimer)
-[2] address duplicated proteins (aptamer is targeting different site)
-[3] & other minor things to make multi-omics comparison feasble (e.g., unifying sample ID)
-```
+1. Remove non-human proteins.
+2. Address duplicated proteins.
+3. Unify sample IDs for multi-omics comparison.
 
-#### 2. Preprocess: Metabolomics data from Metabolon's delivered file (i.e., DATA TABLE.XLSX, Batch-normalized Data)
+### 2. Preprocess: Metabolomics Data from Metabolon's Delivered File (DATA TABLE.XLSX, Batch-normalized Data)
 
-> src/preprocess/metabolomics/01_PREPROCESS_metabolon_raw_data_STEP1.ipynb
-> src/preprocess/metabolomics/02_PREPROCESS_metabolon_raw_data_STEP2.ipynb
-> src/preprocess/metabolomics/03_PREPROCESS_metabolon_raw_data_STEP3.ipynb
+- `src/preprocess/metabolomics/01_PREPROCESS_metabolon_raw_data_STEP1.ipynb`
+- `src/preprocess/metabolomics/02_PREPROCESS_metabolon_raw_data_STEP2.ipynb`
+- `src/preprocess/metabolomics/03_PREPROCESS_metabolon_raw_data_STEP3.ipynb`
 
-```
 Designed to:
-[1] remove metabolites that have more than 20% of N/A values (across all samples)
-[2] after [1], follow the same normalization method that Metabolon performs (i.e., each metabolite is re-scaled to have median 1)
-[3] after [2], imput missing value of with the metabolite's minimum value across all samples. For example, if 2 was the minimum value of metaboliteX across 10 samples. missing value will be imputed as 2.
-[4] & other minor things to make multi-omics comparison feasble (e.g., unifying sample ID)
-```
+1. Remove metabolites with >20% N/A values.
+2. Normalize metabolites to median 1.
+3. Impute missing values with the metabolite's minimum value.
+4. Unify sample IDs for multi-omics comparison.
 
-#### 3. Preprocess: Autoantibody data from Sengenic's delivered file (i.e., KREX Immunome.xlsx, Raw Mean)
+### 3. Preprocess: Autoantibody Data from Sengenic's Delivered File (KREX Immunome.xlsx, Raw Mean)
 
->src/preprocess/autoantibody/01_PREPROCESS_sengenics_quantile_norm_STEP1.ipynb
->src/preprocess/autoantibody/02_PREPROCESS_sengenics_quantile_norm_STEP2.ipynb
+- `src/preprocess/autoantibody/01_PREPROCESS_sengenics_quantile_norm_STEP1.ipynb`
+- `src/preprocess/autoantibody/02_PREPROCESS_sengenics_quantile_norm_STEP2.ipynb`
 
-```
 Designed to:
-[1] quantile normalize the data
-[2] & other minor things to make multi-omics comparison feasble (e.g., unifying sample ID)
-Note: please add "\t" in the begining at first row at the output file (sengenics_qnorm_data.tsv) from sengenics_quantile_norm_STEP1.ipynb.
-```
+1. Quantile normalize the data.
+2. Unify sample IDs for multi-omics comparison.
 
-#### 4. Preprocess: merging three different multi-omics matrix and patient information into a single matrix
+### 4. Preprocess: Merging Multi-omics Matrices and Patient Information into a Single Matrix
 
->src/preprocess/multiomics/PREPROCESS_make_3_omics_matrix.py.ipynb
+- `src/preprocess/multiomics/PREPROCESS_make_3_omics_matrix.py.ipynb`
 
-```
 Designed to:
-[1] merge preprocessed proteomics, metabolomics, autoantibody, and patient information data into single matrix
-[2] handle some feature names that Rscript cannot handle.
-```
+1. Merge preprocessed proteomics, metabolomics, autoantibody, and patient information data into a single matrix.
+2. Handle feature names that Rscript cannot process.
 
 ## Statistics
 
-#### 1. Organize demographics and perform statistics for clinical variables (e.g., treatment, sex, age) (Manuscript Table 1)
+### 1. Organize Demographics and Perform Statistics for Clinical Variables (Manuscript Table 1)
 
->src/statistics/patient_info/summarize_demographics_for_table1.ipynb
->src/statistics/patient_info/table1_statistics.ipynb
+- `src/statistics/patient_info/summarize_demographics_for_table1.ipynb`
+- `src/statistics/patient_info/table1_statistics.ipynb`
 
-```
 Designed to:
-[1] use input data from: preprocessed_data/meta/patient_info_for_statistics.tsv, preprocessed_data/meta/patient_info_for_statistics.v3.tsv
-[2] use Fisher's Exact Test, Kruskal-Wallis rank sum test was used to measure statistics.
-```
+1. Use input data from: `preprocessed_data/meta/patient_info_for_statistics.tsv`, `preprocessed_data/meta/patient_info_for_statistics.v3.tsv`.
+2. Apply Fisher's Exact Test and Kruskal-Wallis rank sum test for statistics.
 
-#### 2. Create a ternary plot to compare the properties of the profiled plasma multi-omics data. (Manscript Fig. 2A)
+### 2. Create a Ternary Plot to Compare Properties of the Profiled Plasma Multi-omics Data (Manuscript Fig. 2A)
 
->src/statistics/ternary_plots/STEP01_PREPROCESS_Ternary_Plot.ipynb
->src/statistics/ternary_plots/STEP02_Ternary_Plot.ipynb
+- `src/statistics/ternary_plots/STEP01_PREPROCESS_Ternary_Plot.ipynb`
+- `src/statistics/ternary_plots/STEP02_Ternary_Plot.ipynb`
 
-```
 Designed to:
-[1] create a ternary plot for each proteomics, metabolomics, and autoantibody profiles
-[2] store results at: analysis/statistics/ternary_plots/
-```
+1. Create a ternary plot for proteomics, metabolomics, and autoantibody profiles.
+2. Store results at: `analysis/statistics/ternary_plots/`.
 
-#### 3. Create a scatter plot of correlations between clinical marker and omics-feature; and to compare 'rho' values of ACPA-negative RA-specific samples and ACPA-positive RA-specific samples. (Manuscript Fig. 2B)
+### 3. Create Scatter Plot of Correlations Between Clinical Markers and Omics Features (Manuscript Fig. 2B)
 
->src/statistics/omics_clinical_feature_correlation/PREPROCESS_make_omics_correlation_matrix_top_bottom_50_v3.ipynb
->src/statistics/omics_clinical_feature_correlation/draw_scatterplots_for_figure2_v2.ipynb
+- `src/statistics/omics_clinical_feature_correlation/PREPROCESS_make_omics_correlation_matrix_top_bottom_50_v3.ipynb`
+- `src/statistics/omics_clinical_feature_correlation/draw_scatterplots_for_figure2_v2.ipynb`
 
-```
 Designed to:
-[1] create a scatter plots of correlations between clinical variable (e.g., ESR) and omics-feature.
-[2] visualize only top 50 (positive correlation) and top 50 (negative correlation) 
-[3] store results at: analysis/statistics/omics_clinical_feature_correlation
-```
+1. Create scatter plots of correlations between clinical variables (e.g., ESR) and omics features.
+2. Visualize the top 50 positive and top 50 negative correlations.
+3. Store results at: `analysis/statistics/omics_clinical_feature_correlation/`.
 
-#### 4. Linear regression & Cohen's D to identify phenotype-associated proteins/metabolites/autoantibodies (Manuscript Fig. 3A, 3B, 4A, 4B, 5A, 5B)
+### 4. Linear Regression & Cohen's D to Identify Phenotype-associated Proteins/Metabolites/Autoantibodies (Manuscript Fig. 3A, 3B, 4A, 4B, 5A, 5B)
 
->src/statistics/linear_model_logit/01_DifferentialAbundance_and_cohens_D_adjust_effect.ipynb
->src/statistics/linear_model_logit/02_report_differential_abundance_adjusting_drug.ipynb
+- `src/statistics/linear_model_logit/01_DifferentialAbundance_and_cohens_D_adjust_effect.ipynb`
+- `src/statistics/linear_model_logit/02_report_differential_abundance_adjusting_drug.ipynb`
+- `src/statistics/volcano_plots/MAKE_volcano_plot_Rscript.ipynb`
+- `src/statistics/volcano_plots/PREPROCESS_identify_cytokines_from_significant_proteins.ipynb`
+- `src/statistics/boxplot_for_cytokines/DRAW_boxplots_for_7_cytokines.ipynb`
 
->src/statistics/volcano_plots/MAKE_volcano_plot_Rscript.ipynb
->src/statistics/volcano_plots/PREPROCESS_identify_cytokines_from_significant_proteins.ipynb
->src/statistics/boxplot_for_cytokines/DRAW_boxplots_for_7_cytokines.ipynb
-
-```
 Designed to:
-[1] Perform logistic regression models while adjusting for sex, age, BMI, smoking history, prednisone use, and use of bDMARDs and csDMARDs. 
-[1-1] sample_phenotype ~ feature_abundance + sex + age + BMI + smoking_history + prednisone + bDMARDs + csDMARDS
-[2] perform Cohen's D to obtain the effect size
-[3] visualize identified features using volcano plots
-[4] visualize differentiall abundant cytokines
-```
+1. Perform logistic regression models while adjusting for various factors.
+2. Obtain effect size using Cohen's D.
+3. Visualize identified features using volcano plots and differential cytokines.
 
-#### 5. Metabolomic analysis with age-stratified samples (Manuscript Fig. 4D)
+### 5. Metabolomic Analysis with Age-stratified Samples (Manuscript Fig. 4D)
 
->src/age_stratified_differences/linear_model_logit/00_split_into_three_age_group_v3.ipynb
->src/age_stratified_differences/linear_model_logit/01_DifferentialAbundance_and_cohens_D_v2.ipynb
+- `src/age_stratified_differences/linear_model_logit/00_split_into_three_age_group_v3.ipynb`
+- `src/age_stratified_differences/linear_model_logit/01_DifferentialAbundance_and_cohens_D_v2.ipynb`
 
-```
 Designed to:
-[1] split sample into three group based on age (low-group: bottom 33%, med-group: medium 33%, high-group: high 33%)
-[2] perform logistic regression, while feature_abundance is a list of the normalized value of the biomolecular (e.g., one metabolite across all samples).
-[2-1] sample_phenotype ~ feature_abundance + sex + age + BMI + smoking_history + prednisone + bDMARDs + csDMARDS
-[3] perform Cohen's D to obtain the effect size from [2]
-```
+1. Split samples into three age groups.
+2. Perform logistic regression and Cohen's D analysis.
 
-#### 6. Autoantibody correlation with clinical parameters (Manuscript Fig. 5C–D)
+### 6. Autoantibody Correlation with Clinical Parameters (Manuscript Fig. 5C–D)
 
->src/statistics/autoantibody_correlation/PREPROCESS01_make_correlation_ready_profile_v2.ipynb
->src/statistics/autoantibody_correlation/PREPROCESS02_make_correlation_ready_profile.ipynb
->src/statistics/autoantibody_correlation/PREPROCESS03_make_correlation_ready_profile.ver_binary.V2.ipynb
->src/statistics/autoantibody_correlation/PREPROCESS04_make_correlation_ready_profile_V2.ipynb
->src/statistics/autoantibody_correlation/draw_heatmap_correlation_v2.ipynb
+- `src/statistics/autoantibody_correlation/PREPROCESS01_make_correlation_ready_profile_v2.ipynb`
+- `src/statistics/autoantibody_correlation/PREPROCESS02_make_correlation_ready_profile.ipynb`
+- `src/statistics/autoantibody_correlation/PREPROCESS03_make_correlation_ready_profile.ver_binary.V2.ipynb`
+- `src/statistics/autoantibody_correlation/PREPROCESS04_make_correlation_ready_profile_V2.ipynb`
+- `src/statistics/autoantibody_correlation/draw_heatmap_correlation_v2.ipynb`
 
-```
 Designed to:
-Calculate Spearman’s rank correlation coefficient (ρ) between plasma autoantibodies and clinical parameters (ACPA titer, RF titer, DAS28-CRP, ESR, CRP) in ACPA– RA and ACPA+ RA. 
-Only autoantibodies demonstrating a significant correlation (|ρ| > 0.4 and P < 0.01) with at least one variable are represented in the heatmap.
-```
+Calculate Spearman’s rank correlation coefficient (ρ) between plasma autoantibodies and clinical parameters. Only significant correlations (|ρ| > 0.4 and P < 0.01) are represented in the heatmap.
 
-#### 7. Inverted correlation network (Manuscript Fig. 6)
+### 7. Inverted Correlation Network (Manuscript Fig. 6)
 
+- `analysis/correlation_network/topology_data/01_make_condition_specific_network.sh`
+- `analysis/correlation_network/topology_data/pbs.batch*.sh`
+- `analysis/correlation_network/topology_data/pbs.padj.batch*.sh`
+- `analysis/correlation_network/topology_data/02_get_sig_network.sh`
+- `analysis/correlation_network/topology_data/03_get_sig_network_posneg.sh`
+- `analysis/correlation_network/network_similarity/01_network_similarity.sh`
+- `analysis/correlation_network/network_similarity/02_make_cytocape_ready_format.sh`
 
->analysis/correlation_network/topology_data/01_make_condition_specific_network.sh
->analysis/correlation_network/topology_data/pbs.batch*.sh
->analysis/correlation_network/topology_data/pbs.padj.batch*.sh
->analysis/correlation_network/topology_data/02_get_sig_network.sh
->analysis/correlation_network/topology_data/03_get_sig_network_posneg.sh
-
->analysis/correlation_network/network_similarity/01_network_similarity.sh
->analysis/correlation_network/network_similarity/02_make_cytocape_ready_format.sh
-```
 Designed to:
-[1] infer a correlation (all pair-wise feature associations) network from condition-specific datasets (i.e., ACPA-negative RA specific, ACPA-positive RA specific)
-[2] "edges" are defined by BH-adjusted P < 0.05, |rho| > 4
-[3] find network edges that are completely the opposite (if the edge is positive-rho in ACPA-negative RA and negative-rho in ACPA-positive RA, this is considered inversed)
+1. Infer a correlation network from condition-specific datasets.
+2. Define "edges" by BH-adjusted P < 0.05 and |rho| > 4.
+3. Identify inverted network edges.
+*Note: PBS scripts have been run in a cluster with a different directory structure; adjustments may be necessary.
 
-*PBS scripts have been run in cluster that has different directory structure. Please note that the directory might need to be adjusted.
+## Machine Learning
 
-Shell scripts utlizes
->src/correlation_network/STEP0_condition_specific_correlation.py
->src/correlation_network/STEP1_make_sigNcorr_results_v2.py
->src/correlation_network/STEP2_update_topology_pad.py
->src/correlation_network/STEP3_topology_with_threshold.py (currently, I am not using this script)
->src/correlation_network/STEP3_topology_with_threshold_ver_rho_split.py
->src/correlation_network/STEP4_analyze_network_similary.py
->src/correlation_network/STEP5_make_cytoscape_ready_format_v3.py
-```
+### 1. Create 5-fold Dataset
 
-## Machine-learning
+- `analysis/5fold_data/network_construction_enet/01_preprocess_omics_enet.sh`
+- `analysis/5fold_data_ra_only/network_construction_enet/01_preprocess_omics_enet.sh`
 
-#### 1. create 5-fold dataset
+Designed to split datasets into balanced 5-fold datasets.
 
->analysis/5fold_data/network_construction_enet/01_preprocess_omics_enet.sh
->analysis/5fold_data_ra_only/network_construction_enet/01_preprocess_omics_enet.sh
+### 2. Infer a Network from 5-fold Dataset Using Elastic Net (Part 1)
 
-```
-Split dataset into balanced (each K-fold dataset contains equal amount of classes) 5fold dataset.
-data/scripts in 5fold_data are designed for RA subgroups vs. controls.
-data/scripts in 5fold_data_ra_only are designed for ACPA– vs. ACPA+.
+- `analysis/5fold_data/network_construction_enet/02_create_omics_enet.*.sh`
+- `analysis/5fold_data_ra_only/network_construction_enet/02_create_omics_enet.*.sh`
 
-The shell script utilizes
->src/network_construction_5fold/enet_construction_preprocess.py
->src/acpa_specific_network_construction_5fold/enet_construction_preprocess.py
-```
+**NOTE:** Elastic net results for '5fold_data' are stored in:
+- [5fold_data results](https://drive.google.com/drive/folders/1GRRf2O6ZrstjEWVxZUrdSMM96oJjRcIL)
+- [5fold_data_ra_only results](https://drive.google.com/drive/folders/1N0EH0RBowVidHv-6JZHl5hmmpL-5Db9d)
 
-#### 2. infer a network from 5-fold dataset (using elastic net) part-1
+### 3. Infer a Network from 5-fold Dataset Using Elastic Net (Part 2)
 
-do_qsub.sh and create_omics_enet.5batch.sh runs pbs and slurm for 02_create_omics_enet.\*.sh, respectively.
+**NOTE:** RWR results for '5fold_data' are stored in:
+- [5fold_data results](https://drive.google.com/drive/folders/140W1aTweCnttRaEUKgpsrA6Z3Y_T_8Do)
+- [5fold_data_ra_only results](https://drive.google.com/drive/folders/1JZhhVDHIZlCwRGMzJgUdu5MOFoak1STc)
 
->analysis/5fold_data/network_construction_enet/02_create_omics_enet.\*.sh
->analysis/5fold_data_ra_only/network_construction_enet/02_create_omics_enet.\*.sh
+### 4. Perform Machine Learning
 
->[!NOTE] 
->Elastic net results for '5fold_data' are stored in: [link](https://drive.google.com/drive/folders/1GRRf2O6ZrstjEWVxZUrdSMM96oJjRcIL) <br />
->Elastic net results for '5fold_data_ra_only' are stored in: [link](https://drive.google.com/drive/folders/1N0EH0RBowVidHv-6JZHl5hmmpL-5Db9d) <br />
->Please use these files for down-stream analysis if you wish to reproduce the study results.
+Prepare matrices for machine learning with features selected by elasticnet and RWR cutoff thresholds.
 
-```
-For each K-fold dataset, perform elastic net to infer network from the data.
-Due to running time, I've splitted the data into several batches and runned via cluster.
+Results are stored in `Table S23.xlsx` in the manuscript.
 
-The shell script utilizes
->src/network_construction_5fold/enet_construction_batch*.py
->src/network_construction_5fold_ra_only/enet_construction_batch*.py
+- `analysis/machine_learning/5fold_v2/enet_3condition/01_create_feature_selected_matrix.sh`
+- `analysis/machine_learning/5fold_v2/enet_3condition/02_create_feature_selected_matrix.v2.sh`
+- `analysis/machine_learning_ra_only/enet_3condition/01_create_feature_selected_matrix.sh`
+- `analysis/machine_learning_ra_only/enet_3condition/02_create_feature_selected_matrix.v2.sh`
 
-enet_construction_batch*.py utilizes
->src/src/network_construction_5fold/ElasticNet_R.short.r
->src/src/network_construction_5fold_ra_only/ElasticNet_R.short.r
-```
+### Summarize ML Results
 
-#### 3. infer a network from 5-fold dataset (using elastic net) part-2
+- `src/machine_learning/ML_summary_overall_performance_v2.ipynb`
+- `src/machine_learning/ML_summary_overall_performance_v2.negVSpos.ipynb`
 
->[!NOTE] 
->RWR results for '5fold_data' are stored in: [link](https://drive.google.com/drive/folders/140W1aTweCnttRaEUKgpsrA6Z3Y_T_8Do) <br />
->RWR results for '5fold_data_ra_only' are stored in: [link](https://drive.google.com/drive/folders/1JZhhVDHIZlCwRGMzJgUdu5MOFoak1STc) <br />
->RWR results were performed with the output from elastic net results provided in the step mentioned above.
-
->analysis/post_network_enet/5fold/enet_3condition/01_organize_topology_files.sh
->analysis/post_network_enet_ra_only/5fold/enet_3condition/01_organize_topology_files.sh
-
-```
-Make adjacent matrix into topology (source-target).
-
-The shell script utlizes
->src/post_network/integrate_network.v2.py
-```
-
->analysis/post_network_enet/5fold/enet_3condition/02_preprocess_RWR.sh
->analysis/post_network_enet_ra_only/5fold/enet_3condition/02_preprocess_RWR.sh
-
-```
-RWR script (from R) has problem understanding some strings. This scripts tries to avoid those issues.
-
-The shell script utilizes
->src/post_network/cleanup_RWR_ready_file.py
-```
-
->analysis/post_network_enet/5fold/enet_3condition/03_make_RWR_p0.sh
->analysis/post_network_enet_ra_only/5fold/enet_3condition/03_make_RWR_p0.sh
-
-```
-Prepare for RWR 'seed' list.
-
-The shell script utlizes
->src/post_network/RWR_create_seed_profile.py
-```
-
->analysis/post_network_enet/5fold/enet_3condition/04_run_RWR.sh
->analysis/post_network_enet_ra_only/5fold/enet_3condition/04_run_RWR.sh
-
-```
-Run RWR
-
-The shell script utlizes
->src/post_network/RWR.R
-```
-
-#### 4. Perform machine-learning
-
-Prepare matrices for machine learning. Each matrix will contain features selected by (i) elasticnet and (ii) RWR cutoff thresholds.
-Results are stored in Table S23.xlsx in the manuscript.
-
->analysis/machine_learning/5fold_v2/enet_3condition/01_create_feature_selected_matrix.sh
->analysis/machine_learning/5fold_v2/enet_3condition/02_create_feature_selected_matrix.v2.sh
-
->analysis/machine_learning_ra_only/enet_3condition/01_create_feature_selected_matrix.sh
->analysis/machine_learning_ra_only/enet_3condition/02_create_feature_selected_matrix.v2.sh
-```
-01_create_feature_selected_matrix.sh is for applying RWR cutoffs via percentage (e.g., top1%, top 5%)
-01_create_feature_selected_matrix.v2.sh is for applying RWR cutoffs via top N (e.g., top10, top 20)
-
-The shell script utlizes
->src/machine_learning/create_feature_selection_matrix.py
-```
-
-[1] prepare the data for two-class classification. For example, if the machine-learning task is for ACPA-negative vs. control, discard ACPA-positive class samples from the data.
-
-[2] perform machine-learning with feature-seleted matrices. I highly recommend to read "run.sh" before performing ML.
-
->analysis/machine_learning/5fold_v2/enet_3condition/03_3class_to_2class.sh
->analysis/machine_learning/5fold_v2/enet_3condition/05_3class_to_2class.sh
->analysis/machine_learning/5fold_v2/run.sh
-
->analysis/machine_learning_ra_only/enet_3condition/03_3class_to_2class.sh
->analysis/machine_learning_ra_only/run.sh
-
-```
-The shell script ultilzes 
->src/machine_learning/transform_3class_to_2class_matrix.py
->src/machine_learning/classification_5fold.2class.opti.withMCC.py
-```
-
-Summarize ML results
-
-```
->src/machine_learning/ML_summary_overall_performance_v2.ipynb
->src/machine_learning/ML_summary_overall_performance_v2.negVSpos.ipynb
-
-Designed to summarize results from 
-[1] analysis/machine_learning/5fold_v2
-[1] analysis/machine_learning_ra_only
-```
-
+Designed to summarize results from:
+- `analysis/machine_learning/5fold_v2`
+- `analysis/machine_learning_ra_only`
 
 ## Misc
 
-#### [1] Addressing Reviewer comments
+### 1. Addressing Reviewer Comments
 
-```
-Not available at the moment
-```
+Not available at the moment.
 
-#### [2] Metabolomics hypergeometric tests
+### 2. Metabolomics Hypergeometric Tests
 
->src/statistics/geneset_enrichment/metabolomics/STEP01_PREPROCESS_make_updownDEG.ipynb
->src/statistics/geneset_enrichment/metabolomics/STEP02_PREPROCESS_hypergeometric_test_for_metabolomics.ipynb
->src/statistics/geneset_enrichment/metabolomics/STEP03_hypergeomteric_test_for_metabolites.ipynb
->src/statistics/geneset_enrichment/metabolomics/STEP04_prepare_bubble_plot_format_V2.ipynb
->src/statistics/geneset_enrichment/metabolomics/STEP05_draw_bubble_plot_V2.ipynb
+- `src/statistics/geneset_enrichment/metabolomics/STEP01_PREPROCESS_make_updownDEG.ipynb`
+- `src/statistics/geneset_enrichment/metabolomics/STEP02_PREPROCESS_hypergeometric_test_for_metabolomics.ipynb`
+- `src/statistics/geneset_enrichment/metabolomics/STEP03_hypergeomteric_test_for_metabolites.ipynb`
+- `src/statistics/geneset_enrichment/metabolomics/STEP04_prepare_bubble_plot_format_V2.ipynb`
+- `src/statistics/geneset_enrichment/metabolomics/STEP05_draw_bubble_plot_V2.ipynb`
 
-```
-Designed to identify enriched biochemical pathways
-Results are stored in analysis/statistics/gse/metabolomics
-```
+Designed to identify enriched biochemical pathways. Results are stored in `analysis/statistics/gse/metabolomics`.
 
-#### [3] Network inference and RWR with full data (Fig 7)
+### 3. Network Inference and RWR with Full Data (Fig 7)
 
->[!NOTE]
->elastic net results for 'full_data' are stored in: [link](https://drive.google.com/drive/folders/1LCpDAd9GB0mwqqSI-zJ07yTYt1DglwTB) <br />
+**NOTE:** Elastic net results for 'full_data' are stored in:
+- [full_data results](https://drive.google.com/drive/folders/1LCpDAd9GB0mwqqSI-zJ07yTYt1DglwTB)
 
->analysis/full_data/create_omics_enet.sh
->analysis/full_data/post_network_enet/01_organize_topology_files.sh
->analysis/full_data/post_network_enet/02_preprocess_RWR.sh
->analysis/full_data/post_network_enet/03_make_RWR_p0.sh
->analysis/full_data/post_network_enet/04_run_RWR.sh
->analysis/full_data/cytoscape_top30/01_make_cytoscape_ready_from_full_topology.sh
->analysis/full_data/cytoscape_top30/02_subnetwork_from_full_topology.sh
+- `analysis/full_data/create_omics_enet.sh`
+- `analysis/full_data/post_network_enet/01_organize_topology_files.sh`
+- `analysis/full_data/post_network_enet/02_preprocess_RWR.sh`
+- `analysis/full_data/post_network_enet/03_make_RWR_p0.sh`
+- `analysis/full_data/post_network_enet/04_run_RWR.sh`
+- `analysis/full_data/cytoscape_top30/01_make_cytoscape_ready_from_full_topology.sh`
+- `analysis/full_data/cytoscape_top30/02_subnetwork_from_full_topology.sh`
 
-```
-Designed to infer the network on a full data (not k-fold) and perform RWR
+Designed to infer the network on full data and perform RWR.
 
-Shell script utilizes:
-src/network_construction_5fold/ElasticNet_R.short.fulldata.r
-src/post_network/integrate_network.v2.py
-src/post_network/cleanup_RWR_ready_file.py
-src/post_network/RWR_create_seed_profile.py
-src/post_network/RWR.R
-src/network_visualization/make_cytoscape_ready_file.py
-src/network_visualization/find_subnetwork_from_cyto_file.py
-```
+### 4. External Validation of Machine Learning
 
-#### [4] External validation of machine-learning.
+External validation was performed on ACPA– vs. ACPA+ metabolomics; ART and EAC data. The features were used to create a RF classifier while features not in the external validation dataset were discarded.
 
-External validation was performed on ACPA– vs. ACPA+ metabolomics; ART and EAC data.
-In brief, we inferred a metabolomics network with our own data (internal validation dataset), 
-and selected the features using the cutoff that we learned that had the best performance (via 5-fold CV).
-
-The features were then used to create a RF classifier while features that are not in external validation dataset were discarded.
-
-
-##### 4-1 Infer network from metabolomics data (ra only)
+#### 4-1 Infer Network from Metabolomics Data (RA Only)
 
 Maintains the same philosophy from "Network inference and RWR with full data".
 
->analysis/full_data_metabolomics_neg_pos/create_omics_enet.sh
->analysis/full_data_metabolomics_neg_pos/post_network_enet/01_organize_topology_files.sh
->analysis/full_data_metabolomics_neg_pos/post_network_enet/02_preprocess_RWR.sh
->analysis/full_data_metabolomics_neg_pos/post_network_enet/03_make_RWR_p0.sh
->analysis/full_data_metabolomics_neg_pos/post_network_enet/04_run_RWR.sh
+- `analysis/full_data_metabolomics_neg_pos/create_omics_enet.sh`
+- `analysis/full_data_metabolomics_neg_pos/post_network_enet/01_organize_topology_files.sh`
+- `analysis/full_data_metabolomics_neg_pos/post_network_enet/02_preprocess_RWR.sh`
+- `analysis/full_data_metabolomics_neg_pos/post_network_enet/03_make_RWR_p0.sh`
+- `analysis/full_data_metabolomics_neg_pos/post_network_enet/04_run_RWR.sh`
 
-##### 4-2 Data preprocessing for ART data
+#### 4-2 Data Preprocessing for ART Data
 
-```
-Preprocess the raw peaks (using the same principle from our internal validation dataset)
->src/revision/ART_preprocess/01_PREPROCESS_RA_ART_metabolomics.ipynb
+Preprocess the raw peaks using the same principle from our internal validation dataset.
 
-prepare feature-selected matrix (from the model that were created purely from internal validation dataset) while discarding features that do not exist in external validation dataset.
->src/revision/ART_preprocess/02_PREPROCESS_ML_external_validation.ipynb
-```
+- `src/revision/ART_preprocess/01_PREPROCESS_RA_ART_metabolomics.ipynb`
 
-##### 4-3 Data preprocessing for EAC data
+Prepare feature-selected matrix while discarding features not in the external validation dataset.
 
-Note: This data is unpublished raw dataset. 
-Please contact corresponding author for data. We will share the data for reasonable request.
+- `src/revision/ART_preprocess/02_PREPROCESS_ML_external_validation.ipynb`
 
-```
-Preprocess the raw peaks (using the same principle from our internal validation dataset)
->src/revision/EAC_preprocess/PREPROCESS_metabolon_raw_data.ipynb
+#### 4-3 Data Preprocessing for EAC Data
 
-prepare feature-selected matrix (from the model that were created purely from internal validation dataset) while discarding features that do not exist in external validation dataset.
->src/revision/EAC_preprocess/Perform_FS_for_ML_external_validation.ipynb
-```
+**Note:** This data is unpublished raw dataset. Please contact the corresponding author for data. We will share the data for reasonable requests.
 
-##### 4-3 Perform ML
+Preprocess the raw peaks using the same principle from our internal validation dataset.
+
+- `src/revision/EAC_preprocess/PREPROCESS_metabolon_raw_data.ipynb`
+
+Prepare feature-selected matrix while discarding features not in the external validation dataset.
+
+- `src/revision/EAC_preprocess/Perform_FS_for_ML_external_validation.ipynb`
+
+#### 4-4 Perform ML
 
 Perform ML on external validation dataset. The script also handles imbalanced classes of the external validation set.
 
-analysis_revision/external_validation/ra_art_metabolomics/run.sh
-analysis_revision/external_validation/ra_eac_metabolomics/run.sh
+- `analysis_revision/external_validation/ra_art_metabolomics/run.sh`
+- `analysis_revision/external_validation/ra_eac_metabolomics/run.sh`
 
-```
-run.sh utilizes
->src/revision/machine_learning_handle_imbalanced/classification_N_summary.ver_external.v2.py
-```
-
+`run.sh` utilizes:
+- `src/revision/machine_learning_handle_imbalanced/classification_N_summary.ver_external.v2.py`
 
