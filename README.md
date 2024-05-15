@@ -47,7 +47,7 @@ Designed to:
 - `src/preprocess/metabolomics/03_PREPROCESS_metabolon_raw_data_STEP3.ipynb`
 
 Designed to:
-1. Remove metabolites with >20% N/A values.
+1. Remove metabolites with >20% N/A values (across all samples).
 2. Normalize metabolites to median 1.
 3. Impute missing values with the metabolite's minimum value.
 4. Unify sample IDs for multi-omics comparison.
@@ -146,7 +146,7 @@ Designed to:
 1. Infer a correlation network from condition-specific datasets.
 2. Define "edges" by BH-adjusted P < 0.05 and |rho| > 4.
 3. Identify inverted network edges.
-*Note: PBS scripts have been run in a cluster with a different directory structure; adjustments may be necessary.
+**Note**: PBS scripts have been run in a cluster with a different directory structure; adjustments may be necessary.
 
 ## Machine Learning
 
