@@ -212,7 +212,7 @@ The shell script utilizes
 
 >[!NOTE] 
 >do_qsub.sh and create_omics_enet.5batch.sh runs pbs and slurm for 02_create_omics_enet.\*.sh, respectively.
->Elastic net results for RA subgroups and controls are stored in: [link](https://drive.google.com/drive/folders/1GRRf2O6ZrstjEWVxZUrdSMM96oJjRcIL)
+>Elastic net results for RA subgroups and controls are stored in: [link](https://drive.google.com/drive/folders/1GRRf2O6ZrstjEWVxZUrdSMM96oJjRcIL) <br />
 >Elastic net results for RA subgroups are stored in: [link](https://drive.google.com/drive/folders/1N0EH0RBowVidHv-6JZHl5hmmpL-5Db9d)
 
 ```
