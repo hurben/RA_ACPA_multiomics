@@ -162,13 +162,13 @@ Designed to split datasets into balanced 5-fold datasets.
 - `analysis/5fold_data/network_construction_enet/02_create_omics_enet.*.sh`
 - `analysis/5fold_data_ra_only/network_construction_enet/02_create_omics_enet.*.sh`
 
-**NOTE:** Elastic net results for '5fold_data' are stored in:
+**NOTE:** Elastic net results are stored in:
 - [5fold_data results](https://drive.google.com/drive/folders/1GRRf2O6ZrstjEWVxZUrdSMM96oJjRcIL)
 - [5fold_data_ra_only results](https://drive.google.com/drive/folders/1N0EH0RBowVidHv-6JZHl5hmmpL-5Db9d)
 
 ### 3. Infer a Network from 5-fold Dataset Using Elastic Net (Part 2)
 
-**NOTE:** RWR results for '5fold_data' are stored in:
+**NOTE:** RWR results are stored in:
 - [5fold_data results](https://drive.google.com/drive/folders/140W1aTweCnttRaEUKgpsrA6Z3Y_T_8Do)
 - [5fold_data_ra_only results](https://drive.google.com/drive/folders/1JZhhVDHIZlCwRGMzJgUdu5MOFoak1STc)
 
