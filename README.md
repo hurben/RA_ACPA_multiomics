@@ -210,7 +210,8 @@ The shell script utilizes
 >analysis/5fold_data/network_construction_enet/02_create_omics_enet.\*.sh
 >analysis/5fold_data_ra_only/network_construction_enet/02_create_omics_enet.\*.sh
 
->[!NOTE] do_qsub.sh and create_omics_enet.5batch.sh runs pbs and slurm for 02_create_omics_enet.\*.sh, respectively. 
+>[!NOTE] 
+>do_qsub.sh and create_omics_enet.5batch.sh runs pbs and slurm for 02_create_omics_enet.\*.sh, respectively. 
 >elastic net results for RA subgroups and controls are stored in: https://drive.google.com/drive/folders/1GRRf2O6ZrstjEWVxZUrdSMM96oJjRcIL
 >elastic net results for RA subgroups are stored in: https://drive.google.com/drive/folders/1N0EH0RBowVidHv-6JZHl5hmmpL-5Db9d
 
