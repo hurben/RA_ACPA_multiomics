@@ -8,18 +8,18 @@
 
 ![plot](./etc/Figure1_v3.png)
 
-### [A] Deep Plasma Multi-omic Profiling
+### [A] Deep plasma multi-omic profiling
 
 Utilized to create a dataset comprising 9,944 proteins, metabolites, and autoantibodies from:
 - 40 ACPA– RA patients
 - 40 ACPA+ RA patients
 - 40 healthy controls
 
-### [B] Statistical Analyses and Set Comparisons
+### [B] Statistical analyses and set comparisons
 
 Performed to characterize and differentiate the three study cohorts at the single- and multi-omic levels. A multi-omic network that elucidates associations between various omic features and clinical attributes, including study group (or phenotype), was constructed using penalized (elastic net) linear regression.
 
-### [C] Feature Selection Scheme for Phenotype Classification
+### [C] Feature selection scheme for phenotype classification
 
 Composed of three main steps:
 1. **Multi-omic Network Construction:** Nodes represent omic features, and edges symbolize links between features inferred using elastic net linear regression.
@@ -30,7 +30,7 @@ Composed of three main steps:
 
 > **NOTE:** Preprocessed files are stored in "preprocessed_data_public". Please rename "preprocessed_data_public" to "preprocessed_data" if you wish to reproduce the study results.
 
-### 1. Preprocess: Proteomics Data from Somascan's Delivered File (.adat)
+### 1. Preprocess: proteomics data from Somascan's delivered File (.adat)
 
 - `src/preprocess/proteomics/PREPROCESS_somascan_raw_data_STEP1.ipynb`
 - `src/preprocess/proteomics/PREPROCESS_somascan_raw_data_STEP2.ipynb`
@@ -40,7 +40,7 @@ Designed to:
 2. Address duplicated proteins.
 3. Unify sample IDs for multi-omics comparison.
 
-### 2. Preprocess: Metabolomics Data from Metabolon's Delivered File (DATA TABLE.XLSX, Batch-normalized Data)
+### 2. Preprocess: metabolomics data from Metabolon's delivered File (DATA TABLE.XLSX, Batch-normalized Data)
 
 - `src/preprocess/metabolomics/01_PREPROCESS_metabolon_raw_data_STEP1.ipynb`
 - `src/preprocess/metabolomics/02_PREPROCESS_metabolon_raw_data_STEP2.ipynb`
@@ -52,7 +52,7 @@ Designed to:
 3. Impute missing values with the metabolite's minimum value.
 4. Unify sample IDs for multi-omics comparison.
 
-### 3. Preprocess: Autoantibody Data from Sengenic's Delivered File (KREX Immunome.xlsx, Raw Mean)
+### 3. Preprocess: autoantibody data from Sengenic's delivered file (KREX Immunome.xlsx, raw mean)
 
 - `src/preprocess/autoantibody/01_PREPROCESS_sengenics_quantile_norm_STEP1.ipynb`
 - `src/preprocess/autoantibody/02_PREPROCESS_sengenics_quantile_norm_STEP2.ipynb`
@@ -61,7 +61,7 @@ Designed to:
 1. Quantile normalize the data.
 2. Unify sample IDs for multi-omics comparison.
 
-### 4. Preprocess: Merging Multi-omics Matrices and Patient Information into a Single Matrix
+### 4. Preprocess: merging multi-omics matrices and patient information into a single matrix
 
 - `src/preprocess/multiomics/PREPROCESS_make_3_omics_matrix.py.ipynb`
 
@@ -71,7 +71,7 @@ Designed to:
 
 ## Statistics
 
-### 1. Organize Demographics and Perform Statistics for Clinical Variables (Manuscript Table 1)
+### 1. Organize demographics and perform statistics for clinical variables (Manuscript Table 1)
 
 - `src/statistics/patient_info/summarize_demographics_for_table1.ipynb`
 - `src/statistics/patient_info/table1_statistics.ipynb`
@@ -80,7 +80,7 @@ Designed to:
 1. Use input data from: `preprocessed_data/meta/patient_info_for_statistics.tsv`, `preprocessed_data/meta/patient_info_for_statistics.v3.tsv`.
 2. Apply Fisher's Exact Test and Kruskal-Wallis rank sum test for statistics.
 
-### 2. Create a Ternary Plot to Compare Properties of the Profiled Plasma Multi-omics Data (Manuscript Fig. 2A)
+### 2. Create a ternary plot to compare properties of the profiled plasma multi-omics data (Manuscript Fig. 2A)
 
 - `src/statistics/ternary_plots/STEP01_PREPROCESS_Ternary_Plot.ipynb`
 - `src/statistics/ternary_plots/STEP02_Ternary_Plot.ipynb`
@@ -89,7 +89,7 @@ Designed to:
 1. Create a ternary plot for proteomics, metabolomics, and autoantibody profiles.
 2. Store results at: `analysis/statistics/ternary_plots/`.
 
-### 3. Create Scatter Plot of Correlations Between Clinical Markers and Omics Features (Manuscript Fig. 2B)
+### 3. Create scatter plot of correlations between clinical markers and omics features (Manuscript Fig. 2B)
 
 - `src/statistics/omics_clinical_feature_correlation/PREPROCESS_make_omics_correlation_matrix_top_bottom_50_v3.ipynb`
 - `src/statistics/omics_clinical_feature_correlation/draw_scatterplots_for_figure2_v2.ipynb`
@@ -99,7 +99,7 @@ Designed to:
 2. Visualize the top 50 positive and top 50 negative correlations.
 3. Store results at: `analysis/statistics/omics_clinical_feature_correlation/`.
 
-### 4. Linear Regression & Cohen's D to Identify Phenotype-associated Proteins/Metabolites/Autoantibodies (Manuscript Fig. 3A, 3B, 4A, 4B, 5A, 5B)
+### 4. Linear regression & Cohen's D to identify phenotype-associated proteins/metabolites/autoantibodies (Manuscript Fig. 3A, 3B, 4A, 4B, 5A, 5B)
 
 - `src/statistics/linear_model_logit/01_DifferentialAbundance_and_cohens_D_adjust_effect.ipynb`
 - `src/statistics/linear_model_logit/02_report_differential_abundance_adjusting_drug.ipynb`
@@ -112,7 +112,7 @@ Designed to:
 2. Obtain effect size using Cohen's D.
 3. Visualize identified features using volcano plots and differential cytokines.
 
-### 5. Metabolomic Analysis with Age-stratified Samples (Manuscript Fig. 4D)
+### 5. Metabolomic analysis with age-stratified samples (Manuscript Fig. 4D)
 
 - `src/age_stratified_differences/linear_model_logit/00_split_into_three_age_group_v3.ipynb`
 - `src/age_stratified_differences/linear_model_logit/01_DifferentialAbundance_and_cohens_D_v2.ipynb`
@@ -121,7 +121,7 @@ Designed to:
 1. Split samples into three age groups.
 2. Perform logistic regression and Cohen's D analysis.
 
-### 6. Autoantibody Correlation with Clinical Parameters (Manuscript Fig. 5C–D)
+### 6. Autoantibody correlation with clinical parameters (Manuscript Fig. 5C–D)
 
 - `src/statistics/autoantibody_correlation/PREPROCESS01_make_correlation_ready_profile_v2.ipynb`
 - `src/statistics/autoantibody_correlation/PREPROCESS02_make_correlation_ready_profile.ipynb`
@@ -132,7 +132,7 @@ Designed to:
 Designed to:
 Calculate Spearman’s rank correlation coefficient (ρ) between plasma autoantibodies and clinical parameters. Only significant correlations (|ρ| > 0.4 and P < 0.01) are represented in the heatmap.
 
-### 7. Inverted Correlation Network (Manuscript Fig. 6)
+### 7. Inverted correlation network (Manuscript Fig. 6)
 
 - `analysis/correlation_network/topology_data/01_make_condition_specific_network.sh`
 - `analysis/correlation_network/topology_data/pbs.batch*.sh`
@@ -162,7 +162,7 @@ Shell scripts utlizes
 
 ## Machine Learning
 
-### 1. Create 5-fold Dataset
+### 1. Create 5-fold dataset
 
 - `analysis/5fold_data/network_construction_enet/01_preprocess_omics_enet.sh`
 - `analysis/5fold_data_ra_only/network_construction_enet/01_preprocess_omics_enet.sh`
@@ -175,7 +175,7 @@ The shell script utilizes
 >src/acpa_specific_network_construction_5fold/enet_construction_preprocess.py
 ```
 
-### 2. Infer a Network from 5-fold Dataset Using Elastic Net (Part 1)
+### 2. Infer a network from 5-fold dataset using elastic net (Part 1)
 
 For each K-fold dataset, perform elastic net to infer network from the data.
 Due to running time, I've splitted the data into several batches and runned via cluster.
@@ -198,7 +198,7 @@ enet_construction_batch*.py utilizes
 >src/src/network_construction_5fold_ra_only/ElasticNet_R.short.r
 ```
 
-### 3. Infer a Network from 5-fold Dataset Using Elastic Net (Part 2)
+### 3. Infer a network from 5-fold dataset using elastic net (Part 2)
 
 #### 3.1 Make adjacent matrix into topology (source-target).
 
