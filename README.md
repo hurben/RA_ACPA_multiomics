@@ -247,7 +247,7 @@ The shell script utlizes
 
 ### 4. Perform Machine Learning
 
-Prepare matrices for machine learning with features selected by elasticnet and RWR cutoff thresholds.
+#### 4.1 Prepare matrices for machine learning with features selected by elasticnet and RWR cutoff thresholds.
 
 Results are stored in `Table S23.xlsx` in the manuscript.
 
@@ -255,6 +255,31 @@ Results are stored in `Table S23.xlsx` in the manuscript.
 - `analysis/machine_learning/5fold_v2/enet_3condition/02_create_feature_selected_matrix.v2.sh`
 - `analysis/machine_learning_ra_only/enet_3condition/01_create_feature_selected_matrix.sh`
 - `analysis/machine_learning_ra_only/enet_3condition/02_create_feature_selected_matrix.v2.sh`
+
+```
+01_create_feature_selected_matrix.sh is for applying RWR cutoffs via percentage (e.g., top1%, top 5%)
+01_create_feature_selected_matrix.v2.sh is for applying RWR cutoffs via top N (e.g., top10, top 20)
+
+The shell script utlizes
+>src/machine_learning/create_feature_selection_matrix.py
+```
+
+Prepare the data for two-class classification. For example, if the machine-learning task is for ACPA-negative vs. control, discard ACPA-positive class samples from the data.
+
+Perform machine-learning with feature-seleted matrices. I highly recommend to read "run.sh" before performing ML.
+
+- `analysis/machine_learning/5fold_v2/enet_3condition/03_3class_to_2class.sh`
+- `analysis/machine_learning/5fold_v2/enet_3condition/05_3class_to_2class.sh`
+- `analysis/machine_learning/5fold_v2/run.sh`
+- `analysis/machine_learning_ra_only/enet_3condition/03_3class_to_2class.sh`
+- `analysis/machine_learning_ra_only/run.sh`
+
+```
+The shell script ultilzes
+>src/machine_learning/transform_3class_to_2class_matrix.py
+>src/machine_learning/classification_5fold.2class.opti.withMCC.py
+```
+
 
 ### Summarize ML Results
 
@@ -296,6 +321,17 @@ Designed to identify enriched biochemical pathways. Results are stored in `analy
 
 Designed to infer the network on full data and perform RWR.
 
+```
+Shell script utilizes:
+src/network_construction_5fold/ElasticNet_R.short.fulldata.r
+src/post_network/integrate_network.v2.py
+src/post_network/cleanup_RWR_ready_file.py
+src/post_network/RWR_create_seed_profile.py
+src/post_network/RWR.R
+src/network_visualization/make_cytoscape_ready_file.py
+src/network_visualization/find_subnetwork_from_cyto_file.py
+```
+
 ### 4. External Validation of Machine Learning
 
 External validation was performed on ACPA– vs. ACPA+ metabolomics; ART and EAC data. The features were used to create a RF classifier while features not in the external validation dataset were discarded.
@@ -309,6 +345,9 @@ Maintains the same philosophy from "Network inference and RWR with full data".
 - `analysis/full_data_metabolomics_neg_pos/post_network_enet/02_preprocess_RWR.sh`
 - `analysis/full_data_metabolomics_neg_pos/post_network_enet/03_make_RWR_p0.sh`
 - `analysis/full_data_metabolomics_neg_pos/post_network_enet/04_run_RWR.sh`
+
+**NOTE:** Elastic net results for 'full_data_metabolomics' are stored in:
+- [full_data results](https://drive.google.com/drive/folders/1vFbfahJRDJlJr_CumqcqKhMt_BFRDMMh)
 
 #### 4-2 Data Preprocessing for ART Data
 
