@@ -148,6 +148,18 @@ Designed to:
 3. Identify inverted network edges. <br />
 **Note**: PBS scripts have been run in a cluster with a different directory structure; adjustments may be necessary.
 
+```
+Shell scripts utlizes
+>src/correlation_network/STEP0_condition_specific_correlation.py
+>src/correlation_network/STEP1_make_sigNcorr_results_v2.py
+>src/correlation_network/STEP2_update_topology_pad.py
+>src/correlation_network/STEP3_topology_with_threshold.py (currently, I am not using this script)
+>src/correlation_network/STEP3_topology_with_threshold_ver_rho_split.py
+>src/correlation_network/STEP4_analyze_network_similary.py
+>src/correlation_network/STEP5_make_cytoscape_ready_format_v3.py
+```
+
+
 ## Machine Learning
 
 ### 1. Create 5-fold Dataset
@@ -159,18 +171,26 @@ Designed to split datasets into balanced 5-fold datasets.
 
 ### 2. Infer a Network from 5-fold Dataset Using Elastic Net (Part 1)
 
+For each K-fold dataset, perform elastic net to infer network from the data.
+Due to running time, I've splitted the data into several batches and runned via cluster.
+
 - `analysis/5fold_data/network_construction_enet/02_create_omics_enet.*.sh`
 - `analysis/5fold_data_ra_only/network_construction_enet/02_create_omics_enet.*.sh`
 
 **NOTE:** Elastic net results are stored in:
 - [5fold_data results](https://drive.google.com/drive/folders/1GRRf2O6ZrstjEWVxZUrdSMM96oJjRcIL)
 - [5fold_data_ra_only results](https://drive.google.com/drive/folders/1N0EH0RBowVidHv-6JZHl5hmmpL-5Db9d)
+- Please use these files for down-stream analysis if you wish to reproduce the study results.
 
 ### 3. Infer a Network from 5-fold Dataset Using Elastic Net (Part 2)
+
+Make adjacent matrix into topology (source-target).
 
 **NOTE:** RWR results are stored in:
 - [5fold_data results](https://drive.google.com/drive/folders/140W1aTweCnttRaEUKgpsrA6Z3Y_T_8Do)
 - [5fold_data_ra_only results](https://drive.google.com/drive/folders/1JZhhVDHIZlCwRGMzJgUdu5MOFoak1STc)
+- RWR results were performed with the output from elastic net results provided in the step mentioned above.
+
 
 ### 4. Perform Machine Learning
 
