@@ -200,10 +200,11 @@ enet_construction_batch*.py utilizes
 
 ### 3. Infer a Network from 5-fold Dataset Using Elastic Net (Part 2)
 
+#### 3.1 Make adjacent matrix into topology (source-target).
+
 - `analysis/post_network_enet/5fold/enet_3condition/01_organize_topology_files.sh`
 - `analysis/post_network_enet_ra_only/5fold/enet_3condition/01_organize_topology_files.sh`
 
-Designed to: Make adjacent matrix into topology (source-target).
 
 **NOTE:** RWR results are stored in:
 - [5fold_data results](https://drive.google.com/drive/folders/140W1aTweCnttRaEUKgpsrA6Z3Y_T_8Do)
@@ -215,31 +216,29 @@ The shell script utilizes
 >src/post_network/integrate_network.v2.py
 ```
 
+#### 3.2 RWR script (from R) has problem understanding some strings. This scripts tries to avoid those issues.
 - `analysis/post_network_enet/5fold/enet_3condition/02_preprocess_RWR.sh`
 - `analysis/post_network_enet_ra_only/5fold/enet_3condition/02_preprocess_RWR.sh`
-
-Designed to: RWR script (from R) has problem understanding some strings. This scripts tries to avoid those issues.
 
 ```
 The shell script utilizes
 >src/post_network/cleanup_RWR_ready_file.py
 ```
 
+#### 3.3  Prepare for RWR 'seed' list.
 
 - `analysis/post_network_enet/5fold/enet_3condition/03_make_RWR_p0.sh`
 - `analysis/post_network_enet_ra_only/5fold/enet_3condition/03_make_RWR_p0.sh`
-
-Designed to: Prepare for RWR 'seed' list.
 
 ```
 The shell script utlizes
 >src/post_network/RWR_create_seed_profile.py
 ```
 
+#### 3.4 Run RWR
+
 - `analysis/post_network_enet/5fold/enet_3condition/04_run_RWR.sh`
 - `analysis/post_network_enet_ra_only/5fold/enet_3condition/04_run_RWR.sh`
-
-Designed to: Run RWR
 
 ```
 The shell script utlizes
