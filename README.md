@@ -1,4 +1,4 @@
-Integrative Multi-omic Phenotyping in Blood Identifies Molecular Signatures and Candidate Biomarkers of ACPA-negative Rheumatoid Arthritis
+***Integrative Multi-omic Phenotyping in Blood Identifies Molecular Signatures and Candidate Biomarkers of ACPA-negative Rheumatoid Arthritis***
 
 DOI: TBD
 
@@ -232,6 +232,11 @@ enet_construction_batch*.py utilizes
 
 #### 3. infer a network from 5-fold dataset (using elastic net) part-2
 
+>[!NOTE] 
+>RWR results for '5fold_data' are stored in: [link](https://drive.google.com/drive/folders/140W1aTweCnttRaEUKgpsrA6Z3Y_T_8Do) <br />
+>RWR results for '5fold_data_ra_only' are stored in: [link](https://drive.google.com/drive/folders/1JZhhVDHIZlCwRGMzJgUdu5MOFoak1STc) <br />
+>RWR results were performed with the output from elastic net results provided in the step mentioned above.
+
 >analysis/post_network_enet/5fold/enet_3condition/01_organize_topology_files.sh
 >analysis/post_network_enet_ra_only/5fold/enet_3condition/01_organize_topology_files.sh
 
@@ -275,6 +280,7 @@ The shell script utlizes
 #### 4. Perform machine-learning
 
 Prepare matrices for machine learning. Each matrix will contain features selected by (i) elasticnet and (ii) RWR cutoff thresholds.
+Results are stored in Table S23.xlsx in the manuscript.
 
 >analysis/machine_learning/5fold_v2/enet_3condition/01_create_feature_selected_matrix.sh
 >analysis/machine_learning/5fold_v2/enet_3condition/02_create_feature_selected_matrix.v2.sh
@@ -341,6 +347,9 @@ Results are stored in analysis/statistics/gse/metabolomics
 
 #### [3] Network inference and RWR with full data (Fig 7)
 
+>[!NOTE]
+>elastic net results for 'full_data' are stored in: [link](https://drive.google.com/drive/folders/1LCpDAd9GB0mwqqSI-zJ07yTYt1DglwTB) <br />
+
 >analysis/full_data/create_omics_enet.sh
 >analysis/full_data/post_network_enet/01_organize_topology_files.sh
 >analysis/full_data/post_network_enet/02_preprocess_RWR.sh
@@ -370,7 +379,18 @@ and selected the features using the cutoff that we learned that had the best per
 
 The features were then used to create a RF classifier while features that are not in external validation dataset were discarded.
 
-##### 4-1 Data preprocessing for ART data
+
+##### 4-1 Infer network from metabolomics data (ra only)
+
+Maintains the same philosophy from "Network inference and RWR with full data".
+
+>analysis/full_data_metabolomics_neg_pos/create_omics_enet.sh
+>analysis/full_data_metabolomics_neg_pos/post_network_enet/01_organize_topology_files.sh
+>analysis/full_data_metabolomics_neg_pos/post_network_enet/02_preprocess_RWR.sh
+>analysis/full_data_metabolomics_neg_pos/post_network_enet/03_make_RWR_p0.sh
+>analysis/full_data_metabolomics_neg_pos/post_network_enet/04_run_RWR.sh
+
+##### 4-2 Data preprocessing for ART data
 
 ```
 Preprocess the raw peaks (using the same principle from our internal validation dataset)
@@ -380,7 +400,7 @@ prepare feature-selected matrix (from the model that were created purely from in
 >src/revision/ART_preprocess/02_PREPROCESS_ML_external_validation.ipynb
 ```
 
-##### 4-2 Data preprocessing for EAC data
+##### 4-3 Data preprocessing for EAC data
 
 Note: This data is unpublished raw dataset. 
 Please contact corresponding author for data. We will share the data for reasonable request.
@@ -395,7 +415,7 @@ prepare feature-selected matrix (from the model that were created purely from in
 
 ##### 4-3 Perform ML
 
-Perform ML on external validation dataset.The script also handles imbalanced classes of the external validation set.
+Perform ML on external validation dataset. The script also handles imbalanced classes of the external validation set.
 
 analysis_revision/external_validation/ra_art_metabolomics/run.sh
 analysis_revision/external_validation/ra_eac_metabolomics/run.sh

@@ -10,3 +10,5 @@ Directory explaination:
 
 4. network_construction_enet_1condition_p3
 > contains metabolomics data
+
+random seeds was not defined for elastic net parameter tuning
