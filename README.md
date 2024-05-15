@@ -196,7 +196,7 @@ Shell scripts utlizes
 >analysis/5fold_data_ra_only/network_construction_enet/01_preprocess_omics_enet.sh
 
 ```
-Split dataset into balanced (each K-fold dataset contains an equal amount of classes) 5-fold dataset.
+Split dataset into balanced (each K-fold dataset contains equal amount of classes) 5fold dataset.
 data/scripts in 5fold_data are designed for RA subgroups vs. controls.
 data/scripts in 5fold_data_ra_only are designed for ACPA– vs. ACPA+.
 
@@ -210,7 +210,9 @@ The shell script utilizes
 >analysis/5fold_data/network_construction_enet/02_create_omics_enet.\*.sh
 >analysis/5fold_data_ra_only/network_construction_enet/02_create_omics_enet.\*.sh
 
-note: do_qsub.sh and create_omics_enet.5batch.sh runs pbs and slurm for 02_create_omics_enet.\*.sh, respectively. 
+>[!NOTE] do_qsub.sh and create_omics_enet.5batch.sh runs pbs and slurm for 02_create_omics_enet.\*.sh, respectively. 
+>elastic net results for RA subgroups and controls are stored in: https://drive.google.com/drive/folders/1GRRf2O6ZrstjEWVxZUrdSMM96oJjRcIL
+>elastic net results for RA subgroups are stored in: https://drive.google.com/drive/folders/1N0EH0RBowVidHv-6JZHl5hmmpL-5Db9d
 
 ```
 For each K-fold dataset, perform elastic net to infer network from the data.
