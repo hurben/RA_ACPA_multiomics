@@ -207,13 +207,15 @@ The shell script utilizes
 
 #### 2. infer a network from 5-fold dataset (using elastic net) part-1
 
+do_qsub.sh and create_omics_enet.5batch.sh runs pbs and slurm for 02_create_omics_enet.\*.sh, respectively.
+
 >analysis/5fold_data/network_construction_enet/02_create_omics_enet.\*.sh
 >analysis/5fold_data_ra_only/network_construction_enet/02_create_omics_enet.\*.sh
 
 >[!NOTE] 
->do_qsub.sh and create_omics_enet.5batch.sh runs pbs and slurm for 02_create_omics_enet.\*.sh, respectively.
->Elastic net results for RA subgroups and controls are stored in: [link](https://drive.google.com/drive/folders/1GRRf2O6ZrstjEWVxZUrdSMM96oJjRcIL) <br />
->Elastic net results for RA subgroups are stored in: [link](https://drive.google.com/drive/folders/1N0EH0RBowVidHv-6JZHl5hmmpL-5Db9d)
+>Elastic net results for '5fold_data' are stored in: [link](https://drive.google.com/drive/folders/1GRRf2O6ZrstjEWVxZUrdSMM96oJjRcIL) <br />
+>Elastic net results for '5fold_data_ra_only' are stored in: [link](https://drive.google.com/drive/folders/1N0EH0RBowVidHv-6JZHl5hmmpL-5Db9d)
+>Please use these files for down-stream analysis if you wish to reproduce the study results.
 
 ```
 For each K-fold dataset, perform elastic net to infer network from the data.
