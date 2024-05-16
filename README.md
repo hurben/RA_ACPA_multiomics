@@ -380,3 +380,20 @@ Perform ML on external validation dataset. The script also handles imbalanced cl
 `run.sh` utilizes:
 - `src/revision/machine_learning_handle_imbalanced/classification_N_summary.ver_external.v2.py`
 
+### Version
+
+Python packages were last tested with:
+
+**networkx**: 3.3
+**scikit-learn**: 1.4.2
+**scipy**: 1.13.0
+
+R packages were last tested with:
+
+**lme4**: 1.1-35.1
+**dplyr**: 1.1.4
+**effects**: 4.2-2
+**stringr**: 1.5.1  
+**lmerTest**: 3.1-3
+**Matrix**: 1.5-4.1 
+**effsize**: 0.8.1 
