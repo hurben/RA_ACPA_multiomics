@@ -346,8 +346,7 @@ Maintains the same philosophy from "Network inference and RWR with full data".
 - `analysis/full_data_metabolomics_neg_pos/post_network_enet/03_make_RWR_p0.sh`
 - `analysis/full_data_metabolomics_neg_pos/post_network_enet/04_run_RWR.sh`
 
-**NOTE:** Elastic net results for 'full_data_metabolomics' are stored in:
-- [full_data results](https://drive.google.com/drive/folders/1vFbfahJRDJlJr_CumqcqKhMt_BFRDMMh)
+**NOTE:** Elastic net results for 'full_data_metabolomics' are stored in: [full_data results](https://drive.google.com/drive/folders/1vFbfahJRDJlJr_CumqcqKhMt_BFRDMMh)
 
 #### 4-2 Data Preprocessing for ART Data
 
