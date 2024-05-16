@@ -380,8 +380,10 @@ Perform ML on external validation dataset. The script also handles imbalanced cl
 - `analysis_revision/external_validation/ra_art_metabolomics/run.sh`
 - `analysis_revision/external_validation/ra_eac_metabolomics/run.sh`
 
-`run.sh` utilizes:
-- `src/revision/machine_learning_handle_imbalanced/classification_N_summary.ver_external.v2.py`
+```
+shell script utilizes:
+src/revision/machine_learning_handle_imbalanced/classification_N_summary.ver_external.v2.py
+```
 
 ### Package/Library versions (which may affect differences in results)
 
