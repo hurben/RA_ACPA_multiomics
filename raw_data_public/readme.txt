@@ -1,11 +1,11 @@
-Raw (or near raw) files are stored in preprocessed_data_public and raw_data_public
+Raw (or near raw) files are stored in preprocessed_data_public and raw_data_public. These files are near identical from the data that we've recieved from the provider.
 
-Near identical from the data recived via the provider.
-
-Metabolomics (not normalized)
+Metabolomics 
+(not normalized)
 - preprocessed_data_public/metabolomics/metabolone_raw.tsv
 
-Proteomics (not normalized; however normalized by somalogic's protocol)
+Proteomics 
+(normalized by somalogic's protocol)
 - preprocessed_data_public/proteomics/somascan_anml.T.tsv
 
 Autoantibody profile 
