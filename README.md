@@ -146,7 +146,10 @@ Designed to:
 1. Infer a correlation network from condition-specific datasets.
 2. Define "edges" by BH-adjusted P < 0.05 and |rho| > 4.
 3. Identify inverted network edges. <br />
-**Note**: PBS scripts have been run in a cluster with a different directory structure; adjustments may be necessary.
+
+**NOTE:** inverted correlation network topology are stored in: [here](https://drive.google.com/drive/folders/1_EnYGusJlS1sOYN74Bt4k_9lJMjsUaU4)
+
+**NOTE**: PBS scripts have been run in a cluster with a different directory structure; adjustments may be necessary.
 
 ```
 Shell scripts utlizes
@@ -184,8 +187,8 @@ Due to running time, I've splitted the data into several batches and runned via 
 - `analysis/5fold_data_ra_only/network_construction_enet/02_create_omics_enet.*.sh`
 
 **NOTE:** Elastic net results are stored in:
-- [5fold_data results](https://drive.google.com/drive/folders/1GRRf2O6ZrstjEWVxZUrdSMM96oJjRcIL)
-- [5fold_data_ra_only results](https://drive.google.com/drive/folders/1N0EH0RBowVidHv-6JZHl5hmmpL-5Db9d)
+- [5fold_data_results](https://drive.google.com/drive/folders/1GRRf2O6ZrstjEWVxZUrdSMM96oJjRcIL)
+- [5fold_data_ra_only_results](https://drive.google.com/drive/folders/1N0EH0RBowVidHv-6JZHl5hmmpL-5Db9d)
 - Please use these files for down-stream analysis if you wish to reproduce the study results.
 
 ```
@@ -207,8 +210,8 @@ enet_construction_batch*.py utilizes
 
 
 **NOTE:** RWR results are stored in:
-- [5fold_data results](https://drive.google.com/drive/folders/140W1aTweCnttRaEUKgpsrA6Z3Y_T_8Do)
-- [5fold_data_ra_only results](https://drive.google.com/drive/folders/1JZhhVDHIZlCwRGMzJgUdu5MOFoak1STc)
+- [5fold_data_RWR_results](https://drive.google.com/drive/folders/140W1aTweCnttRaEUKgpsrA6Z3Y_T_8Do)
+- [5fold_data_ra_only_RWR_results](https://drive.google.com/drive/folders/1JZhhVDHIZlCwRGMzJgUdu5MOFoak1STc)
 - RWR results were performed with the output from elastic net results provided in the step mentioned above.
 
 ```
@@ -308,8 +311,7 @@ Designed to identify enriched biochemical pathways. Results are stored in `analy
 
 ### 3. Network Inference and RWR with Full Data (Fig 7)
 
-**NOTE:** Elastic net results for 'full_data' are stored in:
-- [full_data results](https://drive.google.com/drive/folders/1LCpDAd9GB0mwqqSI-zJ07yTYt1DglwTB)
+**NOTE:** Elastic net results for 'full_data' are stored in: [full_data_results](https://drive.google.com/drive/folders/1LCpDAd9GB0mwqqSI-zJ07yTYt1DglwTB)
 
 - `analysis/full_data/create_omics_enet.sh`
 - `analysis/full_data/post_network_enet/01_organize_topology_files.sh`
@@ -346,7 +348,7 @@ Maintains the same philosophy from "Network inference and RWR with full data".
 - `analysis/full_data_metabolomics_neg_pos/post_network_enet/03_make_RWR_p0.sh`
 - `analysis/full_data_metabolomics_neg_pos/post_network_enet/04_run_RWR.sh`
 
-**NOTE:** Elastic net results for 'full_data_metabolomics' are stored in: [full_data results](https://drive.google.com/drive/folders/1vFbfahJRDJlJr_CumqcqKhMt_BFRDMMh)
+**NOTE:** Elastic net results for 'full_data_metabolomics' are stored in: [full_data_metabolomics_results](https://drive.google.com/drive/folders/1vFbfahJRDJlJr_CumqcqKhMt_BFRDMMh)
 
 #### 4-2 Data Preprocessing for ART Data
 
@@ -397,3 +399,4 @@ R packages were last tested with:
 **lmerTest**: 3.1-3
 **Matrix**: 1.5-4.1 
 **effsize**: 0.8.1 
+**diffusr**: 0.1.4 (https://github.com/dirmeier/diffusr)
