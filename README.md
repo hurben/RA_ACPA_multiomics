@@ -374,7 +374,8 @@ Prepare feature-selected matrix while discarding features not in the external va
 
 #### 4-4 Perform ML
 
-Perform ML on external validation dataset. The script also handles imbalanced classes of the external validation set.
+Perform ML on external validation dataset. The script also handles imbalanced classes of the external validation set. <br />
+**Requires output from: 4-1 Infer Network from Metabolomics Data (RA Only)**
 
 - `analysis_revision/external_validation/ra_art_metabolomics/run.sh`
 - `analysis_revision/external_validation/ra_eac_metabolomics/run.sh`
@@ -382,7 +383,7 @@ Perform ML on external validation dataset. The script also handles imbalanced cl
 `run.sh` utilizes:
 - `src/revision/machine_learning_handle_imbalanced/classification_N_summary.ver_external.v2.py`
 
-### Version
+### Package/Library versions (which may affect differences in results)
 
 Python packages were last tested with:
 
