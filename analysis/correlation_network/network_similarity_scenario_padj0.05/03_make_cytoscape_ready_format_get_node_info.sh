@@ -1,2 +1,0 @@
-#python3 /Users/m221138/RA_acpa_multiomics/src/correlation_network_scenario_padj0.05/STEP6_make_cytoscape_ready_format_node_information.py acpa_neg_3_omics.counter.common.profile.v3.LCC.tsv acpa_neg_3_omics.counter.common.profile.v3.LCC.nodeinfo.tsv
-python3 /Users/m221138/RA_acpa_multiomics/src/correlation_network_scenario_padj0.05/STEP6_make_cytoscape_ready_format_node_information.py acpa_neg_3_omics.counter.common.profile.v3.tsv acpa_neg_3_omics.counter.common.profile.v3.nodeinfo.tsv

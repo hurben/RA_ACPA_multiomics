@@ -14,15 +14,22 @@ def get_RWR_features(file_name, cutoff):
 	r, c = data_df.shape
 
 	threshold = define_cutoff(r, cutoff)
+	print (threshold)
 	feature_list = []
 
+	count = 0
+	class_list = ["control","acpa_pos","acpa_neg"]
+
 	for i in range(r):
-		if i <= threshold:
-			#feature = data_df.iloc[i][0]
+		if count <= threshold:
 			feature = data_df.iloc[i,0]
-			feature_list.append(feature)
+			if feature not in class_list:
+				feature_list.append(feature)
+				count += 1
 		else:
 			break
+
+	print (count)
 
 	return feature_list
 
@@ -51,10 +58,8 @@ def create_feature_selected_matrix(data_matrix_dir, RWR_feature_list, output_dir
 	test_data_dict, test_feature_list, test_patient_ID_list = make_dict_from_profile(test_file)
 
 	#[2] write output with only selected features
-
 	write_fs_text(train_data_dict, train_feature_list, RWR_feature_list, train_patient_ID_list, output_dir, 'multiplex.fs.train.tsv')
 	write_fs_text(test_data_dict, test_feature_list, RWR_feature_list, test_patient_ID_list, output_dir, 'multiplex.fs.test.tsv')
-
 
 def make_dict_from_profile(data_file):
 
@@ -95,7 +100,7 @@ def write_fs_text(data_dict, feature_list, RWR_feature_list, patient_ID_list, ou
 	output_txt.write('\n')
 
 	for feature in feature_list:
-		if feature in RWR_feature_list:
+		if feature in RWR_feature_list or feature == "acpa":
 			output_txt.write('%s' % feature)
 			for patient_ID in patient_ID_list:
 				value = data_dict[feature, patient_ID]
@@ -132,4 +137,3 @@ if __name__ == '__main__':
 	RWR_feature_list = get_RWR_features(RWR_result_file, cutoff)
 	create_feature_selected_matrix(data_matrix_dir, RWR_feature_list, kfold_output_dir)
 		
-

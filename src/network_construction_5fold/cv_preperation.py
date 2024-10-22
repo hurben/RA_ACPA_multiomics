@@ -1,24 +1,22 @@
 #cv_preperation.py				21.11.23
 
-def merge_multiple_dict_main(PI_dict, M_dict, AA_dict, P_dict, PI_patient_list, PI_list, M_list, AA_list, P_list):
+def merge_multiple_dict_main(PI_dict, M_dict, P_dict, PI_patient_list, PI_list, M_list, P_list):
 
 	data_dict = {}
 	feature_list = []
 
 	data_dict, feature_list = merge_multiple_dict_sub(PI_dict, PI_list, data_dict, PI_patient_list, feature_list, 'PI')
 	data_dict, feature_list = merge_multiple_dict_sub(M_dict, M_list, data_dict, PI_patient_list, feature_list, 'M')
-	data_dict, feature_list = merge_multiple_dict_sub(AA_dict, AA_list, data_dict, PI_patient_list, feature_list,'AA')
 	data_dict, feature_list = merge_multiple_dict_sub(P_dict, P_list, data_dict, PI_patient_list, feature_list,'P')
 
 	return data_dict, feature_list
 
-def merge_multiple_dict_main_p1(PI_dict, AA_dict, P_dict, PI_patient_list, PI_list, AA_list, P_list):
+def merge_multiple_dict_main_p1(PI_dict, P_dict, PI_patient_list, PI_list, P_list):
 
 	data_dict = {}
 	feature_list = []
 
 	data_dict, feature_list = merge_multiple_dict_sub(PI_dict, PI_list, data_dict, PI_patient_list, feature_list, 'PI')
-	data_dict, feature_list = merge_multiple_dict_sub(AA_dict, AA_list, data_dict, PI_patient_list, feature_list,'AA')
 	data_dict, feature_list = merge_multiple_dict_sub(P_dict, P_list, data_dict, PI_patient_list, feature_list,'P')
 
 	return data_dict, feature_list
@@ -35,14 +33,13 @@ def merge_multiple_dict_main_p2(PI_dict, M_dict, P_dict, PI_patient_list, PI_lis
 	return data_dict, feature_list
 
 
-def merge_multiple_dict_main_p3(PI_dict, M_dict, AA_dict, PI_patient_list, PI_list, M_list, AA_list):
+def merge_multiple_dict_main_p3(PI_dict, M_dict, PI_patient_list, PI_list, M_list):
 
 	data_dict = {}
 	feature_list = []
 
 	data_dict, feature_list = merge_multiple_dict_sub(PI_dict, PI_list, data_dict, PI_patient_list, feature_list, 'PI')
 	data_dict, feature_list = merge_multiple_dict_sub(M_dict, M_list, data_dict, PI_patient_list, feature_list, 'M')
-	data_dict, feature_list = merge_multiple_dict_sub(AA_dict, AA_list, data_dict, PI_patient_list, feature_list,'AA')
 
 	return data_dict, feature_list
 
@@ -53,16 +50,6 @@ def merge_multiple_dict_main_c1p1(PI_dict, P_dict, PI_patient_list, PI_list, P_l
 
 	data_dict, feature_list = merge_multiple_dict_sub(PI_dict, PI_list, data_dict, PI_patient_list, feature_list, 'PI')
 	data_dict, feature_list = merge_multiple_dict_sub(P_dict, P_list, data_dict, PI_patient_list, feature_list,'P')
-
-	return data_dict, feature_list
-
-def merge_multiple_dict_main_c1p2(PI_dict, AA_dict, PI_patient_list, PI_list, AA_list):
-
-	data_dict = {}
-	feature_list = []
-
-	data_dict, feature_list = merge_multiple_dict_sub(PI_dict, PI_list, data_dict, PI_patient_list, feature_list, 'PI')
-	data_dict, feature_list = merge_multiple_dict_sub(AA_dict, AA_list, data_dict, PI_patient_list, feature_list,'AA')
 
 	return data_dict, feature_list
 
@@ -81,8 +68,6 @@ def merge_multiple_dict_sub(query_dict, query_list, main_dict, patientID_list, f
 
 	for feature in query_list:
 		feature_main = feature
-		if data_type == 'AA':
-			feature_main = 'aa_' + feature
 		if data_type == 'P':
 			feature_main = 'p_' + feature
 

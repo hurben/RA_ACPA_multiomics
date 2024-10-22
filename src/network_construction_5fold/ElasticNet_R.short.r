@@ -13,16 +13,18 @@ args <- commandArgs(trailingOnly=TRUE)
 data_file = args[1]
 output_txt = args[2]
 
+set.seed(123)
 
 #output related
-
 if (file.exists(output_txt)) {
   file.remove(output_txt)
 }
 
 print (data_file)
 data_df = read.csv(data_file, sep = "\t", row.names=1)
+data_df = data_df[!rownames(data_df) %in% "acpa", ]
 data_df = t(data_df)
+
 row_length = nrow(data_df)
 col_length = ncol(data_df)
 feature_list = colnames(data_df)

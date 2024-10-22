@@ -1,7 +1,7 @@
 pathway	pvalue	number_of_metabolites_in_pathway(m)	number_of_hits(x)	metabolite_list
-[Lipid] Sphingosines	0.0280	3	1	sphingosine
-[Lipid] Medium Chain Fatty Acid	0.0732	8	1	caprate (10:0)
-[Lipid] Ceramides	0.0820	9	1	N-palmitoyl-sphingosine (d18:1/16:0)
-[Amino Acid] Tyrosine Metabolism	0.1976	23	1	3-methoxytyramine sulfate
-[Xenobiotics] Chemical	0.0248	27	2	3,5-dichloro-2,6-dihydroxybenzoic acid@3-bromo-5-chloro-2,6-dihydroxybenzoic acid*
-[Partially Characterized Molecules] Partially Characterized Molecules	0.2356	28	1	branched-chain, straight-chain, or cyclopropyl 10:1 fatty acid (1)*
+[Lipid] Sphingosines	0.028035744035	3	1	sphingosine
+[Lipid] Medium Chain Fatty Acid	0.073193463091	8	1	caprate (10:0)
+[Lipid] Ceramides	0.081995044638	9	1	N-palmitoyl-sphingosine (d18:1/16:0)
+[Amino Acid] Tyrosine Metabolism	0.197566459145	23	1	3-methoxytyramine sulfate
+[Xenobiotics] Chemical	0.024755419070	27	2	3,5-dichloro-2,6-dihydroxybenzoic acid@3-bromo-5-chloro-2,6-dihydroxybenzoic acid*
+[Partially Characterized Molecules] Partially Characterized Molecules	0.235553563293	28	1	branched-chain, straight-chain, or cyclopropyl 10:1 fatty acid (1)*

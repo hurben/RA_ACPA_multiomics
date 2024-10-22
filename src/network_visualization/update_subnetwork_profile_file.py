@@ -40,7 +40,7 @@ def make_patient_info_file_dict(data_file):
 	r, c = data_df.shape
 
 	for i in range(r):
-		patientID = data_df["parentID"][i]
+		patientID = data_df["sample_ID"][i]
 		acpa = data_df["acpa"][i]
 
 		data_dict[patientID] = acpa
@@ -135,18 +135,17 @@ if __name__ == "__main__":
 	subnetwork_profile_file = sys.argv[1]
 	output_file = '%s.v2.tsv' % subnetwork_profile_file.split('.tsv')[0]
 
-	patient_info_file = '../../../preprocessed_data/meta/patient_info.v2.tsv'
+	#patient_info_file = '../../../preprocessed_data/meta/patient_info.v2.tsv'
+	patient_info_file = '../../../preprocessed_data/meta/patient_info_for_statistics.v3.tsv'
 
 	p_data_file = '../../../preprocessed_data/proteomics/somascan_anml.T.v2.tsv'
 	m_data_file = '../../../preprocessed_data/metabolomics/metabolone_raw_norm_preprocessed.v2.tsv'
-	aa_data_file = '../../../preprocessed_data/autoantibody/sengenics_qnorm_data.v2.tsv'
 
 	feature_profile_dict, target_feature_list = make_target_feature_dict(subnetwork_profile_file)
 	patient_info_dict = make_patient_info_file_dict(patient_info_file)
 
 	feature_profile_dict = make_omics_dict(p_data_file, patient_info_dict, target_feature_list, feature_profile_dict, 'p')
 	feature_profile_dict = make_omics_dict(m_data_file, patient_info_dict, target_feature_list, feature_profile_dict, 'm')
-	feature_profile_dict = make_omics_dict(aa_data_file, patient_info_dict, target_feature_list, feature_profile_dict, 'aa')
 
 	make_output_file(feature_profile_dict, target_feature_list, output_file)
 	

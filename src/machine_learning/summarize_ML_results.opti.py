@@ -81,7 +81,8 @@ if __name__ == "__main__":
 	import pandas as pd
 
 	#this list is fixed purpose.
-	defined_condition_list = ["enet_3condition", "enet_1condition_p1", "enet_1condition_p2", "enet_1condition_p3"]
+	#defined_condition_list = ["enet_3condition", "enet_1condition_p1", "enet_1condition_p2", "enet_1condition_p3"]
+	defined_condition_list = ["enet_3condition", "enet_1condition_p1", "enet_1condition_p3"]
 
 	comparison_list = ["cVSneg","cVSpos", "cVSra"]
 #	comparison_list = ["posVSneg"]
