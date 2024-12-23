@@ -1,0 +1,4 @@
+/Users/m221138/RA_ACPA_multiomics/analysis/full_data/cytoscape/../../../src/network_visualization/make_cytoscape_ready_file.py:31: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  value = input_df.iloc[i][j]
+Number of total nodes: %s 8341
+Number of total edges: %s 250092

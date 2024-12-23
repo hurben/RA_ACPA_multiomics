@@ -1,0 +1,5 @@
+/Users/m221138/RA_ACPA_multiomics/analysis/full_data/post_network_enet/../../../src/post_network/integrate_network.v2.py:48: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  value = topology_df.iloc[i][j]  #this is coefficient calculated by ElasticNet. We will uses this to infer the weight of the edge (although this will be imputed 1 or 0)
+../../../analysis/full_data
+# Edges:  250092
+# Nodes:  8341

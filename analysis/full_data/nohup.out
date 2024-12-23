@@ -1,0 +1,25 @@
+Loading required package: Matrix
+Loaded glmnet 4.1-8
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Loading required package: ggplot2
+Loading required package: lattice
+[1] "../../preprocessed_data/2_omics/two_omics_multiplex.tsv"
+[1] "1000/8341"
+[1] "2000/8341"
+[1] "3000/8341"
+[1] "4000/8341"
+[1] "5000/8341"
+[1] "6000/8341"
+[1] "7000/8341"
+[1] "8000/8341"
+There were 50 or more warnings (use warnings() to see the first 50)
