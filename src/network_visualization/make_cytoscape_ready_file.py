@@ -6,7 +6,6 @@
 #
 #IMPORTANT NOTE: the input file should have same number of rows and columns
 
-
 if __name__ == '__main__':
 
 	import sys
@@ -32,8 +31,8 @@ if __name__ == '__main__':
 			value = input_df.iloc[i][j]
 			if value > 0:
 				G.add_edge(feature_source, feature_target)
-	#this will naturally remove duplicate edges
 
+	#this will naturally remove duplicate edges
 	print ("Number of total nodes: %s", len(G.nodes))
 	print ("Number of total edges: %s", len(G.edges))
 

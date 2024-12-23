@@ -21,7 +21,7 @@ def get_RWR_features(file_name, cutoff):
 	class_list = ["control","acpa_pos","acpa_neg"]
 
 	for i in range(r):
-		if count <= threshold:
+		if count < threshold:
 			feature = data_df.iloc[i,0]
 			if feature not in class_list:
 				feature_list.append(feature)

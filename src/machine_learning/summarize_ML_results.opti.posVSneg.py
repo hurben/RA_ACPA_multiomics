@@ -48,9 +48,8 @@ def update_summary_dict(ml_result_file, summary_dict, omics_type, comparison):
 
 def get_omics_info(condition_folder):
 
-	condition_info_dict = {"enet_3condition":"3omics_PAM",
+	condition_info_dict = {"enet_2condition":"2omics_PM",
 							"enet_1condition_p1": "1omics_P",
-							"enet_1condition_p2": "1omics_AA",
 							"enet_1condition_p3":"1omics_M"}
 
 
@@ -81,7 +80,7 @@ if __name__ == "__main__":
 	import pandas as pd
 
 	#this list is fixed purpose.
-	defined_condition_list = ["enet_3condition", "enet_1condition_p1", "enet_1condition_p2", "enet_1condition_p3"]
+	defined_condition_list = ["enet_2condition", "enet_1condition_p1", "enet_1condition_p3"]
 
 	comparison_list = ["posVSneg"]
 

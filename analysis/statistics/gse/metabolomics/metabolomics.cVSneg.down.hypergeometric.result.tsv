@@ -1,33 +1,26 @@
 pathway	pvalue	number_of_metabolites_in_pathway(m)	number_of_hits(x)	metabolite_list
-[Amino Acid] Methionine, Cysteine, SAM and Taurine Metabolism	0.651676873506	24	2	S-adenosylhomocysteine (SAH)@2,3-dihydroxy-5-methylthio-4-pentenoate (DMTPA)*
-[Amino Acid] Creatine Metabolism	0.170415998308	3	1	creatinine
-[Lipid] Secondary Bile Acid Metabolism	1.000000000000	21	1	deoxycholate
-[Amino Acid] Urea cycle; Arginine and Proline Metabolism	0.387288808607	22	2	citrulline@N2,N5-diacetylornithine
-[Nucleotide] Pyrimidine Metabolism, Uracil containing	0.138711010436	11	2	2'-deoxyuridine@5-methyluridine (ribothymidine)
-[Amino Acid] Glycine, Serine and Threonine Metabolism	0.138711010436	11	2	betaine@N-acetylthreonine
-[Carbohydrate] Disaccharides and Oligosaccharides	0.117055821315	2	1	sucrose
-[Cofactors and Vitamins] Hemoglobin and Porphyrin Metabolism	0.031831778193	5	2	bilirubin (Z,Z)@heme
-[Lipid] Carnitine Metabolism	0.003585083492	2	2	carnitine@deoxycarnitine
-[Amino Acid] Guanidino and Acetamido Metabolism	0.117055821315	2	1	1-methylguanidine
-[Amino Acid] Histidine Metabolism	0.273667538837	17	2	N-acetylhistidine@1-ribosyl-imidazoleacetate*
-[Peptide] Gamma-glutamyl Amino Acid	0.273667538837	17	2	gamma-glutamylthreonine@gamma-glutamylcitrulline*
-[Amino Acid] Glutathione Metabolism	0.353893225184	7	1	cysteine-glutathione disulfide
-[Xenobiotics] Food Component/Plant	0.118794693243	72	1	homostachydrine*
-[Energy] TCA Cycle	0.393125515116	8	1	succinylcarnitine (C4-DC)
-[Lipid] Fatty Acid, Dihydroxy	0.267790522274	5	1	2R,3R-dihydroxybutyrate
-[Amino Acid] Glutamate Metabolism	0.556727490301	13	1	alpha-ketoglutaramate*
-[Cofactors and Vitamins] Tocopherol Metabolism	0.098045043833	9	2	gamma-CEHC glucuronide*@delta-CEHC
-[Lipid] Sphingomyelins	0.692533099086	29	2	sphingomyelin (d18:1/24:1, d18:2/24:0)*@sphingomyelin (d18:2/18:1)*
+[Cofactors and Vitamins] Tocopherol Metabolism	0.335926167096	9	1	gamma-CEHC glucuronide*
+[Lipid] Sphingomyelins	1.000000000000	29	1	sphingomyelin (d18:2/18:1)*
+[Xenobiotics] Food Component/Plant	0.364950238897	72	1	homostachydrine*
+[Lipid] Secondary Bile Acid Metabolism	0.617407521642	21	1	deoxycholate
+[Carbohydrate] Disaccharides and Oligosaccharides	0.086673305710	2	1	sucrose
+[Nucleotide] Pyrimidine Metabolism, Uracil containing	0.393965027987	11	1	5-methyluridine (ribothymidine)
+[Xenobiotics] Chemical	0.338227149417	27	2	4-chlorobenzoic acid@perfluorooctanesulfonate (PFOS)
+[Lipid] Carnitine Metabolism	0.086673305710	2	1	carnitine
+[Amino Acid] Methionine, Cysteine, SAM and Taurine Metabolism	1.000000000000	24	1	S-adenosylhomocysteine (SAH)
+[Cofactors and Vitamins] Hemoglobin and Porphyrin Metabolism	0.017640259749	5	2	bilirubin (Z,Z)@heme
 [Amino Acid] Tryptophan Metabolism	1.000000000000	25	1	N-acetylkynurenine (2)
-[Lipid] Phosphatidylcholine (PC)	1.000000000000	21	1	1-oleoyl-2-docosahexaenoyl-GPC (18:1/22:6)*
-[Lipid] Fatty Acid Metabolism (Acyl Choline)	0.013544727057	9	3	docosahexaenoylcholine@stearoylcholine*@linoleoylcholine*
-[Nucleotide] Pyrimidine Metabolism, Cytidine containing	0.267790522274	5	1	2'-O-methylcytidine
-[Xenobiotics] Chemical	0.675365977707	27	2	perfluorooctanesulfonate (PFOS)@4-chlorobenzoic acid
-[Lipid] Corticosteroids	0.001921514859	5	3	cortolone glucuronide (1)@tetrahydrocortisol glucuronide@tetrahydrocortisone glucuronide (5)
-[Lipid] Fatty Acid, Dicarboxylate	1.000000000000	29	1	3-carboxy-4-methyl-5-pentyl-2-furanpropionate (3-CMPFP)**
-[Lipid] Fatty Acid, Amino	0.170415998308	3	1	N-acetyl-2-aminooctanoate*
-[Amino Acid] Alanine and Aspartate Metabolism	0.430010574026	9	1	hydroxyasparagine**
 [Lipid] Androgenic Steroids	1.000000000000	22	1	11beta-hydroxyandrosterone glucuronide
+[Amino Acid] Glycine, Serine and Threonine Metabolism	0.081893234629	11	2	N-acetylthreonine@betaine
+[Nucleotide] Pyrimidine Metabolism, Cytidine containing	0.203065592246	5	1	2'-O-methylcytidine
 [Partially Characterized Molecules] Partially Characterized Molecules	1.000000000000	28	1	carnitine of C10H14O2 (5)*
-[Lipid] Fatty Acid, Branched	0.220598773458	4	1	cis-3,4-methyleneheptanoate
-[Lipid] Fatty Acid Metabolism (Acyl Carnitine, Medium Chain)	0.353893225184	7	1	cis-3,4-methyleneheptanoylcarnitine
+[Lipid] Fatty Acid, Branched	0.165980525746	4	1	cis-3,4-methyleneheptanoate
+[Lipid] Fatty Acid, Dicarboxylate	1.000000000000	29	1	3-carboxy-4-methyl-5-pentyl-2-furanpropionate (3-CMPFP)**
+[Amino Acid] Histidine Metabolism	0.539875115566	17	1	N-acetylhistidine
+[Peptide] Gamma-glutamyl Amino Acid	0.171498579831	17	2	gamma-glutamylthreonine@gamma-glutamylcitrulline*
+[Lipid] Fatty Acid, Dihydroxy	0.203065592246	5	1	2R,3R-dihydroxybutyrate
+[Lipid] Fatty Acid Metabolism (Acyl Carnitine, Medium Chain)	0.272458286691	7	1	cis-3,4-methyleneheptanoylcarnitine
+[Lipid] Corticosteroids	0.017640259749	5	2	tetrahydrocortisone glucuronide (5)@cortolone glucuronide (1)
+[Energy] TCA Cycle	0.304900848859	8	1	succinylcarnitine (C4-DC)
+[Lipid] Fatty Acid, Amino	0.127208107062	3	1	N-acetyl-2-aminooctanoate*
+[Lipid] Phosphatidylcholine (PC)	0.617407521642	21	1	1-oleoyl-2-docosahexaenoyl-GPC (18:1/22:6)*

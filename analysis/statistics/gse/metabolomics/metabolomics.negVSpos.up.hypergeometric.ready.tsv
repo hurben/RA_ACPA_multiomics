@@ -1,7 +1,0 @@
-pathway	number_of_metabolites_in_pathway(m)	significant_metabolites_in_pathway(x)	total_number_of_metabolites(n)	detected_significant_metabolites(k)	list_of_metabolites
-[Lipid] Secondary Bile Acid Metabolism	21	1	1061	9	deoxycholate
-[Xenobiotics] Xanthine Metabolism	14	2	1061	9	theobromine@7-methylxanthine
-[Lipid] Fatty Acid, Dicarboxylate	29	1	1061	9	3-carboxy-4-methyl-5-propyl-2-furanpropanoate (CMPF)
-[Nucleotide] Pyrimidine Metabolism, Uracil containing	11	1	1061	9	5-methyluridine (ribothymidine)
-[Xenobiotics] Food Component/Plant	72	1	1061	9	4-acetylcatechol sulfate (1)
-[Xenobiotics] Benzoate Metabolism	29	1	1061	9	2-methoxyhydroquinone sulfate (1)

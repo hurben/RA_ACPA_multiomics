@@ -1,6 +1,6 @@
 #update_subnetwork_profile_file.py			22.04.25
 #
-#make a fc profile from subnetwork						22.04.25
+#make a fc profile from subnetwork					
 # -> which can be done by "find_subnetwork_from_cyto_file.py"
 #
 #[1] Parse edge information from "full_data_subnetwork.profile.tsv"
@@ -58,15 +58,15 @@ def make_omics_dict(data_file, patient_info_dict, target_feature_list, feature_p
 	for i in range(r):
 		feature = data_feature_list[i]
 
-		if omics_type == "aa":
-			feature = '%s_%s' % (omics_type, feature)
 		if omics_type == "p":
 			feature = '%s_%s' % (omics_type, feature)
 			feature = feature.replace('-','_')
 		if omics_type == "m":
 			feature = feature.replace("'",'prime')
+			feature = feature.replace("*",'')
 			feature = feature.replace('-','_')
 			feature = feature.replace(' ','_')
+			feature = feature.replace(',','_')
 
 		if feature in target_feature_list:
 			control_value_list = []
@@ -98,32 +98,35 @@ def make_omics_dict(data_file, patient_info_dict, target_feature_list, feature_p
 def make_output_file(feature_profile_dict, target_feature_list, output_file):
 
 	output_txt = open(output_file, 'w')
-	output_txt.write('feature\trank\tcontrol\tacpa_pos\tacpa_neg\tra\tlog2fc_cVSra\tlog2fc_cVSpos\tlog2fc_cVSneg\n')
+	output_txt.write('feature\tnode_type\trank\tcontrol\tacpa_pos\tacpa_neg\tra\tlog2fc_cVSra\tlog2fc_cVSpos\tlog2fc_cVSneg\n')
 	index_list = ['rank','control','acpa_pos','acpa_neg','ra']
 
 	for feature in target_feature_list:
-		output_txt.write(feature)
-		for index in index_list:
-			value = feature_profile_dict[feature,index]
+		if feature not in ['control', 'acpa_neg', 'acpa_pos']:
+			output_txt.write(feature)
+			if "p_" not in feature:
+				output_txt.write("\t1")
+			elif feature == "acpa":
+				output_txt.write("\t0")
+			else:
+				output_txt.write("\t2")
+			for index in index_list:
+				value = feature_profile_dict[feature, index]
 
-			if index != 'rank':
-				value = statistics.mean(value)
-			output_txt.write('\t%s' % value)
-		#fc (ra/control)
-		output_txt.write('\t%s' % math.log2(statistics.mean(feature_profile_dict[feature,'ra']) / statistics.mean(feature_profile_dict[feature,'control'])))
+				if index != 'rank':
+					value = statistics.mean(value)
+				output_txt.write('\t%s' % value)
+			#fc (ra/control)
+			output_txt.write('\t%s' % math.log2(statistics.mean(feature_profile_dict[feature,'ra']) / statistics.mean(feature_profile_dict[feature,'control'])))
 
-		#fc (acpa+/control)
-		output_txt.write('\t%s' % math.log2(statistics.mean(feature_profile_dict[feature,'acpa_pos']) / statistics.mean(feature_profile_dict[feature,'control'])))
+			#fc (acpa+/control)
+			output_txt.write('\t%s' % math.log2(statistics.mean(feature_profile_dict[feature,'acpa_pos']) / statistics.mean(feature_profile_dict[feature,'control'])))
 
-		#fc (acpa-/control)
-		output_txt.write('\t%s' % math.log2(statistics.mean(feature_profile_dict[feature,'acpa_neg']) / statistics.mean(feature_profile_dict[feature,'control'])))
-
-		output_txt.write('\n')
-
-
+			#fc (acpa-/control)
+			output_txt.write('\t%s' % math.log2(statistics.mean(feature_profile_dict[feature,'acpa_neg']) / statistics.mean(feature_profile_dict[feature,'control'])))
+			output_txt.write('\n')
 
 	output_txt.close()
-
 
 if __name__ == "__main__":
 
@@ -135,9 +138,7 @@ if __name__ == "__main__":
 	subnetwork_profile_file = sys.argv[1]
 	output_file = '%s.v2.tsv' % subnetwork_profile_file.split('.tsv')[0]
 
-	#patient_info_file = '../../../preprocessed_data/meta/patient_info.v2.tsv'
 	patient_info_file = '../../../preprocessed_data/meta/patient_info_for_statistics.v3.tsv'
-
 	p_data_file = '../../../preprocessed_data/proteomics/somascan_anml.T.v2.tsv'
 	m_data_file = '../../../preprocessed_data/metabolomics/metabolone_raw_norm_preprocessed.v2.tsv'
 

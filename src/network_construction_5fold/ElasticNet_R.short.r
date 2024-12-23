@@ -22,7 +22,7 @@ if (file.exists(output_txt)) {
 
 print (data_file)
 data_df = read.csv(data_file, sep = "\t", row.names=1)
-data_df = data_df[!rownames(data_df) %in% "acpa", ]
+data_df = data_df[!rownames(data_df) %in% "acpa", ] #attention: if we are not using one-hot encode, this should be removed
 data_df = t(data_df)
 
 row_length = nrow(data_df)

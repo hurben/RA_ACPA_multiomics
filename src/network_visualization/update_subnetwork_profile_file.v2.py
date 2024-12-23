@@ -208,7 +208,7 @@ if __name__ == "__main__":
 
 	deg_data_dir = '../../../analysis/statistics/linear_model/differential_abundance'
 	condition_list = ['cVSra','cVSpos','cVSneg']
-	omics_list = ['autoantibody','metabolomics','proteomics']
+	omics_list = ['metabolomics','proteomics']
 
 	for omics_data in omics_list:
 		for condition_type in condition_list:

@@ -1,23 +1,18 @@
 pathway	pvalue	number_of_metabolites_in_pathway(m)	number_of_hits(x)	metabolite_list
-[Amino Acid] Methionine, Cysteine, SAM and Taurine Metabolism	0.001660285557	24	5	N-formylmethionine@S-adenosylhomocysteine (SAH)@cysteine@methionine sulfone@2,3-dihydroxy-5-methylthio-4-pentenoate (DMTPA)*
-[Amino Acid] Creatine Metabolism	0.111607416108	3	1	creatinine
-[Amino Acid] Histidine Metabolism	0.024988725740	17	3	histidine@N-acetylhistidine@1-ribosyl-imidazoleacetate*
-[Amino Acid] Urea cycle; Arginine and Proline Metabolism	0.049503979294	22	3	citrulline@N2,N5-diacetylornithine@N,N,N-trimethyl-alanylproline betaine (TMAP)
-[Cofactors and Vitamins] Vitamin A Metabolism	0.019810380857	6	2	retinol (vitamin A)@retinal
-[Nucleotide] Pyrimidine Metabolism, Uracil containing	0.007128219226	11	3	2'-deoxyuridine@pseudouridine@5,6-dihydrouridine
-[Amino Acid] Leucine, Isoleucine and Valine Metabolism	1.000000000000	33	1	N-acetylvaline
-[Amino Acid] Polyamine Metabolism	0.271188218982	8	1	4-acetamidobutanoate
-[Amino Acid] Tryptophan Metabolism	0.013477883667	25	4	indolelactate@N-acetyltryptophan@N-acetylkynurenine (2)@oxindolylalanine
-[Amino Acid] Guanidino and Acetamido Metabolism	0.075827361158	2	1	1-methylguanidine
-[Xenobiotics] Food Component/Plant	0.353883319193	72	4	erythritol@ergothioneine@histidine betaine (hercynine)*@3-formylindole
-[Peptide] Gamma-glutamyl Amino Acid	0.137517290203	17	2	gamma-glutamylglycine@gamma-glutamylcitrulline*
-[Lipid] Carnitine Metabolism	0.075827361158	2	1	deoxycarnitine
-[Nucleotide] Purine Metabolism, Adenine containing	0.299565505802	9	1	N6-succinyladenosine
-[Amino Acid] Glycine, Serine and Threonine Metabolism	0.353123165001	11	1	N-acetylserine
-[Amino Acid] Glutamate Metabolism	0.402678000521	13	1	alpha-ketoglutaramate*
-[Amino Acid] Lysine Metabolism	0.548632793592	20	1	5-(galactosylhydroxy)-lysine
-[Lipid] Diacylglycerol	0.295127948142	28	2	stearoyl-arachidonoyl-glycerol (18:0/20:4) [1]*@stearoyl-arachidonoyl-glycerol (18:0/20:4) [2]*
-[Amino Acid] Alanine and Aspartate Metabolism	0.299565505802	9	1	hydroxyasparagine**
-[Lipid] Primary Bile Acid Metabolism	0.378382165225	12	1	glyco-beta-muricholate**
-[Peptide] Modified Peptides	0.038642789821	1	1	N,N-dimethyl-pro-pro
-[Xenobiotics] Chemical	1.000000000000	27	1	perfluorohexanesulfonate (PFHxS)
+[Amino Acid] Methionine, Cysteine, SAM and Taurine Metabolism	0.020834498505	24	3	methionine sulfone@cysteine@N-formylmethionine
+[Cofactors and Vitamins] Vitamin A Metabolism	0.008788284327	6	2	retinol (vitamin A)@retinal
+[Xenobiotics] Chemical	0.505776891053	27	1	perfluorohexanesulfonate (PFHxS)
+[Xenobiotics] Food Component/Plant	0.104458643223	72	4	histidine betaine (hercynine)*@3-formylindole@erythritol@ergothioneine
+[Amino Acid] Glycine, Serine and Threonine Metabolism	0.247918538958	11	1	N-acetylserine
+[Nucleotide] Pyrimidine Metabolism, Uracil containing	0.029785537074	11	2	pseudouridine@5,6-dihydrouridine
+[Amino Acid] Tryptophan Metabolism	0.023276830035	25	3	indolelactate@oxindolylalanine@N-acetyltryptophan
+[Lipid] Diacylglycerol	0.157335260084	28	2	stearoyl-arachidonoyl-glycerol (18:0/20:4) [1]*@stearoyl-arachidonoyl-glycerol (18:0/20:4) [2]*
+[Lipid] Primary Bile Acid Metabolism	0.267257776528	12	1	glyco-beta-muricholate**
+[Amino Acid] Leucine, Isoleucine and Valine Metabolism	0.578490753133	33	1	N-acetylvaline
+[Amino Acid] Histidine Metabolism	0.356988763562	17	1	histidine
+[Amino Acid] Urea cycle; Arginine and Proline Metabolism	0.436089643404	22	1	N,N,N-trimethyl-alanylproline betaine (TMAP)
+[Peptide] Gamma-glutamyl Amino Acid	0.356988763562	17	1	gamma-glutamylglycine
+[Nucleotide] Purine Metabolism, Adenine containing	0.207754981361	9	1	N6-succinyladenosine
+[Amino Acid] Lysine Metabolism	0.405643879599	20	1	5-(galactosylhydroxy)-lysine
+[Amino Acid] Polyamine Metabolism	0.186906428239	8	1	4-acetamidobutanoate
+[Peptide] Modified Peptides	0.025447690858	1	1	N,N-dimethyl-pro-pro

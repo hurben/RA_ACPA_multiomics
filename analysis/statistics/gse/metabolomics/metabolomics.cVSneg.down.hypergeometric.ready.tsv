@@ -1,33 +1,26 @@
 pathway	number_of_metabolites_in_pathway(m)	significant_metabolites_in_pathway(x)	total_number_of_metabolites(n)	detected_significant_metabolites(k)	list_of_metabolites
-[Amino Acid] Methionine, Cysteine, SAM and Taurine Metabolism	24	2	1061	64	S-adenosylhomocysteine (SAH)@2,3-dihydroxy-5-methylthio-4-pentenoate (DMTPA)*
-[Amino Acid] Creatine Metabolism	3	1	1061	64	creatinine
-[Lipid] Secondary Bile Acid Metabolism	21	1	1061	64	deoxycholate
-[Amino Acid] Urea cycle; Arginine and Proline Metabolism	22	2	1061	64	citrulline@N2,N5-diacetylornithine
-[Nucleotide] Pyrimidine Metabolism, Uracil containing	11	2	1061	64	2'-deoxyuridine@5-methyluridine (ribothymidine)
-[Amino Acid] Glycine, Serine and Threonine Metabolism	11	2	1061	64	betaine@N-acetylthreonine
-[Carbohydrate] Disaccharides and Oligosaccharides	2	1	1061	64	sucrose
-[Cofactors and Vitamins] Hemoglobin and Porphyrin Metabolism	5	2	1061	64	bilirubin (Z,Z)@heme
-[Lipid] Carnitine Metabolism	2	2	1061	64	carnitine@deoxycarnitine
-[Amino Acid] Guanidino and Acetamido Metabolism	2	1	1061	64	1-methylguanidine
-[Amino Acid] Histidine Metabolism	17	2	1061	64	N-acetylhistidine@1-ribosyl-imidazoleacetate*
-[Peptide] Gamma-glutamyl Amino Acid	17	2	1061	64	gamma-glutamylthreonine@gamma-glutamylcitrulline*
-[Amino Acid] Glutathione Metabolism	7	1	1061	64	cysteine-glutathione disulfide
-[Xenobiotics] Food Component/Plant	72	1	1061	64	homostachydrine*
-[Energy] TCA Cycle	8	1	1061	64	succinylcarnitine (C4-DC)
-[Lipid] Fatty Acid, Dihydroxy	5	1	1061	64	2R,3R-dihydroxybutyrate
-[Amino Acid] Glutamate Metabolism	13	1	1061	64	alpha-ketoglutaramate*
-[Cofactors and Vitamins] Tocopherol Metabolism	9	2	1061	64	gamma-CEHC glucuronide*@delta-CEHC
-[Lipid] Sphingomyelins	29	2	1061	64	sphingomyelin (d18:1/24:1, d18:2/24:0)*@sphingomyelin (d18:2/18:1)*
-[Amino Acid] Tryptophan Metabolism	25	1	1061	64	N-acetylkynurenine (2)
-[Lipid] Phosphatidylcholine (PC)	21	1	1061	64	1-oleoyl-2-docosahexaenoyl-GPC (18:1/22:6)*
-[Lipid] Fatty Acid Metabolism (Acyl Choline)	9	3	1061	64	docosahexaenoylcholine@stearoylcholine*@linoleoylcholine*
-[Nucleotide] Pyrimidine Metabolism, Cytidine containing	5	1	1061	64	2'-O-methylcytidine
-[Xenobiotics] Chemical	27	2	1061	64	perfluorooctanesulfonate (PFOS)@4-chlorobenzoic acid
-[Lipid] Corticosteroids	5	3	1061	64	cortolone glucuronide (1)@tetrahydrocortisol glucuronide@tetrahydrocortisone glucuronide (5)
-[Lipid] Fatty Acid, Dicarboxylate	29	1	1061	64	3-carboxy-4-methyl-5-pentyl-2-furanpropionate (3-CMPFP)**
-[Lipid] Fatty Acid, Amino	3	1	1061	64	N-acetyl-2-aminooctanoate*
-[Amino Acid] Alanine and Aspartate Metabolism	9	1	1061	64	hydroxyasparagine**
-[Lipid] Androgenic Steroids	22	1	1061	64	11beta-hydroxyandrosterone glucuronide
-[Partially Characterized Molecules] Partially Characterized Molecules	28	1	1061	64	carnitine of C10H14O2 (5)*
-[Lipid] Fatty Acid, Branched	4	1	1061	64	cis-3,4-methyleneheptanoate
-[Lipid] Fatty Acid Metabolism (Acyl Carnitine, Medium Chain)	7	1	1061	64	cis-3,4-methyleneheptanoylcarnitine
+[Cofactors and Vitamins] Tocopherol Metabolism	9	1	1061	47	gamma-CEHC glucuronide*
+[Lipid] Sphingomyelins	29	1	1061	47	sphingomyelin (d18:2/18:1)*
+[Xenobiotics] Food Component/Plant	72	1	1061	47	homostachydrine*
+[Lipid] Secondary Bile Acid Metabolism	21	1	1061	47	deoxycholate
+[Carbohydrate] Disaccharides and Oligosaccharides	2	1	1061	47	sucrose
+[Nucleotide] Pyrimidine Metabolism, Uracil containing	11	1	1061	47	5-methyluridine (ribothymidine)
+[Xenobiotics] Chemical	27	2	1061	47	4-chlorobenzoic acid@perfluorooctanesulfonate (PFOS)
+[Lipid] Carnitine Metabolism	2	1	1061	47	carnitine
+[Amino Acid] Methionine, Cysteine, SAM and Taurine Metabolism	24	1	1061	47	S-adenosylhomocysteine (SAH)
+[Cofactors and Vitamins] Hemoglobin and Porphyrin Metabolism	5	2	1061	47	bilirubin (Z,Z)@heme
+[Amino Acid] Tryptophan Metabolism	25	1	1061	47	N-acetylkynurenine (2)
+[Lipid] Androgenic Steroids	22	1	1061	47	11beta-hydroxyandrosterone glucuronide
+[Amino Acid] Glycine, Serine and Threonine Metabolism	11	2	1061	47	N-acetylthreonine@betaine
+[Nucleotide] Pyrimidine Metabolism, Cytidine containing	5	1	1061	47	2'-O-methylcytidine
+[Partially Characterized Molecules] Partially Characterized Molecules	28	1	1061	47	carnitine of C10H14O2 (5)*
+[Lipid] Fatty Acid, Branched	4	1	1061	47	cis-3,4-methyleneheptanoate
+[Lipid] Fatty Acid, Dicarboxylate	29	1	1061	47	3-carboxy-4-methyl-5-pentyl-2-furanpropionate (3-CMPFP)**
+[Amino Acid] Histidine Metabolism	17	1	1061	47	N-acetylhistidine
+[Peptide] Gamma-glutamyl Amino Acid	17	2	1061	47	gamma-glutamylthreonine@gamma-glutamylcitrulline*
+[Lipid] Fatty Acid, Dihydroxy	5	1	1061	47	2R,3R-dihydroxybutyrate
+[Lipid] Fatty Acid Metabolism (Acyl Carnitine, Medium Chain)	7	1	1061	47	cis-3,4-methyleneheptanoylcarnitine
+[Lipid] Corticosteroids	5	2	1061	47	tetrahydrocortisone glucuronide (5)@cortolone glucuronide (1)
+[Energy] TCA Cycle	8	1	1061	47	succinylcarnitine (C4-DC)
+[Lipid] Fatty Acid, Amino	3	1	1061	47	N-acetyl-2-aminooctanoate*
+[Lipid] Phosphatidylcholine (PC)	21	1	1061	47	1-oleoyl-2-docosahexaenoyl-GPC (18:1/22:6)*
