@@ -71,19 +71,19 @@ Designed to:
 1. Use input data from: `preprocessed_data/meta/patient_info_for_statistics.tsv`, `preprocessed_data/meta/patient_info_for_statistics.v3.tsv`.
 2. Apply Fisher's Exact Test and Kruskal-Wallis rank sum test for statistics.
 
-### 2. Create a ternary plot to compare properties of the profiled plasma multi-omics data (Manuscript Fig. 2A)
+### 2. Create a ternary plot to compare properties of the profiled plasma multi-omics data (Manuscript Fig. 2)
 
 - `src/statistics/ternary_plots/STEP01_PREPROCESS_Ternary_Plot.ipynb`
 - `src/statistics/ternary_plots/STEP02_Ternary_Plot.ipynb`
 
 Designed to:
-1. Create a ternary plot for proteomics, metabolomics, and autoantibody profiles.
+1. Create a ternary plot for proteomics 무ㅇ metabolomics profiles.
 2. Store results at: `analysis/statistics/ternary_plots/`.
 
-### 3. Create scatter plot of correlations between clinical markers and omics features (Manuscript Fig. 2B)
+### 3. Create scatter plot of correlations between clinical markers and omics features (Manuscript Fig. 2)
 
-- `src/statistics/omics_clinical_feature_correlation/PREPROCESS_make_omics_correlation_matrix_top_bottom_50_v3.ipynb`
-- `src/statistics/omics_clinical_feature_correlation/draw_scatterplots_for_figure2_v2.ipynb`
+- `src/statistics/omics_clinical_feature_correlation/PREPROCESS_make_omics_correlation_matrix.ipynb`
+- `src/statistics/omics_clinical_feature_correlation/draw_scatterplots_for_figure2.R.ipynb`
 
 Designed to:
 1. Create scatter plots of correlations between clinical variables (e.g., ESR) and omics features.
