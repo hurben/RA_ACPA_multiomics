@@ -90,7 +90,7 @@ Designed to:
 2. Visualize the correlations of ACPA– RA ~ clinical variables, and ACPA+ RA ~ clinical variables in scatter plot.
 3. Store results at: `analysis/statistics/omics_clinical_feature_correlation/`.
 
-### 4. Linear regression & Cohen's D to identify phenotype-associated proteins/metabolites/autoantibodies (Manuscript Fig. 3A, 3B, 4A, 4B, 5A, 5B)
+### 4. Linear regression & Cohen's D to identify phenotype-associated proteins/metabolites (Manuscript Fig. 3-4)
 
 - `src/statistics/linear_model_logit/01_DifferentialAbundance_and_cohens_D_adjust_effect_v2.ipynb`
 - `src/statistics/linear_model_logit/02_report_differential_abundance_adjusting_drug.ipynb`
@@ -149,8 +149,8 @@ enet_construction_batch*.py utilizes
 
 
 **NOTE:** RWR results are stored in:
-- [5fold_data_RWR_results](https://drive.google.com/drive/folders/140W1aTweCnttRaEUKgpsrA6Z3Y_T_8Do)
-- [5fold_data_ra_only_RWR_results](https://drive.google.com/drive/folders/1JZhhVDHIZlCwRGMzJgUdu5MOFoak1STc)
+- [5fold_data_RWR_results: TBD](https://drive.google.com/drive/folders/140W1aTweCnttRaEUKgpsrA6Z3Y_T_8Do)
+- [5fold_data_ra_only_RWR_results: TBD](https://drive.google.com/drive/folders/1JZhhVDHIZlCwRGMzJgUdu5MOFoak1STc)
 - RWR results were performed with the output from elastic net results provided in the step mentioned above.
 
 ```
