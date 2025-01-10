@@ -179,8 +179,8 @@ The shell script utlizes
 
 #### 3.4 Run RWR
 
-- `analysis/post_network_enet/5fold/enet_3condition/04_run_RWR.sh`
-- `analysis/post_network_enet_ra_only/5fold/enet_3condition/04_run_RWR.sh`
+- `analysis/post_network_enet/5fold/enet_2condition/04_run_RWR.sh`
+- `analysis/post_network_enet_ra_only/5fold/enet_2condition/04_run_RWR.sh`
 
 ```
 The shell script utlizes
@@ -222,16 +222,6 @@ The shell script ultilzes
 >src/machine_learning/classification_5fold.2class.opti.withMCC.py
 ```
 
-
-### Summarize ML Results
-
-- `src/machine_learning/ML_summary_overall_performance_v2.ipynb`
-- `src/machine_learning/ML_summary_overall_performance_v2.negVSpos.ipynb`
-
-Designed to summarize results from:
-- `analysis/machine_learning/5fold_v2`
-- `analysis/machine_learning_ra_only`
-
 ## Misc
 
 ### 1. Addressing Reviewer Comments
@@ -257,8 +247,8 @@ Designed to identify enriched biochemical pathways. Results are stored in `analy
 - `analysis/full_data/post_network_enet/02_preprocess_RWR.sh`
 - `analysis/full_data/post_network_enet/03_make_RWR_p0.sh`
 - `analysis/full_data/post_network_enet/04_run_RWR.sh`
-- `analysis/full_data/cytoscape_top30/01_make_cytoscape_ready_from_full_topology.sh`
-- `analysis/full_data/cytoscape_top30/02_subnetwork_from_full_topology.sh`
+- `analysis/full_data/cytoscape/01_make_cytoscape_ready_from_full_topology.sh`
+- `analysis/full_data/cytoscape/02_subnetwork_from_full_topology.sh`
 
 Designed to infer the network on full data and perform RWR.
 
@@ -270,58 +260,7 @@ src/post_network/cleanup_RWR_ready_file.py
 src/post_network/RWR_create_seed_profile.py
 src/post_network/RWR.R
 src/network_visualization/make_cytoscape_ready_file.py
-src/network_visualization/find_subnetwork_from_cyto_file.py
-```
-
-### 4. External Validation of Machine Learning
-
-External validation was performed on ACPA– vs. ACPA+ metabolomics; ART and EAC data. The features were used to create a RF classifier while features not in the external validation dataset were discarded.
-
-#### 4-1 Infer Network from Metabolomics Data (RA Only)
-
-Maintains the same philosophy from "Network inference and RWR with full data".
-
-- `analysis/full_data_metabolomics_neg_pos/create_omics_enet.sh`
-- `analysis/full_data_metabolomics_neg_pos/post_network_enet/01_organize_topology_files.sh`
-- `analysis/full_data_metabolomics_neg_pos/post_network_enet/02_preprocess_RWR.sh`
-- `analysis/full_data_metabolomics_neg_pos/post_network_enet/03_make_RWR_p0.sh`
-- `analysis/full_data_metabolomics_neg_pos/post_network_enet/04_run_RWR.sh`
-
-**NOTE:** Elastic net results for 'full_data_metabolomics' are stored in: [full_data_metabolomics_results](https://drive.google.com/drive/folders/1vFbfahJRDJlJr_CumqcqKhMt_BFRDMMh)
-
-#### 4-2 Data Preprocessing for ART Data
-
-Preprocess the raw peaks using the same principle from our internal validation dataset.
-
-- `src/revision/ART_preprocess/01_PREPROCESS_RA_ART_metabolomics.ipynb`
-
-Prepare feature-selected matrix while discarding features not in the external validation dataset.
-
-- `src/revision/ART_preprocess/02_PREPROCESS_ML_external_validation.ipynb`
-
-#### 4-3 Data Preprocessing for EAC Data
-
-**Note:** This data is unpublished raw dataset. Please contact the corresponding author for data. We will share the data for reasonable requests.
-
-Preprocess the raw peaks using the same principle from our internal validation dataset.
-
-- `src/revision/EAC_preprocess/PREPROCESS_metabolon_raw_data.ipynb`
-
-Prepare feature-selected matrix while discarding features not in the external validation dataset.
-
-- `src/revision/EAC_preprocess/Perform_FS_for_ML_external_validation.ipynb`
-
-#### 4-4 Perform ML
-
-Perform ML on external validation dataset. The script also handles imbalanced classes of the external validation set. <br />
-**Requires output from: 4-1 Infer Network from Metabolomics Data (RA Only)**
-
-- `analysis_revision/external_validation/ra_art_metabolomics/run.sh`
-- `analysis_revision/external_validation/ra_eac_metabolomics/run.sh`
-
-```
-shell script utilizes:
-src/revision/machine_learning_handle_imbalanced/classification_N_summary.ver_external.v2.py
+src/network_visualization/find_subnetwork_from_cyto_file.v2.py
 ```
 
 ### Package/Library versions (which may affect differences in results)
