@@ -238,7 +238,7 @@ Not available at the moment.
 
 Designed to identify enriched biochemical pathways. Results are stored in `analysis/statistics/gse/metabolomics`.
 
-### 3. Network Inference and RWR with Full Data (Fig 7)
+### 3. Network Inference and RWR with Full Data (Fig 5)
 
 **NOTE:** Elastic net results for 'full_data' are stored in: [full_data_results](https://drive.google.com/drive/folders/1LCpDAd9GB0mwqqSI-zJ07yTYt1DglwTB)
 
