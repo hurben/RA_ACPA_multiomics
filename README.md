@@ -193,10 +193,10 @@ The shell script utlizes
 
 Results are stored in `Table S23.xlsx` in the manuscript.
 
-- `analysis/machine_learning/5fold_v2/enet_3condition/01_create_feature_selected_matrix.sh`
-- `analysis/machine_learning/5fold_v2/enet_3condition/02_create_feature_selected_matrix.v2.sh`
-- `analysis/machine_learning_ra_only/enet_3condition/01_create_feature_selected_matrix.sh`
-- `analysis/machine_learning_ra_only/enet_3condition/02_create_feature_selected_matrix.v2.sh`
+- `analysis/machine_learning/5fold_v2/enet_2condition/01_create_feature_selected_matrix.sh`
+- `analysis/machine_learning/5fold_v2/enet_2condition/02_create_feature_selected_matrix.v2.sh`
+- `analysis/machine_learning_ra_only/enet_2condition/01_create_feature_selected_matrix.sh`
+- `analysis/machine_learning_ra_only/enet_2condition/02_create_feature_selected_matrix.v2.sh`
 
 ```
 01_create_feature_selected_matrix.sh is for applying RWR cutoffs via percentage (e.g., top1%, top 5%)
@@ -210,10 +210,10 @@ Prepare the data for two-class classification. For example, if the machine-learn
 
 Perform machine-learning with feature-seleted matrices. I highly recommend to read "run.sh" before performing ML.
 
-- `analysis/machine_learning/5fold_v2/enet_3condition/03_3class_to_2class.sh`
-- `analysis/machine_learning/5fold_v2/enet_3condition/05_3class_to_2class.sh`
+- `analysis/machine_learning/5fold_v2/enet_2condition/03_3class_to_2class.sh`
+- `analysis/machine_learning/5fold_v2/enet_2condition/05_3class_to_2class.sh`
 - `analysis/machine_learning/5fold_v2/run.sh`
-- `analysis/machine_learning_ra_only/enet_3condition/03_3class_to_2class.sh`
+- `analysis/machine_learning_ra_only/enet_2condition/03_3class_to_2class.sh`
 - `analysis/machine_learning_ra_only/run.sh`
 
 ```
