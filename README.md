@@ -8,18 +8,18 @@
 
 ![plot](./etc/Figure1_v3.png)
 
-### [A] Deep plasma multi-omic profiling
+### [1] Deep plasma multi-omic profiling
 
-Utilized to create a dataset comprising 9,944 proteins, metabolites, and autoantibodies from:
+Utilized to create a dataset comprising 7,273proteins and 1,061metabolites from:
 - 40 ACPA– RA patients
 - 40 ACPA+ RA patients
 - 40 healthy controls
 
-### [B] Statistical analyses and set comparisons
+### [2] Statistical analyses and set comparisons
 
 Performed to characterize and differentiate the three study cohorts at the single- and multi-omic levels. A multi-omic network that elucidates associations between various omic features and clinical attributes, including study group (or phenotype), was constructed using penalized (elastic net) linear regression.
 
-### [C] Feature selection scheme for phenotype classification
+### [3] Feature selection scheme for phenotype classification
 
 Composed of three main steps:
 1. **Multi-omic Network Construction:** Nodes represent omic features, and edges symbolize links between features inferred using elastic net linear regression.
@@ -52,18 +52,9 @@ Designed to:
 3. Impute missing values with the metabolite's minimum value.
 4. Unify sample IDs for multi-omics comparison.
 
-### 3. Preprocess: autoantibody data from Sengenic's delivered file (KREX Immunome.xlsx, raw mean)
+### 3. Preprocess: merging multi-omics matrices and patient information into a single matrix
 
-- `src/preprocess/autoantibody/01_PREPROCESS_sengenics_quantile_norm_STEP1.ipynb`
-- `src/preprocess/autoantibody/02_PREPROCESS_sengenics_quantile_norm_STEP2.ipynb`
-
-Designed to:
-1. Quantile normalize the data.
-2. Unify sample IDs for multi-omics comparison.
-
-### 4. Preprocess: merging multi-omics matrices and patient information into a single matrix
-
-- `src/preprocess/multiomics/PREPROCESS_make_3_omics_matrix.py.ipynb`
+- `src/preprocess/multiomics/PREPROCESS_make_2_omics_matrix.py.ipynb`
 
 Designed to:
 1. Merge preprocessed proteomics, metabolomics, autoantibody, and patient information data into a single matrix.
