@@ -77,7 +77,7 @@ Designed to:
 - `src/statistics/ternary_plots/STEP02_Ternary_Plot.ipynb`
 
 Designed to:
-1. Create a ternary plot for proteomics 무ㅇ metabolomics profiles.
+1. Create a ternary plot for proteomics and metabolomics profiles.
 2. Store results at: `analysis/statistics/ternary_plots/`.
 
 ### 3. Create scatter plot of correlations between clinical markers and omics features (Manuscript Fig. 2)
@@ -87,21 +87,19 @@ Designed to:
 
 Designed to:
 1. Create scatter plots of correlations between clinical variables (e.g., ESR) and omics features.
-2. Visualize the top 50 positive and top 50 negative correlations.
+2. Visualize the correlations of ACPA– RA ~ clinical variables, and ACPA+ RA ~ clinical variables in scatter plot.
 3. Store results at: `analysis/statistics/omics_clinical_feature_correlation/`.
 
 ### 4. Linear regression & Cohen's D to identify phenotype-associated proteins/metabolites/autoantibodies (Manuscript Fig. 3A, 3B, 4A, 4B, 5A, 5B)
 
-- `src/statistics/linear_model_logit/01_DifferentialAbundance_and_cohens_D_adjust_effect.ipynb`
+- `src/statistics/linear_model_logit/01_DifferentialAbundance_and_cohens_D_adjust_effect_v2.ipynb`
 - `src/statistics/linear_model_logit/02_report_differential_abundance_adjusting_drug.ipynb`
 - `src/statistics/volcano_plots/MAKE_volcano_plot_Rscript.ipynb`
-- `src/statistics/volcano_plots/PREPROCESS_identify_cytokines_from_significant_proteins.ipynb`
-- `src/statistics/boxplot_for_cytokines/DRAW_boxplots_for_7_cytokines.ipynb`
 
 Designed to:
 1. Perform logistic regression models while adjusting for various factors.
 2. Obtain effect size using Cohen's D.
-3. Visualize identified features using volcano plots and differential cytokines.
+3. Visualize identified features using volcano plots.
 
 ### 5. Metabolomic analysis with age-stratified samples (Manuscript Fig. 4D)
 
