@@ -101,56 +101,6 @@ Designed to:
 2. Obtain effect size using Cohen's D.
 3. Visualize identified features using volcano plots.
 
-### 5. Metabolomic analysis with age-stratified samples (Manuscript Fig. 4D)
-
-- `src/age_stratified_differences/linear_model_logit/00_split_into_three_age_group_v3.ipynb`
-- `src/age_stratified_differences/linear_model_logit/01_DifferentialAbundance_and_cohens_D_v2.ipynb`
-
-Designed to:
-1. Split samples into three age groups.
-2. Perform logistic regression and Cohen's D analysis.
-
-### 6. Autoantibody correlation with clinical parameters (Manuscript Fig. 5C–D)
-
-- `src/statistics/autoantibody_correlation/PREPROCESS01_make_correlation_ready_profile_v2.ipynb`
-- `src/statistics/autoantibody_correlation/PREPROCESS02_make_correlation_ready_profile.ipynb`
-- `src/statistics/autoantibody_correlation/PREPROCESS03_make_correlation_ready_profile.ver_binary.V2.ipynb`
-- `src/statistics/autoantibody_correlation/PREPROCESS04_make_correlation_ready_profile_V2.ipynb`
-- `src/statistics/autoantibody_correlation/draw_heatmap_correlation_v2.ipynb`
-
-Designed to:
-Calculate Spearman’s rank correlation coefficient (ρ) between plasma autoantibodies and clinical parameters. Only significant correlations (|ρ| > 0.4 and P < 0.01) are represented in the heatmap.
-
-### 7. Inverted correlation network (Manuscript Fig. 6)
-
-- `analysis/correlation_network/topology_data/01_make_condition_specific_network.sh`
-- `analysis/correlation_network/topology_data/pbs.batch*.sh`
-- `analysis/correlation_network/topology_data/pbs.padj.batch*.sh`
-- `analysis/correlation_network/topology_data/02_get_sig_network.sh`
-- `analysis/correlation_network/topology_data/03_get_sig_network_posneg.sh`
-- `analysis/correlation_network/network_similarity/01_network_similarity.sh`
-- `analysis/correlation_network/network_similarity/02_make_cytocape_ready_format.sh`
-
-Designed to:
-1. Infer a correlation network from condition-specific datasets.
-2. Define "edges" by BH-adjusted P < 0.05 and |rho| > 4.
-3. Identify inverted network edges. <br />
-
-**NOTE:** inverted correlation network topology are stored in: [here](https://drive.google.com/drive/folders/1_EnYGusJlS1sOYN74Bt4k_9lJMjsUaU4)
-
-**NOTE**: PBS scripts have been run in a cluster with a different directory structure; adjustments may be necessary.
-
-```
-Shell scripts utlizes
->src/correlation_network/STEP0_condition_specific_correlation.py
->src/correlation_network/STEP1_make_sigNcorr_results_v2.py
->src/correlation_network/STEP2_update_topology_pad.py
->src/correlation_network/STEP3_topology_with_threshold.py (currently, I am not using this script)
->src/correlation_network/STEP3_topology_with_threshold_ver_rho_split.py
->src/correlation_network/STEP4_analyze_network_similary.py
->src/correlation_network/STEP5_make_cytoscape_ready_format_v3.py
-```
-
 
 ## Machine Learning
 
@@ -176,8 +126,8 @@ Due to running time, I've splitted the data into several batches and runned via 
 - `analysis/5fold_data_ra_only/network_construction_enet/02_create_omics_enet.*.sh`
 
 **NOTE:** Elastic net results are stored in:
-- [5fold_data_results](https://drive.google.com/drive/folders/1GRRf2O6ZrstjEWVxZUrdSMM96oJjRcIL)
-- [5fold_data_ra_only_results](https://drive.google.com/drive/folders/1N0EH0RBowVidHv-6JZHl5hmmpL-5Db9d)
+- [5fold_data_results](TBD)
+- [5fold_data_ra_only_results](TBD)
 - Please use these files for down-stream analysis if you wish to reproduce the study results.
 
 ```
