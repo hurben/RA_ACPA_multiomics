@@ -240,7 +240,7 @@ Designed to identify enriched biochemical pathways. Results are stored in `analy
 
 ### 3. Network Inference and RWR with Full Data (Fig 5)
 
-**NOTE:** Elastic net results for 'full_data' are stored in: [full_data_results](https://drive.google.com/drive/folders/1LCpDAd9GB0mwqqSI-zJ07yTYt1DglwTB)
+**NOTE:** Elastic net results for 'full_data' are stored in: [full_data_results TBD](TBD)
 
 - `analysis/full_data/create_omics_enet.sh`
 - `analysis/full_data/post_network_enet/01_organize_topology_files.sh`
