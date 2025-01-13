@@ -1,4 +1,4 @@
-# Integrative Multi-omic Phenotyping in Blood Identifies Molecular Signatures and Candidate Biomarkers of ACPA-negative Rheumatoid Arthritis
+# Integrative Multi-Omics Phenotyping in Blood Reveals Distinct Immune and Metabolic Signatures between ACPA-negative and ACPA-positive Rheumatoid Arthritis
 
 **DOI:** TBD
 
