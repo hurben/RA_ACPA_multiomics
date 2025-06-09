@@ -1,7 +1,0 @@
-Cliffs delta for effect size.
-Logitic regression was used to identify phenotype-associated features
-
-7 confounding effects were adjusted.
-
-phenotype ~ feature_abundance + sex + age + BMI + smoking history + prednisone use + bDMARDs use + csDMARDs use
-

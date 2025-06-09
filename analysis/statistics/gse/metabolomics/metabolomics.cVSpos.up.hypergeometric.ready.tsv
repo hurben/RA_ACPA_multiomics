@@ -1,3 +1,0 @@
-pathway	number_of_metabolites_in_pathway(m)	significant_metabolites_in_pathway(x)	total_number_of_metabolites(n)	detected_significant_metabolites(k)	list_of_metabolites
-[Amino Acid] Tyrosine Metabolism	23	1	1061	4	3-methoxytyramine sulfate
-[Partially Characterized Molecules] Partially Characterized Molecules	28	1	1061	4	branched-chain, straight-chain, or cyclopropyl 10:1 fatty acid (1)*
