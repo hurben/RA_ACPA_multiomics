@@ -92,9 +92,9 @@ Designed to:
 
 ### 4. Linear regression & Cohen's D to identify phenotype-associated proteins/metabolites (Manuscript Fig. 3-4)
 
-- `src/statistics/linear_model_logit/01_DifferentialAbundance_and_cohens_D_adjust_effect_v2.ipynb`
-- `src/statistics/linear_model_logit/02_report_differential_abundance_adjusting_drug.ipynb`
-- `src/statistics/volcano_plots/MAKE_volcano_plot_Rscript.ipynb`
+- `src/statistics/linear_regression/differentially_abundant_metabolites_original.metabolomics.ipynb`
+- `src/statistics/linear_regression/differentially_abundant_metabolites_original.proteomics.ipynb`
+- `src/statistics/linear_regression/MAKE_volcano_plot_Rscript.ipynb`
 
 Designed to:
 1. Perform logistic regression models while adjusting for various factors.
