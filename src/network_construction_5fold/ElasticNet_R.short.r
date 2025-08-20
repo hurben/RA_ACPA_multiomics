@@ -84,7 +84,6 @@ for (i in 1:col_length)
 			print (paste("Attention to: ", feature, sep=""))
 		}
 	)
-
 }
 #write.csv(output_df, output_txt, sep="\t", row.names = TRUE, quote=FALSE)
 write.table(output_df, output_txt, sep="\t", row.names = TRUE, quote=FALSE)
