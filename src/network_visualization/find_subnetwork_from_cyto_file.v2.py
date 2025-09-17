@@ -63,10 +63,10 @@ if __name__ == '__main__':
 		target = input_df.iloc[i][1]
 
 		if source in rwr_node_list and target in rwr_node_list:
-			if source in condition_list:
-				source = "acpa"
-			if target in condition_list:
-				target = "acpa"
+# 			if source in condition_list:
+#				source = "acpa"
+#			if target in condition_list:
+#				target = "acpa"
 
 			if (source, target) not in G.edges:
 				G.add_edge(source, target)
